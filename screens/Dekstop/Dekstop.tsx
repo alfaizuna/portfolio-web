@@ -118,11 +118,11 @@ export const Dekstop = (): JSX.Element => {
             {statsData.map((stat, index) => (
               <div key={index}>
                 <div className="flex flex-col items-start gap-[3px] relative w-full flex-[0_0_auto]">
-                  <div className="relative w-full mt-[-1.00px] font-display-2xl-bold font-[number:var(--display-2xl-bold-font-weight)] text-white text-[length:var(--display-2xl-bold-font-size)] tracking-[var(--display-2xl-bold-letter-spacing)] leading-[var(--display-2xl-bold-line-height)] [font-style:var(--display-2xl-bold-font-style)]">
+                  <div className="relative w-full mt-[-1.00px] font-bold text-white text-4xl tracking-tight leading-tight">
                     {stat.value}
                   </div>
 
-                  <div className="relative w-full font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-white text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] [font-style:var(--text-md-semibold-font-style)]">
+                  <div className="relative w-full font-semibold text-white text-lg tracking-normal leading-normal">
                     {stat.label}
                   </div>
                 </div>
@@ -159,7 +159,7 @@ export const Dekstop = (): JSX.Element => {
             src="/fluent-mic-24-filled.svg"
           />
 
-          <div className="relative w-full font-text-xl-bold font-[number:var(--text-xl-bold-font-weight)] text-white text-[length:var(--text-xl-bold-font-size)] tracking-[var(--text-xl-bold-letter-spacing)] leading-[var(--text-xl-bold-line-height)] [font-style:var(--text-xl-bold-font-style)]">
+          <div className="relative w-full font-bold text-white text-3xl tracking-tight leading-tight">
             Hi, I&#39;m Edwin Anderson
           </div>
 
@@ -218,7 +218,7 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="absolute top-52 left-[314px] rotate-[-12.34deg] font-normal text-white text-[113.2px] tracking-[-2.26px] leading-[141.5px] whitespace-nowrap z-10" style={{ fontFamily: 'Bonheur Royale, cursive' }}>
+        <div className="absolute top-52 left-[314px] rotate-[-12.34deg] font-normal text-white text-[113.2px] tracking-[-2.26px] leading-[141.5px] whitespace-nowrap z-10" style={{ fontFamily: 'var(--font-bonheur-royale), "Bonheur Royale", cursive' }}>
           Junior
         </div>
       </section>
