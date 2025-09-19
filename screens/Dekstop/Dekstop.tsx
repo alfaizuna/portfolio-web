@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRightIcon, MouseIcon } from "lucide-react";
 import React from "react";
 import { Badge } from "../../components/ui/badge";
@@ -7,12 +9,12 @@ import { HeroSection } from "./sections/HeroSection/HeroSection";
 import { SkillsSection } from "./sections/SkillsSection/SkillsSection";
 
 const navigationItems = [
-  { label: "Home" },
-  { label: "About" },
-  { label: "Skill" },
-  { label: "Projects" },
-  { label: "FAQ" },
-  { label: "Contact" },
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Skill", id: "skills" },
+  { label: "Projects", id: "projects" },
+  { label: "FAQ", id: "faq" },
+  { label: "Contact", id: "contact" },
 ];
 
 const statsData = [
@@ -59,9 +61,19 @@ const socialIcons = [
 ];
 
 export const Dekstop = (): JSX.Element => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="bg-white overflow-hidden w-full min-w-[1440px] relative">
-      <section className="relative w-full">
+      <section id="home" className="relative w-full">
         <div className="flex w-[1440px] h-[1024px] items-center gap-2 absolute top-0 left-0 bg-[#a53860]">
           <div className="relative w-[720px] h-[1024px] bg-[#a53860]" />
         </div>
@@ -125,7 +137,10 @@ export const Dekstop = (): JSX.Element => {
               </div>
             ))}
 
-            <Button className="flex h-14 items-center justify-center gap-2 pl-4 pr-2 py-2 relative w-full bg-[#f3b64c] rounded-[100px] mt-5 h-auto hover:bg-[#f3b64c]/90">
+            <Button 
+              className="flex h-14 items-center justify-center gap-2 pl-4 pr-2 py-2 relative w-full bg-[#f3b64c] rounded-[100px] mt-5 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
+              onClick={() => scrollToSection('contact')}
+            >
               <div className="relative flex-1 font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] [font-style:var(--text-md-semibold-font-style)]">
                 Contact Me
               </div>
@@ -154,12 +169,13 @@ export const Dekstop = (): JSX.Element => {
           </div>
         </div>
 
-        <nav className="inline-flex h-12 items-center justify-center gap-6 px-6 py-0 absolute top-8 left-[calc(50.00%_-_276px)] bg-[#00000033] rounded-[100px] backdrop-blur-[20px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(20px)_brightness(100%)] shadow-bg-blur">
+        <nav className="inline-flex h-12 items-center justify-center gap-6 px-6 py-0 absolute top-8 left-[calc(50.00%_-_276px)] bg-[#00000033] rounded-[100px] backdrop-blur-[20px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(20px)_brightness(100%)] shadow-bg-blur z-50">
           {navigationItems.map((item, index) => (
             <Button
               key={index}
               variant="ghost"
-              className="inline-flex items-center justify-center gap-2 p-2 relative flex-[0_0_auto] h-auto hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 p-2 relative flex-[0_0_auto] h-auto hover:bg-white/10 cursor-pointer transition-all duration-200 pointer-events-auto"
+              onClick={() => scrollToSection(item.id)}
             >
               <div className="relative w-fit mt-[-1.00px] font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-white text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] whitespace-nowrap [font-style:var(--text-md-medium-font-style)]">
                 {item.label}
@@ -168,7 +184,10 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </nav>
 
-        <div className="inline-flex items-center gap-0.5 absolute top-[954px] left-[calc(50.00%_-_62px)] z-20">
+        <div 
+          className="inline-flex items-center gap-0.5 absolute top-[954px] left-[calc(50.00%_-_62px)] z-20 cursor-pointer transition-all duration-200 hover:opacity-80"
+          onClick={() => scrollToSection('skills')}
+        >
           <div className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-white text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
             Scroll Down
           </div>
@@ -204,8 +223,12 @@ export const Dekstop = (): JSX.Element => {
         </div>
       </section>
 
-      <SkillsSection />
-      <HeroSection />
+      <div id="skills">
+        <SkillsSection />
+      </div>
+      <div id="about">
+        <HeroSection />
+      </div>
     </div>
   );
 };

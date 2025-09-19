@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
@@ -158,31 +160,34 @@ export const HeroSection = (): JSX.Element => {
     <section className="flex flex-col w-full items-start relative">
       {/*buat margin bottom  */}
       <div className="mb-80"></div>
-      <div className="mb-40"></div>
+      <div className="mb-60"></div>
 
 
       {/* Main Text Section - Now below the photo */}
       <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="relative w-[892px] mt-[-1.00px] font-display-lg-medium font-[number:var(--display-lg-medium-font-weight)] text-[length:var(--display-lg-medium-font-size)] text-center tracking-[var(--display-lg-medium-letter-spacing)] leading-[var(--display-lg-medium-line-height)] [font-style:var(--display-lg-medium-font-style)]">
-          <span className="text-[#0a0d12] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">
-            As frontend developers , we bring designs to life with{" "}
+        <div className="relative w-[1100px] mt-[-1.00px] text-5xl md:text-3xl lg:text-5xl font-bold text-center leading-tight">
+          <span className="text-[#0a0d12]">
+            As frontend developers, we bring designs to life with{" "}
           </span>
 
-          <span className="text-[#b76080] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">
-            clean
+          <span className="text-[#b76080]">
+            clean, responsive code
           </span>
 
-          <span className="text-[#0a0d12] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">
-            ,{" "}
+          <span className="text-[#0a0d12]">
+            {" "}that blends creativity{" "}
           </span>
 
-          <span className="text-[#b76080] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">
-            responsive code
+          <span className="text-6xl md:text-7xl lg:text-5xl">🎨</span>
+
+          <span className="text-[#0a0d12]">
+            {" "}with usability{" "}
           </span>
 
-          <span className="text-[#0a0d12] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">
-            {" "}
-            that blends creativity 🎨 with usability 🌟.
+          <span className="text-6xl md:text-7xl lg:text-5xl">🌟</span>
+
+          <span className="text-[#0a0d12]">
+            .
           </span>
         </div>
       </div>
@@ -390,7 +395,7 @@ export const HeroSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-12 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
+      <div id="projects" className="flex flex-col items-start gap-12 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex-col w-[686px] gap-2 flex items-start relative">
             <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-transparent text-[length:var(--display-xl-bold-font-size)] tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
@@ -667,7 +672,7 @@ Arrow right"
         </div>
       </div>
 
-      <div className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[#f4f4f4]">
+      <div id="faq" className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[#f4f4f4]">
         <div className="flex flex-col w-[847px] items-start gap-2 relative flex-[0_0_auto]">
           <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] text-center tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
             Let&apos;s Clear Things Up
@@ -719,7 +724,7 @@ Arrow right"
         </div>
       </div>
 
-      <div className="flex w-full items-start justify-center gap-12 p-[120px] relative flex-[0_0_auto]">
+      <div id="contact" className="flex w-full items-start justify-center gap-12 p-[120px] relative flex-[0_0_auto]">
         <div className="flex-col w-[540px] justify-center gap-10 flex items-start relative">
           <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
             <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
