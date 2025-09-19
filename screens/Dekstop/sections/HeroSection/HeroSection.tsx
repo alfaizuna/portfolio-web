@@ -156,6 +156,12 @@ const faqData = [
 export const HeroSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-start relative">
+      {/*buat margin bottom  */}
+      <div className="mb-80"></div>
+      <div className="mb-40"></div>
+
+
+      {/* Main Text Section - Now below the photo */}
       <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
         <div className="relative w-[892px] mt-[-1.00px] font-display-lg-medium font-[number:var(--display-lg-medium-font-weight)] text-[length:var(--display-lg-medium-font-size)] text-center tracking-[var(--display-lg-medium-letter-spacing)] leading-[var(--display-lg-medium-line-height)] [font-style:var(--display-lg-medium-font-style)]">
           <span className="text-[#0a0d12] tracking-[var(--display-lg-medium-letter-spacing)] font-display-lg-medium [font-style:var(--display-lg-medium-font-style)] font-[number:var(--display-lg-medium-font-weight)] leading-[var(--display-lg-medium-line-height)] text-[length:var(--display-lg-medium-font-size)]">

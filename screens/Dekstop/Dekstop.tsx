@@ -89,12 +89,15 @@ export const Dekstop = (): JSX.Element => {
         />
 
         <img
-          className="absolute top-[289px] left-[calc(50.00%_-_305px)] w-[610px] h-[735px]"
+          className="absolute top-[289px] left-[calc(50.00%_-_305px)] w-[610px] h-[735px] z-10"
           alt="Harmonious purple"
           src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
         />
 
-        <div className="top-[451px] left-[calc(50.00%_-_328px)] [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[168.8px] text-center tracking-[-3.38px] leading-[205px] whitespace-nowrap">
+        <div className="top-[451px] left-[calc(50.00%_-_328px)] [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[168.8px] text-center tracking-[-3.38px] leading-[205px] whitespace-nowrap z-10">
+          DEVELOPER
+        </div>
+        <div className="top-[451px] left-[calc(50.00%_-_328px)] text-[#f3b64c] absolute font-anton font-normal text-[168.8px] text-center tracking-[-3.38px] leading-[205px] whitespace-nowrap z-0">
           DEVELOPER
         </div>
 
@@ -165,7 +168,7 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </nav>
 
-        <div className="inline-flex items-center gap-0.5 absolute top-[954px] left-[calc(50.00%_-_62px)]">
+        <div className="inline-flex items-center gap-0.5 absolute top-[954px] left-[calc(50.00%_-_62px)] z-20">
           <div className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-white text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
             Scroll Down
           </div>
@@ -196,7 +199,7 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="absolute top-52 left-[314px] rotate-[-12.34deg] [font-family:'Bonheur_Royale',Helvetica] font-normal text-white text-[113.2px] tracking-[-2.26px] leading-[141.5px] whitespace-nowrap">
+        <div className="absolute top-52 left-[314px] rotate-[-12.34deg] font-normal text-white text-[113.2px] tracking-[-2.26px] leading-[141.5px] whitespace-nowrap z-10" style={{ fontFamily: 'Bonheur Royale, cursive' }}>
           Junior
         </div>
       </section>
