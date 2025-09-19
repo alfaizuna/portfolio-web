@@ -195,10 +195,10 @@ export const Dekstop = (): JSX.Element => {
           <MouseIcon className="relative w-6 h-6 text-white" />
         </div>
 
-        <Badge className="inline-flex items-center gap-1.5 px-4 py-1 absolute top-[227px] left-[calc(50.00%_-_97px)] bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39]">
-          <div className="relative w-4 h-4 bg-[#e16190] rounded-lg" />
+        <Badge className="inline-flex items-center gap-2 px-6 py-3 absolute top-[200px] left-[calc(50.00%_-_97px)] bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39] shadow-lg">
+          <div className="relative w-3 h-3 bg-[#e16190] rounded-full" />
 
-          <div className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-white text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
+          <div className="relative w-fit font-semibold text-white text-base tracking-normal leading-normal whitespace-nowrap">
             Available for Hire
           </div>
         </Badge>
