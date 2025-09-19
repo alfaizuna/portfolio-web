@@ -165,7 +165,9 @@ export const HeroSection = (): JSX.Element => {
 
       {/* Main Text Section - Now below the photo */}
       <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="relative w-[1100px] mt-[-1.00px] text-5xl md:text-3xl lg:text-5xl font-bold text-center leading-tight">
+        
+        
+        <div className="relative w-[1100px] mt-[-1.00px] text-5xl md:text-3xl lg:text-5xl font-bold text-center leading-tight z-10">
           <span className="text-[#0a0d12]">
             As frontend developers, we bring designs to life with{" "}
           </span>

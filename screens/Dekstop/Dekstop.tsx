@@ -113,6 +113,23 @@ export const Dekstop = (): JSX.Element => {
           DEVELOPER
         </div>
 
+        {/* Background decorative image */}
+        <img
+          className="absolute top-80 left-80 right-10 w-48 h-48 opacity-20 z-0"
+          alt="Decorative star"
+          src="/clip-path-group.png"
+        />
+        <img
+          className="absolute top-140 right-80 w-48 h-48 opacity-50 z-0"
+          alt="Decorative star"
+          src="/clip-path-group.png"
+        />
+        <img
+          className="absolute bottom-20 left-1/4 w-20 h-20 opacity-25 z-0"
+          alt="Decorative star"
+          src="/clip-path-group.png"
+        />
+
         <Card className="flex flex-col w-[222px] items-start gap-5 absolute top-[237px] left-[1098px] bg-transparent border-none shadow-none">
           <CardContent className="p-0 w-full">
             {statsData.map((stat, index) => (
