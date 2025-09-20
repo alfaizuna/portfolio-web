@@ -6,7 +6,6 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { HeroSection } from "./sections/HeroSection/HeroSection";
-import { SkillsSection } from "./sections/SkillsSection/SkillsSection";
 
 const navigationItems = [
   { label: "Home", id: "home" },

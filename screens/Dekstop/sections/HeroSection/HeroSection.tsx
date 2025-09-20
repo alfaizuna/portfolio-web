@@ -157,154 +157,157 @@ const faqData = [
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-start relative">
+    <>
       {/*buat margin bottom  */}
       {/* <div className="mb-80"></div>
       <div className="mb-60"></div> */}
 
+      <section id="about" className="flex flex-col w-full items-start relative">
+        {/* Main Text Section - Now below the photo */}
+        <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
 
-      {/* Main Text Section - Now below the photo */}
-      <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-    
-        
-        <div className="relative w-[1100px] mt-[-1.00px] text-3xl md:text-2xl lg:text-4xl font-bold text-center leading-tight z-10">
-          <span className="text-[#0a0d12]">
-            As frontend developers, we bring designs to life
-          </span>
 
-          <br />
+          <div className="relative w-[1100px] mt-[-1.00px] text-3xl md:text-2xl lg:text-4xl font-bold text-center leading-tight z-10">
+            <span className="text-[#0a0d12]">
+              As frontend developers, we bring designs to life
+            </span>
 
-          <span className="text-[#0a0d12]">
-            with{" "}
-          </span>
+            <br />
 
-          <span className="text-[#b76080]">
-            clean, responsive code
-          </span>
+            <span className="text-[#0a0d12]">
+              with{" "}
+            </span>
 
-          <span className="text-[#0a0d12]">
-            {" "}that blends creativity
-          </span>
+            <span className="text-[#b76080]">
+              clean, responsive code
+            </span>
 
-          <br />
+            <span className="text-[#0a0d12]">
+              {" "}that blends creativity
+            </span>
 
-          <span className="text-4xl md:text-3xl lg:text-4xl">🎨</span>
+            <br />
 
-          <span className="text-[#0a0d12]">
-            {" "}with usability{" "}
-          </span>
+            <span className="text-4xl md:text-3xl lg:text-4xl">🎨</span>
 
-          <span className="text-4xl md:text-3xl lg:text-4xl">🌟</span>
+            <span className="text-[#0a0d12]">
+              {" "}with usability{" "}
+            </span>
 
-          <span className="text-[#0a0d12]">
-            .
-          </span>
+            <span className="text-4xl md:text-3xl lg:text-4xl">🌟</span>
+
+            <span className="text-[#0a0d12]">
+              .
+            </span>
+          </div>
         </div>
-      </div>
 
-      <div className="flex items-start gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-        {featureData.map((feature, index) => (
-          <React.Fragment key={index}>
-            <div className="flex flex-col items-start gap-6 relative flex-1 grow">
-              <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
-                <div className="relative w-fit [font-family:'Montserrat',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
-                  {feature.icon}
+        <div className="flex items-start gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
+          {featureData.map((feature, index) => (
+            <React.Fragment key={index}>
+              <div className="flex flex-col items-start gap-6 relative flex-1 grow">
+                <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
+                  <div className="relative w-fit [font-family:'Montserrat',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
+                    {feature.icon}
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                  <h3 className="relative self-stretch mt-[-1.00px] font-bold text-[#0a0d12] text-xl tracking-tight leading-tight uppercase">
+                    {feature.title}
+                  </h3>
+
+                  <p className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
 
-              <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                <h3 className="relative self-stretch mt-[-1.00px] font-bold text-[#0a0d12] text-xl tracking-tight leading-tight uppercase">
-                  {feature.title}
-                </h3>
+              {index < featureData.length - 1 && (
+                <div className="w-px h-32 bg-[#e5e7eb] relative"></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
 
-                <p className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+      <section id="skills" className="w-full relative">
+        <div className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
+          <div className="flex flex-col w-[847px] items-center gap-4 relative flex-[0_0_auto]">
+            <div className="relative text-center text-4xl font-bold text-[#0a0d12] leading-tight">
+              Code, Design, and Everything in Between
             </div>
 
-            {index < featureData.length - 1 && (
-              <div className="w-px h-32 bg-[#e5e7eb] relative"></div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-
-      <div className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
-        <div className="flex flex-col w-[847px] items-start gap-2 relative flex-[0_0_auto]">
-          <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] text-center tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
-            Code, Design, and Everything in Between
+            <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed">
+              These are the technologies that power my workflow and bring ideas to
+              life.
+            </div>
           </div>
 
-          <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] text-center tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
-            These are the technologies that power my workflow and bring ideas to
-            life.
-          </div>
-        </div>
+          <div className="inline-flex flex-col items-center gap-8 relative flex-[0_0_auto]">
+            <div className="inline-flex items-center justify-center gap-6 relative flex-[0_0_auto]">
+              {technologyData.map((tech, index) => (
+                <Card
+                  key={index}
+                  className={`flex flex-col w-[250px] items-center gap-6 px-6 py-12 relative rounded-[110px] ${tech.highlighted ? "bg-[#f3b64c]" : "bg-[#fdfdfd] border border-solid border-[#d5d7da]"}`}
+                >
+                  <CardContent className="p-0 flex flex-col items-center gap-4">
+                    <div
+                      className={`${tech.highlighted ? "bg-[#fdfdfd]" : "bg-[#f4f4f4]"} flex w-[80px] h-[80px] items-center justify-center gap-2.5 p-3 relative rounded-full`}
+                    >
+                      {tech.name === "HTML" && (
+                        <div className="absolute top-5 left-6 w-6 h-[32px] bg-[#fdfdfd]" />
+                      )}
 
-        <div className="inline-flex flex-col items-center gap-8 relative flex-[0_0_auto]">
-          <div className="inline-flex items-start gap-5 relative flex-[0_0_auto]">
-            {technologyData.map((tech, index) => (
-              <Card
-                key={index}
-                className={`flex flex-col w-[215px] items-center gap-3 px-4 py-10 relative rounded-[100px] ${tech.highlighted ? "bg-[#f3b64c]" : "bg-[#fdfdfd] border border-solid border-[#d5d7da]"}`}
+                      <img
+                        className={`${tech.name === "HTML" ? "w-[42px] h-[42px]" : tech.name === "CSS" ? "w-[36px] h-[42px]" : tech.name === "Javascript" ? "w-[48px] h-[48px]" : "w-[45px] h-[40px]"} relative object-cover`}
+                        alt="Icon"
+                        src={tech.icon}
+                      />
+                    </div>
+
+                    <div className="flex flex-col items-center gap-3 relative self-stretch w-full">
+                      <div className="relative text-center text-xl font-semibold text-[#0a0d12] leading-tight">
+                        {tech.name}
+                      </div>
+
+                      <div className="relative text-center text-base font-normal text-[#6b7280] leading-relaxed">
+                        {tech.description}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="inline-flex items-center gap-4 relative flex-[0_0_auto]">
+              <Button
+                variant="outline"
+                size="icon"
+                className="inline-flex items-center justify-center w-12 h-12 p-3 rounded-full border border-solid border-[#d5d7da] relative flex-[0_0_auto] bg-white hover:bg-gray-50"
               >
-                <CardContent className="p-0">
-                  <div
-                    className={`${tech.highlighted ? "bg-[#fdfdfd]" : "bg-[#f4f4f4]"} flex w-[60px] h-[60px] items-center justify-center gap-2.5 p-2.5 relative rounded-[24997.5px]`}
-                  >
-                    {tech.name === "HTML" && (
-                      <div className="absolute top-4 left-5 w-5 h-[27px] bg-[#fdfdfd]" />
-                    )}
+                <img
+                  className="relative w-6 h-6"
+                  alt="Arrow left"
+                  src="/arrow-right-1.svg"
+                />
+              </Button>
 
-                    <img
-                      className={`${tech.name === "HTML" ? "w-[35px] h-[35px]" : tech.name === "CSS" ? "w-[30px] h-[35.22px]" : tech.name === "Javascript" ? "w-11 h-11 mt-[-2.00px] mb-[-2.00px] ml-[-2.00px] mr-[-2.00px]" : "w-[38px] h-[34px]"} relative object-cover`}
-                      alt="Icon"
-                      src={tech.icon}
-                    />
-                  </div>
-
-                  <div className="flex flex-col h-[129px] items-center relative self-stretch w-full">
-                    <div className="relative self-stretch mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-md-semibold-font-size)] text-center tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] [font-style:var(--text-md-semibold-font-style)]">
-                      {tech.name}
-                    </div>
-
-                    <div className="relative flex items-center justify-center self-stretch font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-[#252b37] text-[length:var(--text-md-regular-font-size)] text-center tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] [font-style:var(--text-md-regular-font-style)]">
-                      {tech.description}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="inline-flex items-start gap-3 relative flex-[0_0_auto]">
-            <Button
-              variant="outline"
-              size="icon"
-              className="inline-flex items-center gap-[10.67px] p-[10.67px] rounded-[133.33px] border border-solid border-[#d5d7da] relative flex-[0_0_auto] h-auto"
-            >
-              <img
-                className="relative w-6 h-6"
-                alt="Arrow right"
-                src="/arrow-right-1.svg"
-              />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="inline-flex items-center gap-[10.67px] p-[10.67px] rounded-[133.33px] border border-solid border-[#d5d7da] relative flex-[0_0_auto] h-auto"
-            >
-              <img
-                className="relative w-6 h-6"
-                alt="Arrow right"
-                src="/arrow-right-2.svg"
-              />
-            </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="inline-flex items-center justify-center w-12 h-12 p-3 rounded-full border border-solid border-[#d5d7da] relative flex-[0_0_auto] bg-white hover:bg-gray-50"
+              >
+                <img
+                  className="relative w-6 h-6"
+                  alt="Arrow right"
+                  src="/arrowright.png"
+                />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="flex-col w-full items-start gap-2 px-[120px] py-20 flex-[0_0_auto] bg-white flex relative">
         <div className="flex flex-col items-start gap-12 relative self-stretch w-full flex-[0_0_auto]">
@@ -485,8 +488,7 @@ export const HeroSection = (): JSX.Element => {
                   >
                     <img
                       className="relative w-5 h-5"
-                      alt="
-Arrow right"
+                      alt="Arrow right"
                       src="/arrow-right-2.svg"
                     />
                   </Button>
@@ -850,6 +852,6 @@ Arrow right"
           />
         </div>
       </footer>
-    </section>
+    </>
   );
 };
