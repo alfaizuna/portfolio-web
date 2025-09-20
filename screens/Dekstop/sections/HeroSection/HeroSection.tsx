@@ -11,7 +11,7 @@ import { Textarea } from "../../../../components/ui/textarea";
 
 const featureData = [
   {
-    icon: "⚙",
+    icon: "⚙️",
     title: "COMPONENT-BASED DEVELOPMENT",
     description:
       "Reusable, scalable code built with modern frameworks like React or Vue.",
@@ -202,33 +202,29 @@ export const HeroSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-center gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
+      <div className="flex items-start gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
         {featureData.map((feature, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col items-start gap-4 relative flex-1 grow">
-              <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-[13123.69px] overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
+            <div className="flex flex-col items-start gap-6 relative flex-1 grow">
+              <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
                 <div className="relative w-fit [font-family:'Montserrat',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
                   {feature.icon}
                 </div>
               </div>
 
-              <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                <div className="relative self-stretch mt-[-1.00px] font-display-xs-bold font-[number:var(--display-xs-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xs-bold-font-size)] tracking-[var(--display-xs-bold-letter-spacing)] leading-[var(--display-xs-bold-line-height)] [font-style:var(--display-xs-bold-font-style)]">
+              <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                <h3 className="relative self-stretch mt-[-1.00px] font-bold text-[#0a0d12] text-xl tracking-tight leading-tight uppercase">
                   {feature.title}
-                </div>
+                </h3>
 
-                <div className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#0a0d12] text-base tracking-[-0.48px] leading-[30px]">
+                <p className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
                   {feature.description}
-                </div>
+                </p>
               </div>
             </div>
 
             {index < featureData.length - 1 && (
-              <img
-                className="w-px h-44 relative object-cover"
-                alt="Line"
-                src="/line-114.svg"
-              />
+              <div className="w-px h-32 bg-[#e5e7eb] relative"></div>
             )}
           </React.Fragment>
         ))}
