@@ -435,7 +435,7 @@ export const HeroSection = (): JSX.Element => {
                     {experience.period}
                   </div>
 
-                  <div className="relative self-stretch font-text-xl-bold font-[number:var(--text-xl-bold-font-weight)] text-[#fdfdfd] text-[length:var(--text-xl-bold-font-size)] tracking-[var(--text-xl-bold-letter-spacing)] leading-[var(--text-xl-bold-line-height)] [font-style:var(--text-xl-bold-font-style)]">
+                  <div className="relative self-stretch text-xl font-bold text-[#fdfdfd] leading-tight">
                     {experience.role}
                   </div>
                 </div>
