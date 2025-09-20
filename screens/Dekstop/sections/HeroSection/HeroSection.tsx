@@ -730,53 +730,53 @@ export const HeroSection = (): JSX.Element => {
       </div>
 
       <div className="flex-col w-full gap-12 px-[120px] py-20 flex-[0_0_auto] flex items-center relative">
-        <div className="flex flex-col w-[847px] items-start gap-2 relative flex-[0_0_auto]">
-          <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] text-center tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
+        <div className="flex flex-col w-[847px] items-center gap-4 relative flex-[0_0_auto]">
+          <div className="relative text-center text-4xl font-bold text-[#0a0d12] leading-tight">
             What They Say About Working With Me
           </div>
 
-          <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] text-center tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+          <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed">
             Real words from clients, teammates, and mentors I&apos;ve
             collaborated with on various projects.
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="relative self-stretch w-full h-[437px]">
-            <div className="absolute top-[365px] left-[100px] w-[1000px] h-14 bg-[#b7608033] rounded-2xl" />
-
-            <div className="absolute top-[343px] left-[50px] w-[1100px] h-14 bg-[#d4a0b3] rounded-2xl" />
-
-            <Card className="flex flex-col w-[1200px] items-center gap-8 px-10 py-8 absolute top-0 left-0 bg-[#b76080] rounded-3xl">
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
-                  <img
-                    className="relative flex-[0_0_auto]"
-                    alt="Rating"
-                    src="/rating.svg"
-                  />
-
-                  <div className="relative self-stretch font-display-xs-semibold font-[number:var(--display-xs-semibold-font-weight)] text-[#fdfdfd] text-[length:var(--display-xs-semibold-font-size)] text-center tracking-[var(--display-xs-semibold-letter-spacing)] leading-[var(--display-xs-semibold-line-height)] [font-style:var(--display-xs-semibold-font-style)]">
-                    &quot;Working with Edwin Anderson was a smooth experience
-                    from start to finish. He translated our design into clean,
-                    responsive code and even suggested improvements we
-                    hadn&apos;t thought of. Highly recommended!&quot;
-                  </div>
+          <div className="relative flex justify-center items-center w-full">
+            {/* Back layer - lightest */}
+            <div className="absolute z-0 w-[900px] h-[280px] bg-[#e8c5d3] rounded-3xl top-4" />
+            
+            {/* Middle layer */}
+            <div className="absolute z-10 w-[950px] h-[290px] bg-[#d4a0b3] rounded-3xl top-2" />
+            
+            {/* Front testimonial card */}
+            <Card className="relative z-20 flex flex-col w-[1000px] items-center gap-8 px-12 py-10 bg-[#b76080] rounded-3xl">
+              <CardContent className="p-0 flex flex-col items-center gap-6 w-full max-w-4xl">
+                {/* 5 Star Rating */}
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-[#f3b64c] text-2xl">★</span>
+                  ))}
                 </div>
 
-                <div className="flex flex-col w-[546px] items-center gap-2 relative flex-[0_0_auto]">
+                {/* Testimonial Quote */}
+                <div className="text-center text-xl font-semibold text-white leading-relaxed px-8">
+                  "Working with Edwin Anderson was a smooth experience from start to finish. He translated our design into clean, responsive code and even suggested improvements we hadn't thought of. Highly recommended!"
+                </div>
+
+                {/* Profile Section */}
+                <div className="flex flex-col items-center gap-3">
                   <img
-                    className="relative w-16 h-16 object-cover"
-                    alt="Ellipse"
+                    className="w-16 h-16 rounded-full object-cover"
+                    alt="Sarah Tan"
                     src="/ellipse-8.png"
                   />
-
-                  <div className="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-                    <div className="mt-[-1.00px] font-[number:var(--text-lg-semibold-font-weight)] text-[length:var(--text-lg-semibold-font-size)] tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] relative self-stretch font-text-lg-semibold text-[#fdfdfd] text-center [font-style:var(--text-lg-semibold-font-style)]">
+                  
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="text-lg font-bold text-white">
                       Sarah Tan
                     </div>
-
-                    <div className="font-[number:var(--text-md-medium-font-weight)] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] relative self-stretch font-text-md-medium text-[#fdfdfd] text-center [font-style:var(--text-md-medium-font-style)]">
+                    <div className="text-base text-white/80">
                       Product Manager at Finovate
                     </div>
                   </div>
@@ -785,29 +785,36 @@ export const HeroSection = (): JSX.Element => {
             </Card>
           </div>
 
-          <div className="inline-flex items-start gap-3 relative flex-[0_0_auto]">
+          {/* Navigation Arrows */}
+          <div className="flex items-center gap-4">
             <Button
               variant="outline"
               size="icon"
-              className="inline-flex items-center gap-[10.67px] p-[10.67px] rounded-[133.33px] border border-solid border-[#d5d7da] relative flex-[0_0_auto] h-auto"
+              className="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center"
             >
-              <img
-                className="relative w-6 h-6"
-                alt="Arrow right"
-                src="/arrow-right-1.svg"
-              />
+              <svg 
+                className="w-5 h-5 text-gray-600" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
             </Button>
 
             <Button
               variant="outline"
               size="icon"
-              className="inline-flex items-center gap-[10.67px] p-[10.67px] rounded-[133.33px] border border-solid border-[#d5d7da] relative flex-[0_0_auto] h-auto"
+              className="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center"
             >
-              <img
-                className="relative w-6 h-6"
-                alt="Arrow right"
-                src="/arrow-right-2.svg"
-              />
+              <svg 
+                className="w-5 h-5 text-gray-600" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Button>
           </div>
         </div>
