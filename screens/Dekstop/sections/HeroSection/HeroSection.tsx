@@ -416,8 +416,11 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
           <div className="relative max-w-md mt-[-1.00px] font-text-lg-semibold font-[number:var(--text-lg-semibold-font-weight)] text-[#fdfdfd] text-[length:var(--text-lg-semibold-font-size)] tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] [font-style:var(--text-lg-semibold-font-style)]">
-            From startups to side projects, every step has been a chance to
-            learn, build, and level up.
+            From startups to side projects, every step
+            <br />
+            has been a chance to learn, build, and
+            <br />
+            level up.
           </div>
         </div>
 
