@@ -65,14 +65,14 @@ const socialIcons = [
 ];
 
 const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 
 const technologyData = [
   {
@@ -203,8 +203,8 @@ export const HeroSection = (): JSX.Element => {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
 
   const toggleFaq = (id: string) => {
-    setExpandedFaqs(prev => 
-      prev.includes(id) 
+    setExpandedFaqs(prev =>
+      prev.includes(id)
         ? [] // Tutup FAQ yang sedang terbuka
         : [id] // Buka FAQ yang dipilih dan tutup yang lain
     );
@@ -756,10 +756,10 @@ export const HeroSection = (): JSX.Element => {
           <div className="relative flex justify-center items-center w-full">
             {/* Back layer - lightest */}
             <div className="absolute z-0 w-[900px] h-[280px] bg-[#e8c5d3] rounded-3xl top-4" />
-            
+
             {/* Middle layer */}
             <div className="absolute z-10 w-[950px] h-[290px] bg-[#d4a0b3] rounded-3xl top-2" />
-            
+
             {/* Front testimonial card */}
             <Card className="relative z-20 flex flex-col w-[1000px] items-center gap-8 px-12 py-10 bg-[#b76080] rounded-3xl">
               <CardContent className="p-0 flex flex-col items-center gap-6 w-full max-w-4xl">
@@ -782,7 +782,7 @@ export const HeroSection = (): JSX.Element => {
                     alt="Sarah Tan"
                     src="/ellipse-8.png"
                   />
-                  
+
                   <div className="flex flex-col items-center gap-1">
                     <div className="text-lg font-bold text-white">
                       Sarah Tan
@@ -803,10 +803,10 @@ export const HeroSection = (): JSX.Element => {
               size="icon"
               className="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center"
             >
-              <svg 
-                className="w-5 h-5 text-gray-600" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-5 h-5 text-gray-600"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -818,10 +818,10 @@ export const HeroSection = (): JSX.Element => {
               size="icon"
               className="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center"
             >
-              <svg 
-                className="w-5 h-5 text-gray-600" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-5 h-5 text-gray-600"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -854,7 +854,7 @@ export const HeroSection = (): JSX.Element => {
                   </div>
 
                   <div className="flex flex-col w-[761px] items-start gap-3 relative">
-                    <div 
+                    <div
                       className="relative self-stretch mt-[-1.00px] text-xl font-semibold text-[#0a0d12] cursor-pointer hover:text-[#b76080] transition-colors"
                       onClick={() => toggleFaq(faq.id)}
                     >
@@ -871,11 +871,10 @@ export const HeroSection = (): JSX.Element => {
                   <Button
                     size="icon"
                     onClick={() => toggleFaq(faq.id)}
-                    className={`w-12 h-12 gap-[10.67px] p-[10.67px] rounded-full flex items-center relative h-auto transition-colors ${
-                      isExpanded 
-                        ? "bg-[#b76080] hover:bg-[#a55570] text-white" 
+                    className={`w-12 h-12 gap-[10.67px] p-[10.67px] rounded-full flex items-center relative h-auto transition-colors ${isExpanded
+                        ? "bg-[#b76080] hover:bg-[#a55570] text-white"
                         : "bg-white border border-solid border-[#d5d7da] hover:bg-gray-50 text-[#0a0d12]"
-                    }`}
+                      }`}
                   >
                     {isExpanded ? (
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -901,12 +900,13 @@ export const HeroSection = (): JSX.Element => {
       <div id="contact" className="flex w-full items-start justify-center gap-12 p-[120px] relative flex-[0_0_auto]">
         <div className="flex-col w-[540px] justify-center gap-10 flex items-start relative">
           <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
+            <div className="relative self-stretch mt-[-1.00px] text-5xl font-bold text-[#0a0d12] leading-tight">
               Let&apos;s Work Together
             </div>
 
-            <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+            <div className="relative self-stretch text-sm font-medium text-[#0a0d12] leading-relaxed">
               Have a project in mind or just want to say hi? Drop me a message —
+              <br />
               I&apos;d love to hear from you.
             </div>
           </div>
@@ -932,45 +932,45 @@ export const HeroSection = (): JSX.Element => {
           </div>
         </div>
 
-        <Card className="flex flex-col items-start gap-2 p-8 relative flex-1 grow bg-white rounded-3xl shadow-[0px_0px_28px_#c4c4c440]">
-          <CardContent className="p-0">
-            <div className="flex flex-col items-start gap-5 self-stretch w-full relative flex-[0_0_auto]">
-              <div className="flex flex-col items-start gap-1.5 relative self-stretch w-full flex-[0_0_auto]">
-                <Label className="relative self-stretch mt-[-1.00px] font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
+        <Card className="flex flex-col items-stretch p-8 relative flex-1 grow bg-white rounded-3xl shadow-[0px_0px_28px_#c4c4c440]">
+          <CardContent className="p-0 flex-1">
+            <div className="flex flex-col gap-5 h-full">
+              <div className="flex flex-col gap-1.5">
+                <Label className="font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
                   Name
                 </Label>
 
                 <Input
                   placeholder="Enter your name"
-                  className="flex h-12 items-center justify-center gap-2 px-4 py-2 relative self-stretch w-full rounded-xl border border-solid border-[#d5d7da]"
+                  className="h-12 px-4 py-2 w-full rounded-xl border border-solid border-[#d5d7da]"
                 />
               </div>
 
-              <div className="flex flex-col items-start gap-1.5 relative self-stretch w-full flex-[0_0_auto]">
-                <Label className="relative self-stretch mt-[-1.00px] font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
+              <div className="flex flex-col gap-1.5">
+                <Label className="font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
                   Email
                 </Label>
 
                 <Input
                   placeholder="Enter your email"
                   type="email"
-                  className="flex h-12 items-center justify-center gap-2 px-4 py-2 relative self-stretch w-full rounded-xl border border-solid border-[#d5d7da]"
+                  className="h-12 px-4 py-2 w-full rounded-xl border border-solid border-[#d5d7da]"
                 />
               </div>
 
-              <div className="flex flex-col items-start gap-1.5 relative self-stretch w-full flex-[0_0_auto]">
-                <Label className="relative self-stretch mt-[-1.00px] font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
+              <div className="flex flex-col gap-1.5 flex-1">
+                <Label className="font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
                   Message
                 </Label>
 
                 <Textarea
                   placeholder="Enter your message"
-                  className="flex h-[134px] items-start gap-2 px-4 py-2 relative self-stretch w-full rounded-xl border border-solid border-[#d5d7da]"
+                  className="flex-1 min-h-[120px] px-4 py-2 w-full rounded-xl border border-solid border-[#d5d7da] resize-none"
                 />
               </div>
 
-              <Button className="flex h-12 items-center justify-center gap-1 p-2 relative self-stretch w-full bg-[#b76080] rounded-full hover:bg-[#a55570] h-auto">
-                <div className="relative w-fit font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-white text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] whitespace-nowrap [font-style:var(--text-sm-bold-font-style)]">
+              <Button className="h-12 w-full bg-[#b76080] rounded-full hover:bg-[#a55570] transition-colors">
+                <div className="font-text-sm-bold font-[number:var(--text-sm-bold-font-weight)] text-white text-[length:var(--text-sm-bold-font-size)] tracking-[var(--text-sm-bold-letter-spacing)] leading-[var(--text-sm-bold-line-height)] [font-style:var(--text-sm-bold-font-style)]">
                   Let&apos;s Talk
                 </div>
               </Button>
