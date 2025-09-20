@@ -322,20 +322,18 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
           <div className="flex items-center justify-center gap-6 relative self-stretch w-full flex-[0_0_auto] rounded-3xl border border-solid border-[#ffffff40]">
-            <Card className="flex-col items-center justify-center gap-8 p-8 flex-1 self-stretch grow bg-[#f3b64c] rounded-2xl flex relative">
-              <CardContent className="p-0">
-                <div className="inline-flex flex-col items-center gap-6 relative flex-[0_0_auto]">
-                  <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-text-lg-bold font-[number:var(--text-lg-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-bold-font-size)] text-center tracking-[var(--text-lg-bold-letter-spacing)] leading-[var(--text-lg-bold-line-height)] whitespace-nowrap [font-style:var(--text-lg-bold-font-style)]">
-                    With Me
-                  </div>
+            <Card className="flex flex-col items-center justify-start gap-6 p-8 flex-1 self-stretch bg-[#f3b64c] rounded-3xl">
+              <CardContent className="p-0 flex flex-col items-center gap-6 w-full">
+                <div className="text-center text-lg font-bold text-[#0a0d12]">
+                  With Me
+                </div>
 
-                  <div className="bg-[#b76080] rounded-[15229.25px] relative w-[100px] h-[100px] overflow-hidden">
-                    <img
-                      className="absolute top-2 left-[calc(50.00%_-_37px)] w-[86px] h-[92px]"
-                      alt="Harmonious purple"
-                      src="/harmonious-purple-palette---candid-gentleman-portrait-1-1.png"
-                    />
-                  </div>
+                <div className="bg-[#b76080] rounded-[15229.25px] relative w-[100px] h-[100px] overflow-hidden">
+                  <img
+                    className="absolute top-2 left-[calc(50.00%_-_37px)] w-[86px] h-[92px]"
+                    alt="Harmonious purple"
+                    src="/harmonious-purple-palette---candid-gentleman-portrait-1-1.png"
+                  />
                 </div>
 
                 <div className="flex-col items-start gap-6 self-stretch w-full flex-[0_0_auto] flex relative">
@@ -366,7 +364,7 @@ export const HeroSection = (): JSX.Element => {
                     Another Talent
                   </div>
 
-                  <div className="bg-[#d5d7da] rounded-[12698.74px] relative w-[100px] h-[100px] overflow-hidden">
+                  <div className="bg-[#d5d7da] rounded-[12698.74px] relative w-[90px] h-[90px] overflow-hidden mb-8">
                     <img
                       className="absolute top-[-7237px] left-[-17281px] w-[75px] h-[75px] object-cover"
                       alt="Casual confidence"
