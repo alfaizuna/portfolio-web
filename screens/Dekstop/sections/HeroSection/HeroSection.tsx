@@ -159,8 +159,8 @@ export const HeroSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-start relative">
       {/*buat margin bottom  */}
-      <div className="mb-80"></div>
-      <div className="mb-60"></div>
+      {/* <div className="mb-80"></div>
+      <div className="mb-60"></div> */}
 
 
       {/* Main Text Section - Now below the photo */}

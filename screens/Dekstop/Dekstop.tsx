@@ -72,20 +72,20 @@ export const Dekstop = (): JSX.Element => {
   };
 
   return (
-    <div className="bg-white overflow-hidden w-full min-w-[1440px] relative">
-      <section id="home" className="relative w-full">
-        <div className="flex w-[1440px] h-[1024px] items-center gap-2 absolute top-0 left-0 bg-[#a53860]">
-          <div className="relative w-[720px] h-[1024px] bg-[#a53860]" />
+    <div className="bg-white overflow-hidden w-full relative">
+      <section id="home" className="relative w-full h-screen min-h-[600px]">
+        <div className="flex w-full h-full items-center gap-2 absolute top-0 left-0 bg-[#a53860]">
+          <div className="relative w-1/2 h-full bg-[#a53860]" />
         </div>
 
-        <div className="absolute top-0 left-[calc(50.00%_-_720px)] w-[1440px] h-[1023px] bg-white">
+        <div className="absolute top-0 left-0 w-full h-full bg-white">
           <img
-            className="absolute top-0 left-[calc(50.00%_-_720px)] w-[1440px] h-[1023px] object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover object-center"
             alt="Element"
             src="/227.png"
           />
 
-          <div className="absolute -top-px left-0 w-[1440px] h-[1024px] bg-[#a53860f0]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[#a53860f0]" />
         </div>
 
         <img
@@ -101,36 +101,42 @@ export const Dekstop = (): JSX.Element => {
         />
 
         <img
-          className="absolute top-[289px] left-[calc(50.00%_-_305px)] w-[610px] h-[735px] z-10"
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[70vh] max-w-[610px] max-h-[735px] object-contain z-10"
           alt="Harmonious purple"
           src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
         />
 
-        <div className="top-[451px] left-[calc(50.00%_-_328px)] [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[168.8px] text-center tracking-[-3.38px] leading-[205px] whitespace-nowrap z-10">
+        <div className="flex flex-col items-center justify-center">
+        <h2 className="font-anton font-normal text-[#f3b64c] text-[187.8px] text-center tracking-[-3.76px] leading-[228.0px] whitespace-nowrap mt-64 z-0">
+          FRONTEND
+        </h2>
+      </div>
+
+        <div className="top-[45%] left-1/2 transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10">
           DEVELOPER
         </div>
-        <div className="top-[451px] left-[calc(50.00%_-_328px)] text-[#f3b64c] absolute font-anton font-normal text-[168.8px] text-center tracking-[-3.38px] leading-[205px] whitespace-nowrap z-0">
+        <div className="top-[45%] left-1/2 transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0">
           DEVELOPER
         </div>
 
         {/* Background decorative image */}
         <img
-          className="absolute top-80 left-80 right-10 w-48 h-48 opacity-20 z-0"
+          className="absolute top-1/4 left-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-20 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
         />
         <img
-          className="absolute top-140 right-80 w-48 h-48 opacity-50 z-0"
+          className="absolute top-16 right-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-50 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
         />
         <img
-          className="absolute bottom-20 left-1/4 w-20 h-20 opacity-25 z-0"
+          className="absolute bottom-20 left-1/4 w-16 h-16 lg:w-20 lg:h-20 opacity-25 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
         />
 
-        <Card className="flex flex-col w-[222px] items-start gap-5 absolute top-[237px] left-[1098px] bg-transparent border-none shadow-none">
+        <Card className="flex flex-col w-[222px] items-start gap-5 absolute top-[20%] right-4 lg:right-[100px] bg-transparent border-none shadow-none">
           <CardContent className="p-0 w-full">
             {statsData.map((stat, index) => (
               <div key={index}>
@@ -169,7 +175,7 @@ export const Dekstop = (): JSX.Element => {
           </CardContent>
         </Card>
 
-        <div className="flex flex-col w-[451px] items-start gap-3.5 absolute top-[614px] left-[120px]">
+        <div className="flex flex-col w-full max-w-[451px] items-start gap-3.5 absolute bottom-[15%] left-4 lg:left-[120px] px-4 lg:px-0">
           <img
             className="relative w-[63px] h-[63px]"
             alt="Fluent mic filled"
@@ -186,7 +192,7 @@ export const Dekstop = (): JSX.Element => {
           </div>
         </div>
 
-        <nav className="inline-flex h-12 items-center justify-center gap-6 px-6 py-0 absolute top-8 left-[calc(50.00%_-_276px)] bg-[#00000033] rounded-[100px] backdrop-blur-[20px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(20px)_brightness(100%)] shadow-bg-blur z-50">
+        <nav className="inline-flex h-12 items-center justify-center gap-2 lg:gap-6 px-4 lg:px-6 py-0 absolute top-8 left-1/2 transform -translate-x-1/2 bg-[#00000033] rounded-[100px] backdrop-blur-[20px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(20px)_brightness(100%)] shadow-bg-blur z-50">
           {navigationItems.map((item, index) => (
             <Button
               key={index}
@@ -202,7 +208,7 @@ export const Dekstop = (): JSX.Element => {
         </nav>
 
         <div 
-          className="inline-flex items-center gap-0.5 absolute top-[954px] left-[calc(50.00%_-_62px)] z-20 cursor-pointer transition-all duration-200 hover:opacity-80"
+          className="inline-flex items-center gap-0.5 absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer transition-all duration-200 hover:opacity-80"
           onClick={() => scrollToSection('skills')}
         >
           <div className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-white text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
@@ -212,7 +218,7 @@ export const Dekstop = (): JSX.Element => {
           <MouseIcon className="relative w-6 h-6 text-white" />
         </div>
 
-        <Badge className="inline-flex items-center gap-2 px-6 py-3 absolute top-[200px] left-[calc(50.00%_-_97px)] bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39] shadow-lg">
+        <Badge className="inline-flex items-center gap-2 px-6 py-3 absolute top-[15%] left-1/2 transform -translate-x-1/2 bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39] shadow-lg">
           <div className="relative w-3 h-3 bg-[#e16190] rounded-full" />
 
           <div className="relative w-fit font-semibold text-white text-base tracking-normal leading-normal whitespace-nowrap">
@@ -220,7 +226,7 @@ export const Dekstop = (): JSX.Element => {
           </div>
         </Badge>
 
-        <div className="inline-flex flex-col items-start justify-center gap-[21.78px] px-[21.78px] py-[32.67px] absolute top-[108px] left-[120px] rounded-[13613.1px] border-[1.36px] border-solid border-[#b76080]">
+        <div className="inline-flex flex-col items-start justify-center gap-[21.78px] px-[21.78px] py-[32.67px] absolute top-[10%] left-4 lg:left-[120px] rounded-[13613.1px] border-[1.36px] border-solid border-[#b76080]">
           {socialIcons.map((icon, index) => (
             <Button
               key={index}
@@ -235,13 +241,13 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="absolute top-52 left-[314px] rotate-[-12.34deg] font-normal text-white text-[113.2px] tracking-[-2.26px] leading-[141.5px] whitespace-nowrap z-10" style={{ fontFamily: 'var(--font-bonheur-royale), "Bonheur Royale", cursive' }}>
+        <div className="absolute top-1/4 left-1/4 lg:left-[314px] rotate-[-12.34deg] font-normal text-white text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10" style={{ fontFamily: 'var(--font-bonheur-royale), "Bonheur Royale", cursive' }}>
           Junior
         </div>
       </section>
 
       <div id="skills">
-        <SkillsSection />
+        {/* <SkillsSection /> */}
       </div>
       <div id="about">
         <HeroSection />
