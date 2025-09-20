@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
@@ -10,6 +10,7 @@ import { Textarea } from "../../../../components/ui/textarea";
 import { About } from "../About/About";
 import { ArrowRightIcon, MouseIcon } from "lucide-react";
 import { Badge } from "../../../../components/ui/badge";
+import { mockFaq } from "../../../../src/constants/mocks/help-faq.mock";
 
 const navigationItems = [
   { label: "Home", id: "home" },
@@ -199,6 +200,16 @@ const faqData = [
 ];
 
 export const HeroSection = (): JSX.Element => {
+  const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
+
+  const toggleFaq = (id: string) => {
+    setExpandedFaqs(prev => 
+      prev.includes(id) 
+        ? [] // Tutup FAQ yang sedang terbuka
+        : [id] // Buka FAQ yang dipilih dan tutup yang lain
+    );
+  };
+
   return (
     <>
       <section id="home" className="relative w-full h-screen min-h-[600px]">
@@ -833,42 +844,57 @@ export const HeroSection = (): JSX.Element => {
         </div>
 
         <div className="flex flex-col items-start gap-5 self-stretch w-full relative flex-[0_0_auto]">
-          {faqData.map((faq, index) => (
-            <React.Fragment key={index}>
-              <div className="items-start flex justify-between relative self-stretch w-full flex-[0_0_auto]">
-                <div className="w-fit font-[number:var(--display-xs-semibold-font-weight)] text-[#0a0d12] text-[length:var(--display-xs-semibold-font-size)] text-center tracking-[var(--display-xs-semibold-letter-spacing)] leading-[var(--display-xs-semibold-line-height)] whitespace-nowrap relative mt-[-1.00px] font-display-xs-semibold [font-style:var(--display-xs-semibold-font-style)]">
-                  {faq.number}
-                </div>
-
-                <div className="flex flex-col w-[761px] items-start gap-3 relative">
-                  <div className="relative self-stretch mt-[-1.00px] font-display-xs-semibold font-[number:var(--display-xs-semibold-font-weight)] text-[#0a0d12] text-[length:var(--display-xs-semibold-font-size)] tracking-[var(--display-xs-semibold-letter-spacing)] leading-[var(--display-xs-semibold-line-height)] [font-style:var(--display-xs-semibold-font-style)]">
-                    {faq.question}
+          {mockFaq.map((faq, index) => {
+            const isExpanded = expandedFaqs.includes(faq.id);
+            return (
+              <React.Fragment key={faq.id}>
+                <div className="items-start flex justify-between relative self-stretch w-full flex-[0_0_auto]">
+                  <div className="w-fit text-xl font-semibold text-[#0a0d12] text-center whitespace-nowrap relative mt-[-1.00px]">
+                    {String(index + 1).padStart(2, '0')}
                   </div>
 
-                  {faq.expanded && faq.answer && (
-                    <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#414651] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
-                      {faq.answer}
+                  <div className="flex flex-col w-[761px] items-start gap-3 relative">
+                    <div 
+                      className="relative self-stretch mt-[-1.00px] text-xl font-semibold text-[#0a0d12] cursor-pointer hover:text-[#b76080] transition-colors"
+                      onClick={() => toggleFaq(faq.id)}
+                    >
+                      {faq.q}
                     </div>
-                  )}
+
+                    {isExpanded && (
+                      <div className="relative self-stretch text-base font-medium text-[#6b7280] leading-relaxed">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+
+                  <Button
+                    size="icon"
+                    onClick={() => toggleFaq(faq.id)}
+                    className={`w-12 h-12 gap-[10.67px] p-[10.67px] rounded-full flex items-center relative h-auto transition-colors ${
+                      isExpanded 
+                        ? "bg-[#b76080] hover:bg-[#a55570] text-white" 
+                        : "bg-white border border-solid border-[#d5d7da] hover:bg-gray-50 text-[#0a0d12]"
+                    }`}
+                  >
+                    {isExpanded ? (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                    ) : (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h12" />
+                      </svg>
+                    )}
+                  </Button>
                 </div>
 
-                <Button
-                  size="icon"
-                  className={`w-12 h-12 gap-[10.67px] p-[10.67px] rounded-[133.33px] flex items-center relative h-auto ${faq.expanded ? "bg-[#b76080]" : "bg-white border border-solid border-[#d5d7da]"}`}
-                >
-                  <img
-                    className="relative w-6 h-6"
-                    alt={faq.expanded ? "Plus" : "Minus"}
-                    src={faq.expanded ? "/plus.svg" : "/minus.svg"}
-                  />
-                </Button>
-              </div>
-
-              {index < faqData.length - 1 && (
-                <Separator className="self-stretch w-full h-px relative object-cover" />
-              )}
-            </React.Fragment>
-          ))}
+                {index < mockFaq.length - 1 && (
+                  <Separator className="self-stretch w-full h-px relative object-cover" />
+                )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
 
