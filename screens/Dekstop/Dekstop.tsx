@@ -6,6 +6,7 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { HeroSection } from "./sections/HeroSection/HeroSection";
+import { Footer } from "./sections/Footer/Footer";
 
 const navigationItems = [
   { label: "Home", id: "home" },
@@ -63,7 +64,7 @@ export const Dekstop = (): JSX.Element => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -93,12 +94,6 @@ export const Dekstop = (): JSX.Element => {
           src="/clip-path-group.png"
         />
 
-        {/* <img
-          className="absolute w-[21.49%] h-[3.96%] top-[9.72%] left-[55.56%]"
-          alt="Clip path group"
-          src="/clip-path-group-1.png"
-        /> */}
-
         <img
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[70vh] max-w-[610px] max-h-[735px] object-contain z-10"
           alt="Harmonious purple"
@@ -106,10 +101,10 @@ export const Dekstop = (): JSX.Element => {
         />
 
         <div className="absolute top-[23%] left-1/2 transform -translate-x-1/2">
-        <h2 className="font-anton font-normal text-[#f3b64c] text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap z-0">
-          FRONTEND
-        </h2>
-      </div>
+          <h2 className="font-anton font-normal text-[#f3b64c] text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap z-0">
+            FRONTEND
+          </h2>
+        </div>
 
         <div className="top-[45%] left-1/2 transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10">
           DEVELOPER
@@ -118,12 +113,6 @@ export const Dekstop = (): JSX.Element => {
           DEVELOPER
         </div>
 
-        {/* Background decorative image */}
-        {/* <img
-          className="absolute top-1/4 left-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-20 z-0"
-          alt="Decorative star"
-          src="/clip-path-group.png"
-        /> */}
         <img
           className="absolute top-16 right-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-50 z-0"
           alt="Decorative star"
@@ -159,7 +148,7 @@ export const Dekstop = (): JSX.Element => {
               </div>
             ))}
 
-            <Button 
+            <Button
               className="flex h-14 items-center justify-center gap-2 pl-4 pr-2 py-2 relative w-full bg-[#f3b64c] rounded-[100px] mt-5 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
               onClick={() => scrollToSection('contact')}
             >
@@ -206,7 +195,7 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </nav>
 
-        <div 
+        <div
           className="inline-flex items-center gap-0.5 absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer transition-all duration-200 hover:opacity-80"
           onClick={() => scrollToSection('skills')}
         >
@@ -235,10 +224,10 @@ export const Dekstop = (): JSX.Element => {
               {index === 2 && (
                 <div className="absolute top-[16px] left-[19px] w-[20px] h-[26px] bg-white" />
               )}
-              <img 
-                className={icon.className.replace(/w-\[[^\]]+\]/g, 'w-[36px]').replace(/h-\[[^\]]+\]/g, 'h-[36px]')} 
-                alt={icon.alt} 
-                src={icon.src} 
+              <img
+                className={icon.className.replace(/w-\[[^\]]+\]/g, 'w-[36px]').replace(/h-\[[^\]]+\]/g, 'h-[36px]')}
+                alt={icon.alt}
+                src={icon.src}
               />
             </Button>
           ))}
@@ -250,6 +239,7 @@ export const Dekstop = (): JSX.Element => {
       </section>
 
       <HeroSection />
+      <Footer />
     </div>
   );
 };

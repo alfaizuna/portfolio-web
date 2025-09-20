@@ -1,34 +1,13 @@
 "use client";
 
 import React from "react";
-import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Separator } from "../../../../components/ui/separator";
 import { Textarea } from "../../../../components/ui/textarea";
-
-const featureData = [
-  {
-    icon: "⚙️",
-    title: "COMPONENT-BASED DEVELOPMENT",
-    description:
-      "Reusable, scalable code built with modern frameworks like React or Vue.",
-  },
-  {
-    icon: "🎨",
-    title: "PIXEL-PERFECT UI IMPLEMENTATION",
-    description:
-      "Translating design into high-fidelity user interfaces with attention to detail.",
-  },
-  {
-    icon: "📱",
-    title: "RESPONSIVE & ACCESSIBLE DESIGN",
-    description:
-      "Optimized layouts that work seamlessly across all screen sizes and devices.",
-  },
-];
+import { About } from "../About/About";
 
 const technologyData = [
   {
@@ -158,79 +137,7 @@ const faqData = [
 export const HeroSection = (): JSX.Element => {
   return (
     <>
-      {/*buat margin bottom  */}
-      {/* <div className="mb-80"></div>
-      <div className="mb-60"></div> */}
-
-      <section id="about" className="flex flex-col w-full items-start relative">
-        {/* Main Text Section - Now below the photo */}
-        <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-
-
-          <div className="relative w-[1100px] mt-[-1.00px] text-3xl md:text-2xl lg:text-4xl font-bold text-center leading-tight z-10">
-            <span className="text-[#0a0d12]">
-              As frontend developers, we bring designs to life
-            </span>
-
-            <br />
-
-            <span className="text-[#0a0d12]">
-              with{" "}
-            </span>
-
-            <span className="text-[#b76080]">
-              clean, responsive code
-            </span>
-
-            <span className="text-[#0a0d12]">
-              {" "}that blends creativity
-            </span>
-
-            <br />
-
-            <span className="text-4xl md:text-3xl lg:text-4xl">🎨</span>
-
-            <span className="text-[#0a0d12]">
-              {" "}with usability{" "}
-            </span>
-
-            <span className="text-4xl md:text-3xl lg:text-4xl">🌟</span>
-
-            <span className="text-[#0a0d12]">
-              .
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-          {featureData.map((feature, index) => (
-            <React.Fragment key={index}>
-              <div className="flex flex-col items-start gap-6 relative flex-1 grow">
-                <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
-                  <div className="relative w-fit [font-family:'Montserrat',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
-                    {feature.icon}
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                  <h3 className="relative self-stretch mt-[-1.00px] font-bold text-[#0a0d12] text-xl tracking-tight leading-tight uppercase">
-                    {feature.title}
-                  </h3>
-
-                  <p className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-
-              {index < featureData.length - 1 && (
-                <div className="w-px h-32 bg-[#e5e7eb] relative"></div>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
-
+      <About />
       <section id="skills" className="w-full relative">
         <div className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
           <div className="flex flex-col w-[847px] items-center gap-4 relative flex-[0_0_auto]">
@@ -811,40 +718,6 @@ export const HeroSection = (): JSX.Element => {
           src="/24a839d1d8.png"
         />
       </div>
-
-      <footer className="flex w-full items-center gap-[275px] px-32 py-6 relative flex-[0_0_auto] bg-[#0a0d12]">
-        <div className="flex w-[756px] items-center gap-4 relative">
-          <div className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#fdfdfd] text-base text-center tracking-[-0.48px] leading-[30px] whitespace-nowrap">
-            © 2025 Edwin Anderson. All rights reserved.
-          </div>
-        </div>
-
-        <div className="flex w-52 h-10 items-center gap-4 relative mr-[-55.00px]">
-          <img
-            className="relative w-10 h-10"
-            alt="Social media"
-            src="/social-media-1.svg"
-          />
-
-          <img
-            className="relative w-10 h-10"
-            alt="Social media"
-            src="/social-media.svg"
-          />
-
-          <img
-            className="relative w-10 h-10"
-            alt="Social media"
-            src="/social-media-2.svg"
-          />
-
-          <img
-            className="relative w-10 h-10"
-            alt="Social media"
-            src="/social-media-3.svg"
-          />
-        </div>
-      </footer>
     </>
   );
 };
