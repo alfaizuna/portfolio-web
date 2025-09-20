@@ -249,12 +249,7 @@ export const Dekstop = (): JSX.Element => {
         </div>
       </section>
 
-      <div id="skills">
-        {/* <SkillsSection /> */}
-      </div>
-      <div id="about">
-        <HeroSection />
-      </div>
+      <HeroSection />
     </div>
   );
 };
