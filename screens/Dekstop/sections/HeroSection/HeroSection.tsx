@@ -311,12 +311,12 @@ export const HeroSection = (): JSX.Element => {
 
       <div className="flex-col w-full items-start gap-2 px-[120px] py-20 flex-[0_0_auto] bg-white flex relative">
         <div className="flex flex-col items-start gap-12 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] text-center tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
+          <div className="flex flex-col items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
+            <div className="relative text-center text-5xl font-bold text-[#0a0d12] leading-tight max-w-4xl">
               More Than Just Code
             </div>
 
-            <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] text-center tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+            <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed max-w-2xl">
               We care about design, performance, and user experience all in one.
             </div>
           </div>
