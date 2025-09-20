@@ -226,17 +226,21 @@ export const Dekstop = (): JSX.Element => {
           </div>
         </Badge>
 
-        <div className="inline-flex flex-col items-start justify-center gap-[21.78px] px-[21.78px] py-[32.67px] absolute top-[10%] left-4 lg:left-[120px] rounded-[13613.1px] border-[1.36px] border-solid border-[#b76080]">
+        <div className="inline-flex flex-col items-start justify-center gap-[18px] px-[18px] py-[28px] absolute top-[10%] left-4 lg:left-[120px] rounded-[13613.1px] border-[1.36px] border-solid border-[#b76080]">
           {socialIcons.map((icon, index) => (
             <Button
               key={index}
               variant="ghost"
-              className="flex w-[69.43px] h-[69.43px] items-center justify-center gap-[11.57px] p-[11.57px] relative rounded-[28927.83px] border-[1.36px] border-solid border-[#b76080] hover:bg-white/10 h-auto"
+              className="flex w-[58px] h-[58px] items-center justify-center gap-[9px] p-[9px] relative rounded-[28927.83px] border-[1.36px] border-solid border-[#b76080] hover:bg-white/10 h-auto"
             >
               {index === 2 && (
-                <div className="absolute top-[19px] left-[23px] w-[23px] h-[31px] bg-white" />
+                <div className="absolute top-[16px] left-[19px] w-[20px] h-[26px] bg-white" />
               )}
-              <img className={icon.className} alt={icon.alt} src={icon.src} />
+              <img 
+                className={icon.className.replace(/w-\[[^\]]+\]/g, 'w-[36px]').replace(/h-\[[^\]]+\]/g, 'h-[36px]')} 
+                alt={icon.alt} 
+                src={icon.src} 
+              />
             </Button>
           ))}
         </div>
