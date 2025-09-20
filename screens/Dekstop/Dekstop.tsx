@@ -106,8 +106,8 @@ export const Dekstop = (): JSX.Element => {
           src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
         />
 
-        <div className="flex flex-col items-center justify-center">
-        <h2 className="font-anton font-normal text-[#f3b64c] text-[187.8px] text-center tracking-[-3.76px] leading-[228.0px] whitespace-nowrap mt-64 z-0">
+        <div className="absolute top-[23%] left-1/2 transform -translate-x-1/2">
+        <h2 className="font-anton font-normal text-[#f3b64c] text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap z-0">
           FRONTEND
         </h2>
       </div>
@@ -241,7 +241,7 @@ export const Dekstop = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="absolute top-1/4 left-1/4 lg:left-[314px] rotate-[-12.34deg] font-normal text-white text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10" style={{ fontFamily: 'var(--font-bonheur-royale), "Bonheur Royale", cursive' }}>
+        <div className="absolute top-[18%] left-1/4 lg:left-[314px] rotate-[-12.34deg] font-normal text-white text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10" style={{ fontFamily: 'var(--font-bonheur-royale), "Bonheur Royale", cursive' }}>
           Junior
         </div>
       </section>
