@@ -670,8 +670,8 @@ export const HeroSection = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Card className="flex flex-col w-48 items-start gap-2 p-2 relative rounded-2xl border border-solid border-[#252b37]">
-                  <CardContent className="flex flex-col items-start gap-2 p-6 relative self-stretch w-full flex-[0_0_auto] bg-[#0a0d12] rounded-2xl border border-solid border-[#252b37]">
+                <div className="relative w-48 h-20 rounded-2xl border-2 border-solid border-[#3a3f4a] p-1">
+                  <div className="flex items-center justify-center w-full h-full bg-[#0a0d12] rounded-xl border border-solid border-[#2a2f3c] relative overflow-hidden">
                     <div className="relative w-32 h-12 overflow-hidden">
                       {Array.isArray(experience.logo) ? (
                         <>
@@ -713,8 +713,8 @@ export const HeroSection = (): JSX.Element => {
                         />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
 
                 <div className="relative w-[513px] mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#a4a7ae] text-base tracking-[-0.48px] leading-[30px]">
                   {experience.description}
