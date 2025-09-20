@@ -94,11 +94,11 @@ export const Dekstop = (): JSX.Element => {
           src="/clip-path-group.png"
         />
 
-        <img
+        {/* <img
           className="absolute w-[21.49%] h-[3.96%] top-[9.72%] left-[55.56%]"
           alt="Clip path group"
           src="/clip-path-group-1.png"
-        />
+        /> */}
 
         <img
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[70vh] max-w-[610px] max-h-[735px] object-contain z-10"
@@ -120,11 +120,11 @@ export const Dekstop = (): JSX.Element => {
         </div>
 
         {/* Background decorative image */}
-        <img
+        {/* <img
           className="absolute top-1/4 left-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-20 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
-        />
+        /> */}
         <img
           className="absolute top-16 right-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-50 z-0"
           alt="Decorative star"

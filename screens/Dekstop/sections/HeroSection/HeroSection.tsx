@@ -446,11 +446,11 @@ export const HeroSection = (): JSX.Element => {
                   />
 
                   <div className="top-7 left-[-9px] h-[29px] rotate-180 absolute w-[97px]">
-                    <img
+                    {/* <img
                       className="absolute w-[8.93%] h-[57.86%] top-0 left-[90.52%] -rotate-180"
                       alt="Clip path group"
                       src={`/clip-path-group-${index + 2}.png`}
-                    />
+                    /> */}
 
                     <Badge className="top-2 left-0 h-[21px] flex bg-[#f3b64c] rounded-[178.63px_0px_0px_178.63px] overflow-hidden absolute w-[97px]">
                       <div className="-mt-px w-20 h-6 ml-[11px] rotate-180 font-text-xs-semibold font-[number:var(--text-xs-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-xs-semibold-font-size)] tracking-[var(--text-xs-semibold-letter-spacing)] leading-[var(--text-xs-semibold-line-height)] whitespace-nowrap [font-style:var(--text-xs-semibold-font-style)]">
