@@ -18,6 +18,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
+        montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
         anton: ['var(--font-anton)', 'Anton', 'sans-serif'],
       },
       colors: {

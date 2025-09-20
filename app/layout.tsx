@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Anton, Bonheur_Royale } from 'next/font/google';
+import { Inter, Anton, Bonheur_Royale, Montserrat } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 const anton = Anton({ 
@@ -12,6 +12,10 @@ const bonheurRoyale = Bonheur_Royale({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-bonheur-royale'
+});
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat'
 });
 
 export const metadata: Metadata = {
@@ -26,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${anton.variable} ${bonheurRoyale.variable}`}>{children}</body>
+      <body className={`${montserrat.className} ${anton.variable} ${bonheurRoyale.variable} ${montserrat.variable}`}>{children}</body>
     </html>
   );
 }
