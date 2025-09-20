@@ -404,18 +404,17 @@ export const HeroSection = (): JSX.Element => {
 
       <div id="projects" className="flex flex-col items-start gap-12 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex-col w-[686px] gap-2 flex items-start relative">
-            <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-transparent text-[length:var(--display-xl-bold-font-size)] tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
-              <span className="text-[#0a0d12] tracking-[var(--display-xl-bold-letter-spacing)] font-display-xl-bold [font-style:var(--display-xl-bold-font-style)] font-[number:var(--display-xl-bold-font-weight)] leading-[var(--display-xl-bold-line-height)] text-[length:var(--display-xl-bold-font-size)]">
+          <div className="flex flex-col max-w-4xl gap-4 items-start relative">
+            <div className="relative text-6xl font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] tracking-[var(--display-xl-bold-letter-spacing)] leading-tight [font-style:var(--display-xl-bold-font-style)]">
+              <span className="text-[#0a0d12]">
                 Design to{" "}
               </span>
-
-              <span className="text-[#b76080] tracking-[var(--display-xl-bold-letter-spacing)] font-display-xl-bold [font-style:var(--display-xl-bold-font-style)] font-[number:var(--display-xl-bold-font-weight)] leading-[var(--display-xl-bold-line-height)] text-[length:var(--display-xl-bold-font-size)]">
+              <span className="text-[#b76080]">
                 Code Accuracy
               </span>
             </div>
 
-            <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+            <div className="text-xl font-text-medium text-[#6b7280] leading-relaxed max-w-3xl">
               We translated design mockups into pixel-perfect, responsive
               components, ensuring a smooth user experience across all devices.
             </div>
