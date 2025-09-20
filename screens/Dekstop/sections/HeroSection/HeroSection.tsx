@@ -367,22 +367,22 @@ export const HeroSection = (): JSX.Element => {
               </Card>
 
               <Card className="flex items-center justify-between p-4 relative self-stretch w-full flex-[0_0_auto] bg-[#f4f4f4] rounded-[20px]">
-                <CardContent className="p-0">
-                  <div className="flex flex-col items-start gap-3 relative flex-1 grow">
-                    <div className="relative self-stretch mt-[-1.00px] font-text-lg-bold font-[number:var(--text-lg-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-bold-font-size)] tracking-[var(--text-lg-bold-letter-spacing)] leading-[var(--text-lg-bold-line-height)] [font-style:var(--text-lg-bold-font-style)]">
+                <CardContent className="p-0 flex items-center justify-between w-full">
+                  <div className="flex flex-col items-start gap-3 relative flex-1">
+                    <div className="relative mt-[-1.00px] font-text-lg-bold font-[number:var(--text-lg-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-bold-font-size)] tracking-[var(--text-lg-bold-letter-spacing)] leading-[var(--text-lg-bold-line-height)] [font-style:var(--text-lg-bold-font-style)]">
                       {portfolio.title}
                     </div>
 
-                    <Separator className="self-stretch w-full h-px relative object-cover" />
+                    <Separator className="w-full h-px relative object-cover" />
 
-                    <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#535861] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+                    <div className="relative font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#535861] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
                       {portfolio.category}
                     </div>
                   </div>
 
                   <Button
                     size="icon"
-                    className="inline-flex items-center gap-2 p-2 relative flex-[0_0_auto] bg-[#b76080] rounded-[100px] h-auto"
+                    className="inline-flex items-center gap-2 p-2 relative bg-[#b76080] rounded-[100px] h-auto ml-4"
                   >
                     <img
                       className="relative w-5 h-5"
