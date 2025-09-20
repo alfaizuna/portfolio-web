@@ -821,12 +821,12 @@ export const HeroSection = (): JSX.Element => {
       </div>
 
       <div id="faq" className="flex flex-col w-full items-center gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[#f4f4f4]">
-        <div className="flex flex-col w-[847px] items-start gap-2 relative flex-[0_0_auto]">
-          <div className="relative self-stretch mt-[-1.00px] font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] text-[#0a0d12] text-[length:var(--display-xl-bold-font-size)] text-center tracking-[var(--display-xl-bold-letter-spacing)] leading-[var(--display-xl-bold-line-height)] [font-style:var(--display-xl-bold-font-style)]">
+        <div className="flex flex-col w-[847px] items-center gap-4 relative flex-[0_0_auto]">
+          <div className="relative text-center text-4xl font-bold text-[#0a0d12] leading-tight">
             Let&apos;s Clear Things Up
           </div>
 
-          <div className="relative self-stretch font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#0a0d12] text-[length:var(--text-md-medium-font-size)] text-center tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+          <div className="relative text-center text-md font-medium text-[#6b7280] leading-relaxed">
             I&apos;ve answered a few questions that usually come up when working
             with a frontend developer like me.
           </div>
