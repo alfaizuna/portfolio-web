@@ -78,7 +78,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, isSuccess }) => {
                   Got Your Message!
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Really appreciate you reaching out. I'll be in touch soon.
+                  Really appreciate you reaching out. I&apos;ll be in touch soon.
                 </p>
                 
                 <div className="pt-4">
