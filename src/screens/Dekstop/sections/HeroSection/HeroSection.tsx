@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useCallback, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ArrowRightIcon, MouseIcon, Menu, X } from "lucide-react";
@@ -18,85 +19,177 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
   const memoizedNavItems = useMemo(() => navigationItems, []);
   const memoizedSocialIcons = useMemo(() => socialIcons, []);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
   return (
     <>
       {/* Hero section */}
-      <section
+      <motion.section
         id="home"
         className="relative w-full h-screen min-h-[600px] overflow-hidden"
         role="banner"
         aria-label="Hero section"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="flex w-full h-full items-center gap-2 absolute top-0 left-0 bg-[#a53860]">
+        <motion.div 
+          className="flex w-full h-full items-center gap-2 absolute top-0 left-0 bg-[#a53860]"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
           <div className="relative w-1/2 h-full bg-[#a53860]" />
-        </div>
+        </motion.div>
 
-        <div className="absolute top-0 left-0 w-full h-full bg-white">
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-full bg-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <img
             className="absolute top-0 left-0 w-full h-full object-cover object-center"
             alt="Element"
             src="/227.png"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-[#a53860f0]" />
-        </div>
+        </motion.div>
 
-        <img
+        <motion.img
           className="absolute w-[13.89%] h-[3.23%] top-[5.29%] left-[20.21%]"
           alt="Decorative star element"
           src="/clip-path-group.png"
           loading="lazy"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [-10, 10, -10]
+          }}
+          transition={{
+            opacity: { duration: 0.6, delay: 0.8 },
+            scale: { duration: 0.6, delay: 0.8 },
+            y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
+          }}
         />
 
-        <img
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[45vh] md:h-[70vh] lg:h-[70vh] max-w-[350px] md:max-w-[400px] lg:max-w-[610px] max-h-[400px] md:max-h-[500px] lg:max-h-[735px] object-contain z-10"
+        <motion.img
+          className="absolute bottom-0 left-[13%] md:left-1/2 md:left-[35%] transform -translate-x-1/2 w-auto h-[45vh] md:h-[70vh] lg:h-[70vh] max-w-[350px] md:max-w-[400px] lg:max-w-[610px] max-h-[400px] md:max-h-[500px] lg:max-h-[735px] object-contain z-10"
           alt="Edwin Anderson - Frontend Developer"
           src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
           loading="eager"
           fetchPriority="high"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         />
 
         {/* Typography Design Elements */}
-        <div
+        <motion.div
           className="absolute top-[58%] md:top-[18%] left-[4%] md:left-1/4 lg:left-[314px] rotate-[-12.34deg] font-bonheur-royale font-normal text-white text-[18vw] md:text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10"
           aria-hidden="true"
+          initial={{ opacity: 0, x: -60, rotate: -12.34 }}
+          animate={{ opacity: 1, x: 0, rotate: -12.34 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
         >
           Junior
-        </div>
+        </motion.div>
 
-        <div
-          className="absolute top-[60%] md:top-[23%] left-1/2 transform -translate-x-1/2 px-1 md:px-0"
+        <motion.div
+          className="absolute top-[60%] md:top-[23%] left-[2%] md:left-1/2 md:left-[25%] transform md:-translate-x-1/2 px-1 md:px-0"
           aria-hidden="true"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
         >
-          <div className="font-anton font-normal text-[#f3b64c] text-[28vw] md:text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap">
+          <div className="font-anton font-normal text-[#f3b64c] text-[28vw] md:text-[10vw] lg:text-[187.8px] text-left md:text-center tracking-[-3.76px] leading-tight whitespace-nowrap">
             FRONTEND
           </div>
-        </div>
+        </motion.div>
 
-        <div className="top-[73%] md:top-[45%] left-1/2 transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10 px-1 md:px-0">
+        <motion.div 
+          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10 px-1 md:px-0"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
+        >
           DEVELOPER
-        </div>
-        <div className="top-[73%] md:top-[45%] left-1/2 transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0 px-1 md:px-0">
+        </motion.div>
+        <motion.div 
+          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0 px-1 md:px-0"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+        >
           DEVELOPER
-        </div>
+        </motion.div>
 
-        <img
+        <motion.img
           className="absolute top-16 right-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-50 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
+          initial={{ opacity: 0, scale: 0, rotate: 0 }}
+          animate={{ 
+            opacity: 0.5, 
+            scale: 1, 
+            rotate: [0, 180, 360],
+            y: [-5, 5, -5]
+          }}
+          transition={{
+            opacity: { duration: 0.6, delay: 1.2 },
+            scale: { duration: 0.6, delay: 1.2 },
+            rotate: { duration: 8, repeat: Infinity, ease: "linear", delay: 2 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }
+          }}
         />
-        <img
+        <motion.img
           className="absolute bottom-20 left-1/4 w-16 h-16 lg:w-20 lg:h-20 opacity-25 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
+          initial={{ opacity: 0, scale: 0, rotate: 0 }}
+          animate={{ 
+            opacity: 0.25, 
+            scale: 1, 
+            rotate: [0, -180, -360],
+            x: [-3, 3, -3]
+          }}
+          transition={{
+            opacity: { duration: 0.6, delay: 1.4 },
+            scale: { duration: 0.6, delay: 1.4 },
+            rotate: { duration: 6, repeat: Infinity, ease: "linear", delay: 2.5 },
+            x: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2.5 }
+          }}
         />
 
         {/* Stats Card - Mobile: After intro, Desktop: Top Right */}
-        <Card className="flex flex-col w-full max-w-[350px] md:w-[222px] items-start gap-6 md:gap-5 absolute top-[220px] md:bottom-auto md:top-[20%] left-6 right-6 md:left-auto md:transform-none md:right-4 lg:right-[100px] bg-transparent border-none shadow-none">
-          <CardContent className="p-0 w-full">
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
+          <Card className="flex flex-col w-full max-w-[350px] md:w-[222px] items-start gap-6 md:gap-5 absolute top-[220px] md:bottom-auto md:top-[20%] left-6 right-6 md:left-auto md:transform-none md:right-4 lg:right-[100px] bg-transparent border-none shadow-none">
+            <CardContent className="p-0 w-full">
             {/* Mobile: Grid layout, Desktop: Vertical layout */}
             <div className="grid grid-cols-2 md:block gap-2 md:gap-0 w-full">
               {memoizedStats.map((stat, index) => (
-                <div key={index}>
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                >
                   <div className="flex flex-col items-start gap-[4px] relative w-full flex-[0_0_auto]">
                     <div className="relative w-full mt-[-1.00px] font-bold text-white text-3xl md:text-4xl tracking-tight leading-tight">
                       {stat.value}
@@ -115,7 +208,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                       src="/line-111.svg"
                     />
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -131,159 +224,298 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 <ArrowRightIcon className="relative w-5 md:w-5 h-5 md:h-5 text-white" />
               </div>
             </Button>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* Introduction Section - Mobile: Top, Desktop: Bottom Left */}
-        <section
+        <motion.section
           className="flex flex-col w-full max-w-[320px] md:max-w-[400px] items-start gap-2 md:gap-3 absolute top-[80px] md:top-auto md:bottom-[10%] left-6 right-6 md:left-4 lg:left-[120px] px-0 md:px-4 lg:px-0"
           aria-label="Introduction"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          <img
+          <motion.img
             className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]"
             alt="Welcome indicator"
             src="/fluent-mic-24-filled.svg"
             loading="lazy"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: "backOut" }}
           />
 
-          <h1 className="w-full font-bold text-white text-lg md:text-2xl tracking-tight leading-tight">
+          <motion.h1 
+            className="w-full font-bold text-white text-lg md:text-2xl tracking-tight leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+          >
             Hi, I'm Edwin Anderson
-          </h1>
+          </motion.h1>
 
-          <p className="w-full font-montserrat font-medium text-white text-xs md:text-base tracking-normal leading-relaxed">
+          <motion.p 
+            className="w-full font-montserrat font-medium text-white text-xs md:text-base tracking-normal leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          >
             a frontend developer passionate about creating seamless digital
             experiences that are fast, responsive, and user-friendly.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* Desktop Navigation */}
-        <nav
-          className="hidden lg:inline-flex h-12 items-center justify-center gap-6 px-6 py-0 absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/20 rounded-full backdrop-blur-md z-50"
+        <motion.nav
+          className="hidden lg:inline-flex h-12 items-center justify-center gap-6 px-6 py-0 absolute top-8 left-1/2 left-[29%] transform -translate-x-1/2 bg-black/20 rounded-full backdrop-blur-md z-50"
           role="navigation"
           aria-label="Main navigation"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
           {memoizedNavItems.map((item, index) => (
-            <Button
+            <motion.div
               key={index}
-              variant="ghost"
-              className="inline-flex items-center justify-center gap-2 p-2 relative flex-[0_0_auto] h-auto hover:bg-white/10 cursor-pointer transition-all duration-200 pointer-events-auto"
-              onClick={() => scrollToSection(item.id)}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 + (index * 0.1), ease: "easeOut" }}
             >
-              <div className="relative w-fit mt-[-1.00px] font-montserrat font-medium text-white text-base tracking-normal leading-normal whitespace-nowrap">
-                {item.label}
-              </div>
-            </Button>
+              <Button
+                variant="ghost"
+                className="inline-flex items-center justify-center gap-2 p-2 relative flex-[0_0_auto] h-auto hover:bg-white/10 cursor-pointer transition-all duration-200 pointer-events-auto"
+                onClick={() => scrollToSection(item.id)}
+              >
+                <div className="relative w-fit mt-[-1.00px] font-montserrat font-medium text-white text-base tracking-normal leading-normal whitespace-nowrap">
+                  {item.label}
+                </div>
+              </Button>
+            </motion.div>
           ))}
-        </nav>
+        </motion.nav>
 
         {/* Mobile Header */}
-        <header
-          className="lg:hidden flex items-center justify-between mx-4 mt-4 px-4 py-2 absolute top-0 left-0 right-0 z-50 bg-black/20 rounded-full backdrop-blur-md"
+        <motion.header
+          className="lg:hidden flex items-center justify-between mx-4 mt-4 px-4 py-2 absolute top-0 left-0 right-0 z-40 bg-black/20 rounded-full backdrop-blur-md"
           role="banner"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
           {/* Logo/Name */}
-          <div className="flex items-center gap-3">
+          <motion.div 
+            className="flex items-center gap-3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          >
             <span className="font-bold text-white text-lg">Edwin</span>
-          </div>
+          </motion.div>
 
           {/* Burger Menu Button */}
-          <Button
-            variant="ghost"
-            className="w-8 h-8 p-0 hover:bg-white/10 rounded-lg transition-colors duration-200"
-            onClick={toggleMobileMenu}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-navigation"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5 text-white" />
-            ) : (
-              <Menu className="w-5 h-5 text-white" />
-            )}
-          </Button>
-        </header>
+            <Button
+              variant="ghost"
+              className="w-8 h-8 p-0 hover:bg-white/10 rounded-lg transition-colors duration-200"
+              onClick={toggleMobileMenu}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-white" />
+              ) : (
+                <Menu className="w-5 h-5 text-white" />
+              )}
+            </Button>
+          </motion.div>
+        </motion.header>
 
         {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <>
-            {/* Backdrop overlay */}
-            <div
-              className="lg:hidden fixed inset-0 z-30 bg-black/50"
-              onClick={closeMobileMenu}
-              aria-hidden="true"
-            />
-            <nav
-              id="mobile-navigation"
-              className="lg:hidden fixed inset-0 z-40 bg-[#a53860]/95 backdrop-blur-md"
-              role="navigation"
-              aria-label="Mobile navigation"
-            >
-              <div className="flex flex-col items-center justify-center h-full space-y-8">
-                {memoizedNavItems.map((item, index) => (
-                  <Button
-                    key={item.id}
-                    variant="ghost"
-                    className="text-white text-xl font-medium hover:bg-white/10 p-4 transition-colors duration-200"
-                    onClick={() => {
-                      scrollToSection(item.id);
-                      closeMobileMenu();
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Backdrop overlay with blur */}
+              <motion.div
+                className="lg:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-md"
+                onClick={closeMobileMenu}
+                aria-hidden="true"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              />
+              
+              {/* Top Covering Mobile Sidebar */}
+              <div className="lg:hidden fixed inset-0 z-50 flex items-start justify-center">
+                <motion.nav
+                  id="mobile-navigation"
+                  className="relative w-full h-[90vh] bg-gradient-to-b from-[#a53860]/40 via-[#9b4265]/35 to-[#8b2f5a]/30 backdrop-blur-3xl rounded-b-[3rem] shadow-2xl border-b border-x border-white/30 overflow-hidden"
+                  role="navigation"
+                  aria-label="Mobile navigation"
+                  initial={{ opacity: 0, y: -100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -100 }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: [0.32, 0.72, 0, 1],
+                    type: "tween"
+                  }}
+                >
+                  {/* Header with Brand Name and Close Button */}
+                  <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-8 mt-4">
+                    {/* Brand Name */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.5, delay: 0.2, ease: "backOut" }}
+                    >
+                      <h2 className="text-white text-2xl font-bold tracking-tight">Edwin</h2>
+                    </motion.div>
+
+                    {/* Close Button */}
+                    <motion.button
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition-all duration-300 backdrop-blur-sm"
+                      onClick={closeMobileMenu}
+                      initial={{ opacity: 0, rotate: -180, scale: 0.8 }}
+                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                      exit={{ opacity: 0, rotate: 180, scale: 0.8 }}
+                      transition={{ duration: 0.4, delay: 0.1, ease: "backOut" }}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <X className="w-6 h-6 text-white" />
+                    </motion.button>
+                  </div>
+
+                  {/* Content Container */}
+                  <div className="px-8 pt-24 pb-16 h-full flex flex-col justify-center">
+
+                    {/* Navigation Items */}
+                    <div className="space-y-6 flex-1 flex flex-col justify-center">
+                      {memoizedNavItems.map((item, index) => (
+                        <motion.div
+                          key={item.id}
+                          initial={{ opacity: 0, x: -30 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -30 }}
+                          transition={{ 
+                            duration: 0.4, 
+                            delay: 0.25 + (index * 0.08),
+                            ease: [0.4, 0.0, 0.2, 1]
+                          }}
+                        >
+                          <motion.button
+                            className="w-full text-left text-white text-2xl font-medium hover:text-[#f3b64c] transition-all duration-300 py-4 px-2 rounded-xl hover:bg-white/5"
+                            onClick={() => {
+                              scrollToSection(item.id);
+                              closeMobileMenu();
+                            }}
+                            whileHover={{ x: 12 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            {item.label}
+                          </motion.button>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Subtle bottom overlay for depth */}
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                </motion.nav>
               </div>
-            </nav>
-          </>
-        )}
+            </>
+          )}
+        </AnimatePresence>
 
         {/* Scroll Down Indicator - Center bottom */}
-        <Button
-          variant="ghost"
-          className="inline-flex items-center gap-2 absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-all duration-200 hover:opacity-80 bg-transparent border-none p-2"
-          onClick={() => scrollToSection('skills')}
-          aria-label="Scroll down to skills section"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.5, ease: "easeOut" }}
         >
-          <span className="font-montserrat font-semibold text-white text-sm md:text-base tracking-tight whitespace-nowrap">
-            Scroll Down
-          </span>
-          <MouseIcon className="w-5 md:w-6 h-5 md:h-6 text-white animate-bounce" />
-        </Button>
+          <Button
+            variant="ghost"
+            className="inline-flex items-center gap-2 absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-all duration-200 hover:opacity-80 bg-transparent border-none p-2"
+            onClick={() => scrollToSection('skills')}
+            aria-label="Scroll down to skills section"
+          >
+            <span className="font-montserrat font-semibold text-white text-sm md:text-base tracking-tight whitespace-nowrap">
+              Scroll Down
+            </span>
+            <MouseIcon className="w-5 md:w-6 h-5 md:h-6 text-white animate-bounce" />
+          </Button>
+        </motion.div>
 
         {/* Available for Hire Badge - Mobile: Below stats, Desktop: Center */}
-        <Badge
-          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 absolute top-[440px] md:top-[15%] left-1/2 transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
-          role="status"
-          aria-label="Available for hire status"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: -10 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            y: 0,
+          }}
+          transition={{ duration: 0.6, delay: 1.3, ease: "backOut" }}
         >
-          <div className="w-1.5 md:w-3 h-1.5 md:h-3 bg-[#e16190] rounded-full animate-pulse" />
-          <span className="font-semibold text-white text-xs md:text-base whitespace-nowrap">
-            Available for Hire
-          </span>
-        </Badge>
+          <Badge
+            className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 absolute top-[440px] md:top-[15%] left-[49%] transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
+            role="status"
+            aria-label="Available for hire status"
+          >
+            <div className="w-1.5 md:w-3 h-1.5 md:h-3 bg-[#e16190] rounded-full animate-pulse" />
+            <span className="font-semibold text-white text-xs md:text-base whitespace-nowrap">
+              Available for Hire
+            </span>
+          </Badge>
+        </motion.div>
 
         {/* Social Icons - Hide on mobile, show on desktop */}
-        <aside
+        <motion.aside
           className="hidden md:inline-flex flex-col items-start justify-center gap-4 px-4 py-7 absolute top-[10%] left-4 lg:left-[120px] rounded-full border border-[#b76080]"
           aria-label="Social media links"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
         >
           {memoizedSocialIcons.map((icon, index) => (
-            <Button
+            <motion.div
               key={`social-${index}`}
-              variant="ghost"
-              className="flex w-14 h-14 items-center justify-center p-2 rounded-full border border-[#b76080] hover:bg-white/10 transition-colors duration-200"
-              aria-label={`Social media link ${index + 1}`}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                duration: 0.4, 
+                delay: 1.1 + (index * 0.1), 
+                ease: "backOut" 
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              <img
-                className="w-9 h-9 object-contain"
-                alt={icon.alt}
-                src={icon.src}
-                loading="lazy"
-              />
-            </Button>
+              <Button
+                variant="ghost"
+                className="flex w-14 h-14 items-center justify-center p-2 rounded-full border border-[#b76080] hover:bg-white/10 transition-colors duration-200"
+                aria-label={`Social media link ${index + 1}`}
+              >
+                <img
+                  className="w-9 h-9 object-contain"
+                  alt={icon.alt}
+                  src={icon.src}
+                  loading="lazy"
+                />
+              </Button>
+            </motion.div>
           ))}
-        </aside>
-      </section>
+        </motion.aside>
+      </motion.section>
     </>
   );
 };
