@@ -7,7 +7,7 @@ import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
 import Modal from "../../../../components/modal/Modal";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 
 export const ContactSection = (): JSX.Element => {
   const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ export const ContactSection = (): JSX.Element => {
     setIsModalOpen(false);
   };
 
-  const leftContainerVariants = {
+  const leftContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -65,7 +65,7 @@ export const ContactSection = (): JSX.Element => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -77,7 +77,7 @@ export const ContactSection = (): JSX.Element => {
     },
   };
 
-  const formVariants = {
+  const formVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
