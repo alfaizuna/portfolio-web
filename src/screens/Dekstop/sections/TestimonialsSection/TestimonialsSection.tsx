@@ -12,7 +12,7 @@ export const TestimonialsSection = (): JSX.Element => {
           What They Say About Working With Me
         </div>
 
-        <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed">
+        <div className="relative text-center text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed">
           Real words from clients, teammates, and mentors I&apos;ve
           collaborated with on various projects.
         </div>

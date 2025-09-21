@@ -20,7 +20,7 @@ export const ProjectsSection = ({ portfolioData }: ProjectsSectionProps): JSX.El
     <section id="projects" className="flex flex-col items-start gap-12 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
       <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col max-w-4xl gap-4 items-start relative">
-          <div className="relative text-6xl font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] tracking-[var(--display-xl-bold-letter-spacing)] leading-tight [font-style:var(--display-xl-bold-font-style)]">
+          <div className="relative text-6xl font-bold tracking-tight leading-tight">
             <span className="text-[#0a0d12]">
               Design to{" "}
             </span>
@@ -29,14 +29,14 @@ export const ProjectsSection = ({ portfolioData }: ProjectsSectionProps): JSX.El
             </span>
           </div>
 
-          <div className="text-xl font-text-medium text-[#6b7280] leading-relaxed max-w-3xl">
+          <div className="text-xl font-montserrat font-medium text-[#6b7280] leading-relaxed max-w-3xl">
             We translated design mockups into pixel-perfect, responsive
             components, ensuring a smooth user experience across all devices.
           </div>
         </div>
 
         <Button className="flex w-[156px] h-14 items-center justify-center gap-2 pl-4 pr-2 py-2 relative rounded-[100px] border border-solid border-[#d5d7da] bg-transparent text-[#0a0d12] hover:bg-gray-50 h-auto">
-          <div className="relative flex-1 font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] [font-style:var(--text-md-semibold-font-style)]">
+          <div className="relative flex-1 font-montserrat font-semibold text-[#0a0d12] text-base tracking-tight leading-normal">
             See All
           </div>
 

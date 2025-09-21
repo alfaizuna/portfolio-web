@@ -16,7 +16,7 @@ export const ContactSection = (): JSX.Element => {
             Let&apos;s Work Together
           </div>
 
-          <div className="relative self-stretch text-sm font-medium text-[#0a0d12] leading-relaxed">
+          <div className="relative self-stretch text-lg font-montserrat font-medium text-[#0a0d12] leading-relaxed">
             Have a project in mind or just want to say hi? Drop me a message —
             <br />
             I&apos;d love to hear from you.

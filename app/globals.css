@@ -60,6 +60,33 @@
 }
  
 @layer base {
+  :root {
+    /* Typography variables */
+    --text-lg-semibold-font-weight: 600;
+    --text-lg-semibold-font-size: 18px;
+    --text-lg-semibold-letter-spacing: -0.02em;
+    --text-lg-semibold-line-height: 1.5;
+    --text-lg-semibold-font-style: normal;
+    
+    --text-md-semibold-font-weight: 600;
+    --text-md-semibold-font-size: 16px;
+    --text-md-semibold-letter-spacing: -0.02em;
+    --text-md-semibold-line-height: 1.5;
+    --text-md-semibold-font-style: normal;
+    
+    --text-md-medium-font-weight: 500;
+    --text-md-medium-font-size: 16px;
+    --text-md-medium-letter-spacing: 0;
+    --text-md-medium-line-height: 1.5;
+    --text-md-medium-font-style: normal;
+    
+    --text-lg-medium-font-weight: 500;
+    --text-lg-medium-font-size: 18px;
+    --text-lg-medium-letter-spacing: 0;
+    --text-lg-medium-line-height: 1.5;
+    --text-lg-medium-font-style: normal;
+  }
+  
   body {
     @apply bg-background text-foreground;
   }

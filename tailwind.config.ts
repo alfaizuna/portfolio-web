@@ -6,6 +6,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
     './screens/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -20,6 +21,7 @@ const config: Config = {
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
         anton: ['var(--font-anton)', 'Anton', 'sans-serif'],
+        'bonheur-royale': ['var(--font-bonheur-royale)', 'Bonheur Royale', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

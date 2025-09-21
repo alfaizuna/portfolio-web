@@ -17,7 +17,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
             More Than Just Code
           </div>
 
-          <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed max-w-2xl">
+          <div className="relative text-center text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed max-w-2xl">
             We care about design, performance, and user experience all in one.
           </div>
         </div>
@@ -49,7 +49,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
                       src="/check-icon.svg"
                     />
 
-                    <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-text-lg-semibold font-[number:var(--text-lg-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-semibold-font-size)] text-center tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] whitespace-nowrap [font-style:var(--text-lg-semibold-font-style)]">
+                    <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold text-[#0a0d12] text-lg text-center tracking-tight leading-normal whitespace-nowrap">
                       {feature}
                     </div>
                   </div>
@@ -61,7 +61,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
           <Card className="flex flex-col items-center justify-center gap-8 p-8 relative flex-1 self-stretch grow bg-white rounded-2xl border border-solid border-[#d5d7da]">
             <CardContent className="p-0">
               <div className="flex flex-col items-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
-                <div className="relative flex items-center justify-center self-stretch mt-[-1.00px] font-text-lg-semibold font-[number:var(--text-lg-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-semibold-font-size)] text-center tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] [font-style:var(--text-lg-semibold-font-style)]">
+                <div className="relative flex items-center justify-center self-stretch mt-[-1.00px] font-semibold text-[#0a0d12] text-lg text-center tracking-tight leading-normal">
                   Another Talent
                 </div>
 
@@ -91,7 +91,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
                       src="/close-icon.svg"
                     />
 
-                    <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-text-lg-semibold font-[number:var(--text-lg-semibold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-semibold-font-size)] text-center tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] whitespace-nowrap [font-style:var(--text-lg-semibold-font-style)]">
+                    <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold text-[#0a0d12] text-lg text-center tracking-tight leading-normal whitespace-nowrap">
                       {feature}
                     </div>
                   </div>

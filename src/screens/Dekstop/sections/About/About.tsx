@@ -68,7 +68,7 @@ export const About = (): JSX.Element => {
                 <React.Fragment key={index}>
                   <div className="flex flex-col items-start gap-6 relative flex-1 grow">
                     <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
-                      <div className="relative w-fit [font-family:'Montserrat',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
+                      <div className="relative w-fit font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
                         {feature.icon}
                       </div>
                     </div>
@@ -78,7 +78,7 @@ export const About = (): JSX.Element => {
                         {feature.title}
                       </h3>
     
-                      <p className="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
+                      <p className="relative self-stretch font-montserrat font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
                         {feature.description}
                       </p>
                     </div>

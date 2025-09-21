@@ -32,7 +32,7 @@ export const FAQSection = ({ mockFaq }: FAQSectionProps): JSX.Element => {
           Let&apos;s Clear Things Up
         </div>
 
-        <div className="relative text-center text-md font-medium text-[#6b7280] leading-relaxed">
+        <div className="relative text-center text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed">
           I&apos;ve answered a few questions that usually come up when working
           with a frontend developer like me.
         </div>

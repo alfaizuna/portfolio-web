@@ -19,12 +19,12 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
     <section id="experience" className="flex flex-col w-full items-start gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[#0a0d12]">
       <div className="justify-between self-stretch w-full flex-[0_0_auto] flex items-start relative">
         <div className="flex flex-col gap-0 max-w-2xl">
-          <div className="text-3xl font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] tracking-[var(--display-xl-bold-letter-spacing)] leading-tight [font-style:var(--display-xl-bold-font-style)]">
+          <div className="text-3xl font-bold tracking-tight leading-tight">
             <span className="text-[#fdfdfd]">
               Experiences That
             </span>
           </div>
-          <div className="text-3xl font-display-xl-bold font-[number:var(--display-xl-bold-font-weight)] tracking-[var(--display-xl-bold-letter-spacing)] leading-tight [font-style:var(--display-xl-bold-font-style)]">
+          <div className="text-3xl font-bold tracking-tight leading-tight">
             <span className="text-[#f3b64c]">
               Shaped Me
             </span>
@@ -34,7 +34,7 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
           </div>
         </div>
 
-        <div className="relative max-w-md mt-[-1.00px] font-text-lg-semibold font-[number:var(--text-lg-semibold-font-weight)] text-[#fdfdfd] text-[length:var(--text-lg-semibold-font-size)] tracking-[var(--text-lg-semibold-letter-spacing)] leading-[var(--text-lg-semibold-line-height)] [font-style:var(--text-lg-semibold-font-style)]">
+        <div className="relative max-w-md mt-[-1.00px] font-montserrat font-semibold text-[#fdfdfd] text-lg tracking-tight leading-normal">
           From startups to side projects, every step
           <br />
           has been a chance to learn, build, and

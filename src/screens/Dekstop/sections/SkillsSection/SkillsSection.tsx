@@ -24,7 +24,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
             Code, Design, and Everything in Between
           </div>
 
-          <div className="relative text-center text-lg font-medium text-[#6b7280] leading-relaxed">
+          <div className="relative text-center text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed">
             These are the technologies that power my workflow and bring ideas to
             life.
           </div>
@@ -57,7 +57,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                       {tech.name}
                     </div>
 
-                    <div className="relative text-center text-base font-normal text-[#6b7280] leading-relaxed">
+                    <div className="relative text-center text-base font-montserrat font-normal text-[#6b7280] leading-relaxed">
                       {tech.description}
                     </div>
                   </div>
