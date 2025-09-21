@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Separator } from "../../../../components/ui/separator";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 interface Experience {
   period: string;
@@ -15,16 +16,37 @@ interface ExperienceSectionProps {
 }
 
 export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): JSX.Element => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <section id="experience" className="flex flex-col w-full items-start gap-12 px-[120px] py-20 relative flex-[0_0_auto] bg-[#0a0d12]">
-      <div className="justify-between self-stretch w-full flex-[0_0_auto] flex items-start relative">
-        <div className="flex flex-col gap-0 max-w-2xl">
-          <div className="text-3xl font-bold tracking-tight leading-tight">
+    <motion.section
+      ref={ref}
+      id="experience"
+      className="flex flex-col w-full items-start gap-8 md:gap-12 px-4 md:px-8 lg:px-[120px] py-10 md:py-20 relative bg-[#0a0d12]"
+      variants={{
+        hidden: { opacity: 0, y: 75 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate={mainControls}
+      transition={{ duration: 0.5, delay: 0.25 }}
+    >
+      <div className="justify-between self-stretch w-full flex flex-col md:flex-row items-start relative gap-4 md:gap-0">
+        <div className="flex flex-col gap-0 max-w-full md:max-w-2xl">
+          <div className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
             <span className="text-[#fdfdfd]">
               Experiences That
             </span>
           </div>
-          <div className="text-3xl font-bold tracking-tight leading-tight">
+          <div className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
             <span className="text-[#f3b64c]">
               Shaped Me
             </span>
@@ -34,32 +56,28 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
           </div>
         </div>
 
-        <div className="relative max-w-md mt-[-1.00px] font-montserrat font-semibold text-[#fdfdfd] text-lg tracking-tight leading-normal">
-          From startups to side projects, every step
-          <br />
-          has been a chance to learn, build, and
-          <br />
-          level up.
+        <div className="relative max-w-full md:max-w-md mt-0 md:mt-[-1.00px] font-montserrat font-semibold text-[#fdfdfd] text-base md:text-lg tracking-tight leading-normal">
+          From startups to side projects, every step has been a chance to learn, build, and level up.
         </div>
       </div>
 
-      <Separator className="w-[1242px] h-px mr-[-42.00px] relative object-cover" />
+      <Separator className="w-full h-px relative object-cover" />
 
-      <div className="flex flex-col items-start gap-8 relative self-stretch w-full flex-[0_0_auto]">
+      <div className="flex flex-col items-start gap-8 relative self-stretch w-full">
         {experienceData.map((experience, index) => (
           <React.Fragment key={index}>
-            <div className="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto] bg-[#0a0d12]">
-              <div className="flex flex-col w-[178px] items-start gap-1 relative">
-                <div className="relative self-stretch mt-[-1.00px] font-text-sm-medium font-[number:var(--text-sm-medium-font-weight)] text-[#a4a7ae] text-[length:var(--text-sm-medium-font-size)] tracking-[var(--text-sm-medium-letter-spacing)] leading-[var(--text-sm-medium-line-height)] [font-style:var(--text-sm-medium-font-style)]">
+            <div className="flex flex-col md:flex-row items-start justify-between relative self-stretch w-full bg-[#0a0d12] gap-4 md:gap-0">
+              <div className="flex flex-col w-full md:w-[178px] items-start gap-1 relative">
+                <div className="relative self-stretch font-text-sm-medium font-[number:var(--text-sm-medium-font-weight)] text-[#a4a7ae] text-[length:var(--text-sm-medium-font-size)] tracking-[var(--text-sm-medium-letter-spacing)] leading-[var(--text-sm-medium-line-height)] [font-style:var(--text-sm-medium-font-style)]">
                   {experience.period}
                 </div>
 
-                <div className="relative self-stretch text-xl font-bold text-[#fdfdfd] leading-tight">
+                <div className="relative self-stretch text-lg md:text-xl font-bold text-[#fdfdfd] leading-tight">
                   {experience.role}
                 </div>
               </div>
 
-              <div className="relative w-48 h-20 rounded-2xl border-2 border-solid border-[#3a3f4a] p-1">
+              <div className="relative w-full md:w-48 h-20 rounded-2xl border-2 border-solid border-[#3a3f4a] p-1">
                 <div className="flex items-center justify-center w-full h-full bg-[#0a0d12] rounded-xl border border-solid border-[#2a2f3c] relative overflow-hidden">
                   <div className="relative w-32 h-12 overflow-hidden">
                     {Array.isArray(experience.logo) ? (
@@ -105,7 +123,7 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
                 </div>
               </div>
 
-              <div className="relative w-[513px] mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#a4a7ae] text-base tracking-[-0.48px] leading-[30px]">
+              <div className="relative w-full md:w-[513px] [font-family:'Montserrat',Helvetica] font-normal text-[#a4a7ae] text-sm md:text-base tracking-[-0.48px] leading-[24px] md:leading-[30px]">
                 {experience.description}
               </div>
             </div>
@@ -116,6 +134,6 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
           </React.Fragment>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
