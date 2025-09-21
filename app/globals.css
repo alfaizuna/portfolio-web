@@ -97,6 +97,21 @@
     @apply border-border;
   }
   
+  /* Text clamp utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   /* Modal animations */
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out forwards;

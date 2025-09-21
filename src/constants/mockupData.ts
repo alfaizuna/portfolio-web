@@ -84,7 +84,7 @@ const technologyData = [
   },
   {
     name: "TypeScript",
-    description: "Type-safe JavaScript for better code quality.",
+    description: "Type-safe JavaScript for better code quality, maintainability, and performance.",
     icon: "/typescript.png",
     highlighted: false,
   },
