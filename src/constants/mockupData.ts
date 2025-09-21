@@ -161,28 +161,28 @@ const experienceData = [
 const mockFaq = [
   {
     id: "q1",
-    q: "What services do you offer?",
-    a: "We provide custom web/app development, cloud solutions, UX/UI design, and more.",
+    q: "What technologies do you work with?",
+    a: "I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.",
   },
   {
     id: "q2",
-    q: "How do I know if this is right for my business?",
-    a: "We’ll assess your goals and propose the best approach tailored to your needs.",
+    q: "Do you work on freelance or remote projects?",
+    a: "Yes, I'm available for both freelance projects and remote work. I have experience collaborating with teams across different time zones and managing projects independently with clear communication and regular updates.",
   },
   {
     id: "q3",
-    q: "How much does a project cost?",
-    a: "Project cost depends on complexity, features, and timeline...",
+    q: "Can you convert Figma or Sketch designs into code?",
+    a: "Absolutely! I specialize in converting design mockups from Figma and Sketch into pixel-perfect, responsive code. I ensure that the final implementation matches the design specifications while maintaining clean, semantic HTML and optimized CSS.",
   },
   {
     id: "q4",
-    q: "How long does it take?",
-    a: "Timelines vary by project scope, but we provide clear milestones...",
+    q: "Do you collaborate with backend developers or teams?",
+    a: "Yes, I have extensive experience working with backend developers and cross-functional teams. I'm proficient in integrating APIs, working with RESTful services, and collaborating using version control systems like Git to ensure smooth project delivery.",
   },
   {
     id: "q5",
-    q: "Can I start with a small project first?",
-    a: "Yes, we often recommend starting small to validate ideas...",
+    q: "Are you available for full-time roles?",
+    a: "I'm open to discussing full-time opportunities that align with my skills and career goals. I'm particularly interested in roles that involve modern frontend technologies, challenging projects, and opportunities for professional growth.",
   },
 ];
 
