@@ -51,8 +51,9 @@ export const About = (): JSX.Element => {
       <motion.div 
         className="flex items-center justify-center px-4 md:px-[120px] mb-8 md:mb-12 w-full"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <div className="max-w-4xl text-2xl md:text-3xl font-bold text-center leading-tight">
           <span className="text-black">
@@ -81,7 +82,8 @@ export const About = (): JSX.Element => {
         className="w-full px-4 md:px-[120px]"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-10 max-w-6xl mx-auto">
           {featureData.map((feature, index) => (
