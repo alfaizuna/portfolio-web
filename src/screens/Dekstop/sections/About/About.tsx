@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const featureData = [
   {
@@ -23,73 +24,94 @@ const featureData = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
 export const About = (): JSX.Element => {
   return (
-    <section id="about" className="flex flex-col w-full items-start relative">
-            {/* Main Text Section - Now below the photo */}
-            <div className="flex items-center justify-center gap-2 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative w-[1100px] mt-[-1.00px] text-3xl md:text-2xl lg:text-4xl font-bold text-center leading-tight z-10">
-                <span className="text-[#0a0d12]">
-                  As frontend developers, we bring designs to life
-                </span>
-    
-                <br />
-    
-                <span className="text-[#0a0d12]">
-                  with{" "}
-                </span>
-    
-                <span className="text-[#b76080]">
-                  clean, responsive code
-                </span>
-    
-                <span className="text-[#0a0d12]">
-                  {" "}that blends creativity
-                </span>
-    
-                <br />
-    
-                <span className="text-4xl md:text-3xl lg:text-4xl">🎨</span>
-    
-                <span className="text-[#0a0d12]">
-                  {" "}with usability{" "}
-                </span>
-    
-                <span className="text-4xl md:text-3xl lg:text-4xl">🌟</span>
-    
-                <span className="text-[#0a0d12]">
-                  .
+    <section id="about" className="flex flex-col w-full items-center relative py-12 md:py-20">
+      {/* Main Text Section */}
+      <motion.div 
+        className="flex items-center justify-center px-4 md:px-[120px] mb-8 md:mb-12 w-full"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-4xl text-2xl md:text-3xl font-bold text-center leading-tight">
+          <span className="text-black">
+            As frontend developers, we bring designs to life
+          </span>
+          <br></br>
+          <span className="text-black">with {" "}</span>
+          <span className="text-pink-500">
+            clean, responsive code
+          </span>
+          <span className="text-black">
+            {" "}that blends creativity{" "}
+          </span>
+          <br></br>
+          <span className="text-2xl md:text-3xl">🎨</span>
+          <span className="text-black">
+            {" "}with usability{" "}
+          </span>
+          <span className="text-2xl md:text-3xl">🌟</span>
+          <span className="text-black">.</span>
+        </div>
+      </motion.div>
+
+      {/* Feature Cards */}
+      <motion.div 
+        className="w-full px-4 md:px-[120px]"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-10 max-w-6xl mx-auto">
+          {featureData.map((feature, index) => (
+            <motion.div 
+              key={index}
+              variants={itemVariants}
+              className={`flex flex-col items-start gap-4 py-6 md:py-8 ${
+                index < featureData.length - 1 ? 'border-b border-gray-200 md:border-b-0' : ''
+              } ${index === 1 ? 'md:border-x md:border-gray-200 md:px-10' : ''}`}
+            >
+              {/* Icon */}
+              <div className="flex w-12 h-12 items-center justify-center rounded-full bg-gray-50 border border-gray-200">
+                <span className="text-xl">
+                  {feature.icon}
                 </span>
               </div>
-            </div>
-    
-            <div className="flex items-start gap-10 px-[120px] py-20 relative self-stretch w-full flex-[0_0_auto]">
-              {featureData.map((feature, index) => (
-                <React.Fragment key={index}>
-                  <div className="flex flex-col items-start gap-6 relative flex-1 grow">
-                    <div className="flex w-[63px] h-[63px] items-center justify-center gap-[10.5px] px-[6.56px] py-[2.62px] relative rounded-full overflow-hidden border-[1.31px] border-solid border-[#d5d7da]">
-                      <div className="relative w-fit font-bold text-black text-[32px] tracking-[0] leading-9 whitespace-nowrap">
-                        {feature.icon}
-                      </div>
-                    </div>
-    
-                    <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-                      <h3 className="relative self-stretch mt-[-1.00px] font-bold text-[#0a0d12] text-xl tracking-tight leading-tight uppercase">
-                        {feature.title}
-                      </h3>
-    
-                      <p className="relative self-stretch font-montserrat font-normal text-[#6b7280] text-base tracking-normal leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-    
-                  {index < featureData.length - 1 && (
-                    <div className="w-px h-32 bg-[#e5e7eb] relative"></div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </section>
+
+              {/* Content */}
+              <div className="flex flex-col gap-3 w-full">
+                <h3 className="text-lg font-bold text-black uppercase tracking-wide leading-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
