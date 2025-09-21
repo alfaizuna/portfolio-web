@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
 import Modal from "../../../../components/modal/Modal";
+import { motion, useInView } from "framer-motion";
 
 export const ContactSection = (): JSX.Element => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,9 @@ export const ContactSection = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -49,45 +53,89 @@ export const ContactSection = (): JSX.Element => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const leftContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.4 },
+    },
+  };
+
   return (
-    <section id="contact" className="flex w-full items-start justify-center gap-12 p-[120px] relative flex-[0_0_auto]">
-      <div className="flex-col w-[540px] justify-center gap-10 flex items-start relative">
-        <div className="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="relative self-stretch mt-[-1.00px] text-5xl font-bold text-[#0a0d12] leading-tight">
+    <section ref={ref} id="contact" className="relative flex w-full flex-col items-center justify-center gap-12 p-8 md:p-16 lg:flex-row lg:items-start lg:p-[120px]">
+      <motion.div variants={leftContainerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="relative flex w-full max-w-[540px] flex-col items-center justify-center gap-10 lg:items-start">
+        <motion.div variants={itemVariants} className="relative flex w-full flex-col items-center gap-2 self-stretch lg:items-start">
+          <div className="relative mt-[-1.00px] self-stretch text-center text-2xl font-bold leading-tight text-[#0a0d12] lg:text-left lg:text-5xl">
             Let&apos;s Work Together
           </div>
 
-          <div className="relative self-stretch text-lg font-montserrat font-medium text-[#0a0d12] leading-relaxed">
+          <div className="relative self-stretch text-center font-montserrat text-base font-medium leading-relaxed text-[#0a0d12] lg:text-left lg:text-lg">
             Have a project in mind or just want to say hi? Drop me a message —
             <br />
             I&apos;d love to hear from you.
           </div>
-        </div>
+        </motion.div>
 
-        <div className="inline-flex items-start gap-5 relative flex-[0_0_auto]">
+        <motion.div variants={itemVariants} className="relative inline-flex flex-wrap items-start justify-center gap-5">
           <img
-            className="rounded-lg relative w-[142px] h-[142px] object-cover"
+            className="relative h-28 w-28 rounded-lg object-cover lg:h-[142px] lg:w-[142px]"
             alt="Portfolio image"
             src="/portfolio-image-3.png"
           />
 
           <img
-            className="relative w-[142px] h-[142px] object-cover"
+            className="relative h-28 w-28 object-cover lg:h-[142px] lg:w-[142px]"
             alt="Portfolio image"
             src="/portfolio-image-4.png"
           />
 
           <img
-            className="relative w-[142px] h-[142px] object-cover"
+            className="relative h-28 w-28 object-cover lg:h-[142px] lg:w-[142px]"
             alt="Portfolio image"
             src="/portfolio-image-5.png"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <Card className="flex flex-col items-stretch p-8 relative flex-1 grow bg-white rounded-3xl shadow-[0px_0px_28px_#c4c4c440]">
-        <CardContent className="p-0 flex-1">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5 h-full">
+      <motion.div
+        variants={formVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="relative w-full max-w-[540px] lg:flex-1 lg:grow"
+      >
+        <Card className="relative mt-16 flex w-full flex-col items-stretch rounded-3xl bg-white p-8 shadow-[0px_0px_28px_#c4c4c440] lg:mt-0">
+          <img
+            className="mx-auto -mt-36 mb-2 block h-auto w-36 lg:hidden"
+            alt="Element"
+            src="/24a839d1d8.png"
+          />
+          <CardContent className="p-0 flex-1">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 h-full">
             <div className="flex flex-col gap-1.5">
               <Label className="font-montserrat font-bold text-[#0a0d12] text-sm tracking-tight leading-normal">
                 Name
@@ -143,12 +191,13 @@ export const ContactSection = (): JSX.Element => {
                 {isLoading ? "Sending..." : "Let's Talk"}
               </div>
             </Button>
-          </form>
-        </CardContent>
-      </Card>
+            </form>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       <img
-        className="absolute top-[-35px] left-[calc(50.00%_+_211px)] w-48 h-[170px]"
+        className="absolute top-[-35px] left-[calc(50.00%_+_211px)] hidden h-[170px] w-48 lg:block"
         alt="Element"
         src="/24a839d1d8.png"
       />
