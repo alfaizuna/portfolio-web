@@ -84,7 +84,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         {/* Stats Card - Mobile: After intro, Desktop: Top Right */}
-        <Card className="flex flex-col w-full max-w-[350px] md:w-[222px] items-start gap-6 md:gap-5 absolute top-[280px] md:bottom-auto md:top-[20%] left-6 right-6 md:left-auto md:transform-none md:right-4 lg:right-[100px] bg-transparent border-none shadow-none">
+        <Card className="flex flex-col w-full max-w-[350px] md:w-[222px] items-start gap-6 md:gap-5 absolute top-[220px] md:bottom-auto md:top-[20%] left-6 right-6 md:left-auto md:transform-none md:right-4 lg:right-[100px] bg-transparent border-none shadow-none">
           <CardContent className="p-0 w-full">
             {/* Mobile: Grid layout, Desktop: Vertical layout */}
             <div className="grid grid-cols-2 md:block gap-2 md:gap-0 w-full">
@@ -128,18 +128,18 @@ export const HeroSection = (): JSX.Element => {
         </Card>
 
         {/* Introduction Section - Mobile: Top, Desktop: Bottom Left */}
-        <div className="flex flex-col w-full max-w-[350px] md:max-w-[400px] items-start gap-3 md:gap-3 absolute top-[80px] md:top-auto md:bottom-[10%] left-6 right-6 md:left-4 lg:left-[120px] px-0 md:px-4 lg:px-0">
+        <div className="flex flex-col w-full max-w-[320px] md:max-w-[400px] items-start gap-2 md:gap-3 absolute top-[80px] md:top-auto md:bottom-[10%] left-6 right-6 md:left-4 lg:left-[120px] px-0 md:px-4 lg:px-0">
           <img
             className="relative w-[30px] h-[30px] md:w-[50px] md:h-[50px]"
             alt="Fluent mic filled"
             src="/fluent-mic-24-filled.svg"
           />
 
-          <div className="relative w-full font-bold text-white text-xl md:text-2xl tracking-tight leading-tight">
+          <div className="relative w-full font-bold text-white text-lg md:text-2xl tracking-tight leading-tight">
             Hi, I'm Edwin Anderson
           </div>
 
-          <div className="relative w-full font-montserrat font-medium text-white text-sm md:text-base tracking-normal leading-relaxed">
+          <div className="relative w-full font-montserrat font-medium text-white text-xs md:text-base tracking-normal leading-relaxed">
             a frontend developer passionate about creating seamless digital
             experiences that are fast, responsive, and user-friendly.
           </div>
@@ -223,10 +223,10 @@ export const HeroSection = (): JSX.Element => {
         </div>
 
         {/* Available for Hire Badge - Mobile: Below stats, Desktop: Center */}
-        <Badge className="inline-flex items-center gap-2 px-6 md:px-6 py-3 md:py-3 absolute top-[530px] md:top-[15%] left-1/2 md:left-1/2 transform -translate-x-1/2 md:-translate-x-1/2 bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39] shadow-lg">
-          <div className="relative w-3 md:w-3 h-3 md:h-3 bg-[#e16190] rounded-full" />
+        <Badge className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 absolute top-[440px] md:top-[15%] left-1/2 md:left-1/2 transform -translate-x-1/2 md:-translate-x-1/2 bg-[#860d39] rounded-full border border-solid border-[#b76080] hover:bg-[#860d39] shadow-lg">
+          <div className="relative w-1.5 md:w-3 h-1.5 md:h-3 bg-[#e16190] rounded-full" />
 
-          <div className="relative w-fit font-semibold text-white text-base md:text-base tracking-normal leading-normal whitespace-nowrap">
+          <div className="relative w-fit font-semibold text-white text-xs md:text-base tracking-normal leading-normal whitespace-nowrap">
             Available for Hire
           </div>
         </Badge>
