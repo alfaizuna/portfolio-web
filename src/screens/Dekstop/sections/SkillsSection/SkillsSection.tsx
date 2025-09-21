@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { motion } from "framer-motion";
@@ -21,6 +21,21 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
   const [cardsToShow, setCardsToShow] = useState(4); // Default to desktop first for SSR
   const [isMounted, setIsMounted] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const orderedTechnologyData = useMemo(() => {
+    const html = technologyData.find((tech) => tech.name === "HTML");
+    const css = technologyData.find((tech) => tech.name === "CSS");
+    const others = technologyData.filter(
+      (tech) => tech.name !== "HTML" && tech.name !== "CSS"
+    );
+
+    const sorted = [];
+    if (html) sorted.push(html);
+    if (css) sorted.push(css);
+    sorted.push(...others);
+
+    return sorted;
+  }, [technologyData]);
   
   // Responsive cards to show based on screen size
   const getCardsToShow = () => {
@@ -52,7 +67,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
   };
 
   const handleNext = () => {
-    if (currentIndex < technologyData.length - cardsToShow) {
+    if (currentIndex < orderedTechnologyData.length - cardsToShow) {
       setCurrentIndex(currentIndex + 1);
       scrollToIndex(currentIndex + 1);
     }
@@ -92,15 +107,15 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
         setCurrentIndex(0);
       } else {
         // Reset index if it's out of bounds for other screen sizes
-        if (currentIndex >= technologyData.length - newCardsToShow) {
-          setCurrentIndex(Math.max(0, technologyData.length - newCardsToShow));
+        if (currentIndex >= orderedTechnologyData.length - newCardsToShow) {
+          setCurrentIndex(Math.max(0, orderedTechnologyData.length - newCardsToShow));
         }
       }
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [currentIndex, technologyData.length, isMounted]);
+  }, [currentIndex, orderedTechnologyData.length, isMounted]);
 
   return (
     <motion.section 
@@ -144,17 +159,17 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          <div className="w-full max-w-[1200px] overflow-hidden relative px-4 sm:px-0">
+          <div className="w-full max-w-[1100px] overflow-hidden relative flex items-center h-[280px] sm:h-[460px] px-4 sm:px-0">
             <motion.div 
               ref={scrollContainerRef}
-              className="flex items-center gap-2 sm:gap-6 md:gap-8 overflow-x-hidden scroll-smooth"
+              className="flex items-center gap-2 sm:gap-6 md:gap-8 scroll-smooth"
               style={{ 
-                width: `${technologyData.length * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 174 : 274)}px`,
+                width: `${orderedTechnologyData.length * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 174 : 274)}px`,
                 transform: `translateX(-${currentIndex * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 174 : 274)}px)`,
                 transition: 'transform 0.3s ease-in-out'
               }}
             >
-              {technologyData.map((tech, index) => {
+              {orderedTechnologyData.map((tech, index) => {
                 return (
                 <motion.div
                   key={index}
@@ -271,9 +286,9 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                 variant="outline"
                 size="icon"
                 onClick={handleNext}
-                disabled={currentIndex >= technologyData.length - cardsToShow}
+                disabled={currentIndex >= orderedTechnologyData.length - cardsToShow}
                 className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-3 rounded-full border border-solid border-[#d5d7da] relative flex-[0_0_auto] bg-white hover:bg-gray-50 ${
-                  currentIndex >= technologyData.length - cardsToShow ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                  currentIndex >= orderedTechnologyData.length - cardsToShow ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                 }`}
               >
                 <img
