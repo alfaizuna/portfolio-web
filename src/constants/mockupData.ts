@@ -60,20 +60,32 @@ const technologyData = [
   },
   {
     name: "CSS",
-    description: "Crafting semantic, accessible HTML structures.",
+    description: "Styling beautiful and responsive user interfaces.",
     icon: "/icon-4.png",
     highlighted: false,
   },
   {
     name: "Javascript",
-    description: "Crafting semantic, accessible HTML structures.",
+    description: "Building interactive and dynamic web applications.",
     icon: "/icon-5.png",
     highlighted: true,
   },
   {
     name: "React",
-    description: "Crafting semantic, accessible HTML structures.",
+    description: "Creating reusable components and modern UIs.",
     icon: "/image-6-1.png",
+    highlighted: false,
+  },
+  {
+    name: "Next.js",
+    description: "Full-stack React framework for production applications.",
+    icon: "/next.svg",
+    highlighted: true,
+  },
+  {
+    name: "TypeScript",
+    description: "Type-safe JavaScript for better code quality.",
+    icon: "/typescript.png",
     highlighted: false,
   },
 ];
