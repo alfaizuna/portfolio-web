@@ -55,20 +55,20 @@ export const HeroSection = (): JSX.Element => {
           src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
         />
 
-        <div className="absolute top-[68%] md:top-[18%] left-[10%] md:left-1/4 lg:left-[314px] rotate-[-12.34deg] font-bonheur-royale font-normal text-white text-[8vw] md:text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10">
+        <div className="absolute top-[58%] md:top-[18%] left-[4%] md:left-1/4 lg:left-[314px] rotate-[-12.34deg] font-bonheur-royale font-normal text-white text-[18vw] md:text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10">
           Junior
         </div>
 
-        <div className="absolute top-[70%] md:top-[23%] left-1/2 transform -translate-x-1/2">
-          <h2 className="font-anton font-normal text-[#f3b64c] text-[12vw] md:text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap z-0">
+        <div className="absolute top-[60%] md:top-[23%] left-1/2 transform -translate-x-1/2 px-1 md:px-0">
+          <h2 className="font-anton font-normal text-[#f3b64c] text-[28vw] md:text-[10vw] lg:text-[187.8px] text-center tracking-[-3.76px] leading-tight whitespace-nowrap z-0">
             FRONTEND
           </h2>
         </div>
 
-        <div className="top-[78%] md:top-[45%] left-1/2 transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[10vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10">
+        <div className="top-[73%] md:top-[45%] left-1/2 transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10 px-1 md:px-0">
           DEVELOPER
         </div>
-        <div className="top-[78%] md:top-[45%] left-1/2 transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[10vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0">
+        <div className="top-[73%] md:top-[45%] left-1/2 transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0 px-1 md:px-0">
           DEVELOPER
         </div>
 
