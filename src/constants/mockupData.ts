@@ -1,3 +1,11 @@
+const profileData = {
+  name: "Wira Achyar",
+  description: "a frontend developer passionate about creating seamless digital experiences that are fast, responsive, and user-friendly.",
+  profileImage: "/Photo-Wira-1.png",
+  // Fallback image if profileImage is not available
+  defaultProfileImage: "/harmonious-purple-palette---candid-gentleman-portrait-1.png"
+};
+
 const statsData = [
   {
     value: "2+",
@@ -199,7 +207,7 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Working with Edwin Anderson was a smooth experience from start to finish. He is very responsive and always goes above and beyond to ensure our project's success.",
+      `Working with ${profileData.name} was a smooth experience from start to finish. He is very responsive and always goes above and beyond to ensure our project's success.`,
     name: "Sarah Tan",
     title: "Product Manager at Finovate",
     image: "/ellipse-8.png",
@@ -215,7 +223,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "Edwin is a proactive and resourceful developer. He's not just a coder; he's a problem solver who contributes great ideas to the team. I would gladly work with him again.",
+      `${profileData.name} is a proactive and resourceful developer. He's not just a coder; he's a problem solver who contributes great ideas to the team. I would gladly work with ${profileData.name} again.`,
     name: "Jessica Liu",
     title: "Senior Frontend Developer at TechCorp",
     image: "/default-portrait.png",
@@ -234,4 +242,5 @@ export {
   mockFaq,
   navigationItems,
   testimonials,
+  profileData,
 };

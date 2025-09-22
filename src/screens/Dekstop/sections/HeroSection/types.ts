@@ -15,6 +15,13 @@ export interface SocialIcon {
   className: string;
 }
 
+export interface ProfileData {
+  name: string;
+  description: string;
+  profileImage: string;
+  defaultProfileImage: string;
+}
+
 export interface HeroSectionProps {
   className?: string;
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { profileData } from "@/src/constants/mockupData";
 
 interface WithMeSectionProps {
   withMeFeatures: string[];
@@ -10,6 +11,12 @@ interface WithMeSectionProps {
 }
 
 export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeSectionProps): JSX.Element => {
+  const [profileImageSrc, setProfileImageSrc] = useState(profileData.profileImage || profileData.defaultProfileImage);
+
+  // Handle image error - fallback to default image
+  const handleImageError = useCallback(() => {
+    setProfileImageSrc(profileData.defaultProfileImage);
+  }, []);
   return (
     <motion.section
       id="with-me"
@@ -52,9 +59,10 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
 
                 <div className="bg-[#b76080] rounded-[15229.25px] relative w-[100px] h-[100px] overflow-hidden">
                   <img
-                    className="absolute top-2 left-[calc(50.00%_-_37px)] w-[86px] h-[92px]"
-                    alt="Harmonious purple"
-                    src="/harmonious-purple-palette---candid-gentleman-portrait-1-1.png"
+                    className="absolute top-2 left-[calc(50.00%_-_40px)] w-[86px] h-[92px] object-cover"
+                    alt={`${profileData.name} profile photo`}
+                    src={profileImageSrc}
+                    onError={handleImageError}
                   />
                 </div>
 

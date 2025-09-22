@@ -6,13 +6,19 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ArrowRightIcon, MouseIcon, Menu, X } from "lucide-react";
 import { Badge } from "../../../../components/ui/badge";
-import { statsData, socialIcons, navigationItems } from "@/src/constants/mockupData";
+import { statsData, socialIcons, navigationItems, profileData } from "@/src/constants/mockupData";
 import type { HeroSectionProps } from "./types";
 import { useScrollTo, useMobileMenu } from "./hooks";
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
   const scrollToSection = useScrollTo();
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useMobileMenu();
+  const [profileImageSrc, setProfileImageSrc] = useState(profileData.profileImage || profileData.defaultProfileImage);
+
+  // Handle image error - fallback to default image
+  const handleImageError = useCallback(() => {
+    setProfileImageSrc(profileData.defaultProfileImage);
+  }, []);
 
   // Memoize static content to prevent unnecessary re-renders
   const memoizedStats = useMemo(() => statsData, []);
@@ -87,8 +93,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         <motion.img
           className="absolute bottom-0 left-[13%] md:left-1/2 md:left-[35%] transform -translate-x-1/2 w-auto h-[45vh] md:h-[70vh] lg:h-[70vh] max-w-[350px] md:max-w-[400px] lg:max-w-[610px] max-h-[400px] md:max-h-[500px] lg:max-h-[735px] object-contain z-10"
-          alt="Edwin Anderson - Frontend Developer"
-          src="/harmonious-purple-palette---candid-gentleman-portrait-1.png"
+          alt={`${profileData.name} - Frontend Developer`}
+          src={profileImageSrc}
+          onError={handleImageError}
           loading="eager"
           fetchPriority="high"
           initial={{ opacity: 0, y: 60 }}
@@ -252,7 +259,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
           >
-            Hi, I&apos;m Edwin Anderson
+            Hi, I&apos;m {profileData.name}
           </motion.h1>
 
           <motion.p 
@@ -261,8 +268,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
-            a frontend developer passionate about creating seamless digital
-            experiences that are fast, responsive, and user-friendly.
+            {profileData.description}
           </motion.p>
         </motion.section>
 
@@ -310,7 +316,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           >
-            <span className="font-bold text-white text-lg">Edwin</span>
+            <span className="font-bold text-white text-lg">{profileData.name.split(' ')[0]}</span>
           </motion.div>
 
           {/* Burger Menu Button */}
@@ -376,7 +382,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.5, delay: 0.2, ease: "backOut" }}
                     >
-                      <h2 className="text-white text-2xl font-bold tracking-tight">Edwin</h2>
+                      <h2 className="text-white text-2xl font-bold tracking-tight">{profileData.name.split(' ')[0]}</h2>
                     </motion.div>
 
                     {/* Close Button */}
