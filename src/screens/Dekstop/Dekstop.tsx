@@ -11,7 +11,7 @@ import { ExperienceSection } from "../Dekstop/sections/ExperienceSection/Experie
 import { TestimonialsSection } from "../Dekstop/sections/TestimonialsSection/TestimonialsSection";
 import { FAQSection } from "../Dekstop/sections/FAQSection/FAQSection";
 import { ContactSection } from "../Dekstop/sections/ContactSection/ContactSection";
-import { technologyData, withMeFeatures, anotherTalentFeatures, portfolioData, experienceData, mockFaq } from "../../constants/mockupData";
+import { technologyData, withMeFeatures, anotherTalentFeatures, experienceData, mockFaq } from "../../constants/mockupData";
 
 export const Dekstop = (): JSX.Element => {
   return (
@@ -20,7 +20,7 @@ export const Dekstop = (): JSX.Element => {
       <About />
       <SkillsSection technologyData={technologyData} />
       <WithMeSection withMeFeatures={withMeFeatures} anotherTalentFeatures={anotherTalentFeatures} />
-      <ProjectsSection portfolioData={portfolioData} />
+      <ProjectsSection />
       <ExperienceSection experienceData={experienceData} />
       <TestimonialsSection />
       <FAQSection mockFaq={mockFaq} />
