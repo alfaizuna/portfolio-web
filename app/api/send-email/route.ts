@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       },
       {
         headers: {
-          'Authorization': 'Bearer re_FbyJvad3_57Ns7TYSAfgCxyxk7k5Cat3k',
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
           'Content-Type': 'application/json'
         }
       }
