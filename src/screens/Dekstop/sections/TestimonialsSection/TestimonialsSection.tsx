@@ -4,34 +4,7 @@ import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { motion, AnimatePresence, wrap } from "framer-motion";
-
-// 1. Data untuk testimoni dibuat dinamis dalam sebuah array
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "Working with Edwin Anderson was a smooth experience from start to finish. He translated our design into clean, responsive code and even suggested improvements we hadn't thought of. Highly recommended!",
-    name: "Sarah Tan",
-    title: "Product Manager at Finovate",
-    image: "/ellipse-8.png",
-  },
-  {
-    id: 2,
-    quote:
-      "His attention to detail and commitment to quality are outstanding. The final product exceeded our expectations. A true professional and a pleasure to work with.",
-    name: "Michael Chen",
-    title: "Lead Designer at Creative Solutions",
-    image: "/default-portrait.png",
-  },
-  {
-    id: 3,
-    quote:
-      "Edwin is a proactive and resourceful developer. He's not just a coder; he's a problem solver who contributes great ideas to the team. I would gladly work with him again.",
-    name: "Jessica Liu",
-    title: "Senior Frontend Developer at TechCorp",
-    image: "/default-portrait.png",
-  },
-];
+import { testimonials } from "../../../../constants/mockupData";
 
 // 2. Varian animasi untuk efek geser (slide)
 const variants = {
@@ -109,8 +82,8 @@ export const TestimonialsSection = (): JSX.Element => {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-[95%] h-full bg-[#d48fa3] rounded-3xl" />
 
                 {/* Kartu Testimoni Utama (Paling Depan) */}
-                <Card className="relative z-20 flex flex-col w-full items-center gap-8 px-8 sm:px-12 py-10 bg-[#B15C7D] rounded-3xl shadow-lg">
-                  <CardContent className="p-0 flex flex-col items-center gap-6 w-full">
+                <Card className="relative z-20 flex flex-col w-full items-center gap-6 sm:gap-8 px-6 sm:px-12 py-8 sm:py-10 bg-[#B15C7D] rounded-3xl shadow-lg">
+                  <CardContent className="p-0 flex flex-col items-center gap-4 sm:gap-6 w-full">
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
                         <span key={i} className="text-[#f3b64c] text-2xl">
@@ -121,13 +94,13 @@ export const TestimonialsSection = (): JSX.Element => {
                     <div className="text-center text-xl font-semibold font-montserrat text-white leading-relaxed min-h-[120px] sm:min-h-[96px]">
                       &quot;{currentTestimonial.quote}&quot;
                     </div>
-                    <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center gap-2 sm:gap-3">
                       <img
-                        className="w-16 h-16 rounded-full object-cover"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover"
                         alt={currentTestimonial.name}
                         src={currentTestimonial.image}
                       />
-                      <div className="flex flex-col items-center gap-1">
+                      <div className="flex flex-col items-center gap-0.5 sm:gap-1">
                         <div className="text-lg font-bold font-montserrat text-white">{currentTestimonial.name}</div>
                         <div className="text-base text-white/80">{currentTestimonial.title}</div>
                       </div>

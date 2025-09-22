@@ -195,6 +195,33 @@ const navigationItems = [
   { label: "Contact", id: "contact" },
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    quote:
+      "Working with Edwin Anderson was a smooth experience from start to finish. He is very responsive and always goes above and beyond to ensure our project's success.",
+    name: "Sarah Tan",
+    title: "Product Manager at Finovate",
+    image: "/ellipse-8.png",
+  },
+  {
+    id: 2,
+    quote:
+      "His attention to detail and commitment to quality are outstanding. The final product exceeded our expectations. A true professional and a pleasure to work with.",
+    name: "Michael Chen",
+    title: "Lead Designer at Creative Solutions",
+    image: "/default-portrait.png",
+  },
+  {
+    id: 3,
+    quote:
+      "Edwin is a proactive and resourceful developer. He's not just a coder; he's a problem solver who contributes great ideas to the team. I would gladly work with him again.",
+    name: "Jessica Liu",
+    title: "Senior Frontend Developer at TechCorp",
+    image: "/default-portrait.png",
+  },
+];
+
 export {
   statsData,
   socialIcons,
@@ -206,4 +233,5 @@ export {
   experienceData,
   mockFaq,
   navigationItems,
+  testimonials,
 };
