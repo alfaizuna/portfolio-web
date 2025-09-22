@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
     const response = await axios.post(
       'https://api.resend.com/emails',
       {
-        from: 'inidarifieldemail@resend.dev',
-        to: 'alfaizunaulia@gmail.com',
+        from: email,
+        to: `${process.env.CONTACT_EMAIL}`,
         subject: `New message from ${name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

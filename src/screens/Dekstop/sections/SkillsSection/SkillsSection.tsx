@@ -126,7 +126,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
   // Mobile Grid Component - Changed to Mobile Carousel
   const MobileCarousel = () => (
     <>
-      <div className="w-full max-w-[400px] overflow-hidden relative flex items-center h-[320px] px-4">
+      <div className="w-full max-w-[360px] overflow-hidden relative flex items-center h-[320px] px-4">
         <motion.div 
           className="flex items-center gap-4 scroll-smooth"
           style={{ 
@@ -140,7 +140,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
               initial={{ opacity: 0, y: 60, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
-                duration: 0.3, 
+                duration: 0.2, 
                 delay: 0.1 + (index * 0.05),
                 ease: "easeOut"
               }}
