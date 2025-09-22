@@ -74,25 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         </motion.div>
 
         <motion.img
-          className="absolute w-[13.89%] h-[3.23%] top-[5.29%] left-[20.21%]"
-          alt="Decorative star element"
-          src="/clip-path-group.png"
-          loading="lazy"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1,
-            y: [-10, 10, -10]
-          }}
-          transition={{
-            opacity: { duration: 0.6, delay: 0.8 },
-            scale: { duration: 0.6, delay: 0.8 },
-            y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
-          }}
-        />
-
-        <motion.img
-          className="absolute bottom-0 left-[13%] md:left-1/2 md:left-[35%] transform -translate-x-1/2 w-auto h-[45vh] md:h-[70vh] lg:h-[70vh] max-w-[350px] md:max-w-[400px] lg:max-w-[610px] max-h-[400px] md:max-h-[500px] lg:max-h-[735px] object-contain z-10"
+          className="absolute bottom-0 left-[13%] md:left-1/2 md:left-[35%] transform -translate-x-1/2 w-auto h-[45vh] md:h-[70vh] lg:h-[70vh] max-w-[350px] md:max-w-[400px] lg:max-w-[610px] max-h-[400px] md:max-h-[500px] lg:max-h-[735px] object-contain z-20"
           alt={`${profileData.name} - Frontend Developer`}
           src={profileImageSrc}
           onError={handleImageError}
@@ -105,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Typography Design Elements */}
         <motion.div
-          className="absolute top-[58%] md:top-[18%] left-[4%] md:left-1/4 lg:left-[314px] rotate-[-12.34deg] font-bonheur-royale font-normal text-white text-[18vw] md:text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-10"
+          className="absolute top-[58%] md:top-[18%] left-[4%] md:left-1/4 lg:left-[314px] rotate-[-12.34deg] font-bonheur-royale font-normal text-white text-[18vw] md:text-[6vw] lg:text-[113.2px] tracking-[-2.26px] leading-tight whitespace-nowrap z-20"
           aria-hidden="true"
           initial={{ opacity: 0, x: -60, rotate: -12.34 }}
           animate={{ opacity: 1, x: 0, rotate: -12.34 }}
@@ -115,27 +97,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         </motion.div>
 
         <motion.div
-          className="absolute top-[60%] md:top-[23%] left-[2%] md:left-1/2 md:left-[25%] transform md:-translate-x-1/2 px-1 md:px-0"
+          className="absolute top-[60%] md:top-[23%] left-[2%] md:left-1/2 md:left-[25%] transform md:-translate-x-1/2 font-anton font-normal text-[#f3b64c] text-[28vw] md:text-[10vw] lg:text-[187.8px] text-left md:text-center tracking-[-3.76px] leading-tight whitespace-nowrap px-1 md:px-0 z-10"
           aria-hidden="true"
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
         >
-          <div className="font-anton font-normal text-[#f3b64c] text-[28vw] md:text-[10vw] lg:text-[187.8px] text-left md:text-center tracking-[-3.76px] leading-tight whitespace-nowrap">
-            FRONTEND
-          </div>
+          FRONTEND
         </motion.div>
 
         <motion.div 
-          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-10 px-1 md:px-0"
+          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 [-webkit-text-stroke:1px_#f3b64c] text-transparent absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap px-1 md:px-0 z-30"
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
         >
           DEVELOPER
         </motion.div>
+        
         <motion.div 
-          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap z-0 px-1 md:px-0"
+          className="top-[73%] md:top-[45%] left-[2%] md:left-1/2 md:left-[25%] transform -translate-x-1/2 text-[#f3b64c] absolute font-anton font-normal text-[25vw] md:text-[8vw] lg:text-[168.8px] text-center tracking-[-3.38px] leading-tight whitespace-nowrap px-1 md:px-0 z-10"
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
@@ -144,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         </motion.div>
 
         <motion.img
-          className="absolute top-16 right-1/4 w-32 h-32 lg:w-48 lg:h-48 opacity-50 z-0"
+          className="absolute bottom-10 right-[27%] w-32 h-32 lg:w-40 lg:h-40 opacity-50 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
           initial={{ opacity: 0, scale: 0, rotate: 0 }}
@@ -162,7 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           }}
         />
         <motion.img
-          className="absolute bottom-20 left-1/4 w-16 h-16 lg:w-20 lg:h-20 opacity-25 z-0"
+          className="absolute bottom-80 left-[20%] w-16 h-16 lg:w-48 lg:h-48 opacity-25 z-0"
           alt="Decorative star"
           src="/clip-path-group.png"
           initial={{ opacity: 0, scale: 0, rotate: 0 }}
