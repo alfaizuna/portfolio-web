@@ -41,12 +41,12 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
     >
       <div className="justify-between self-stretch w-full flex flex-col md:flex-row items-start relative gap-4 md:gap-0">
         <div className="flex flex-col gap-0 max-w-full md:max-w-2xl">
-          <div className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+          <div className="text-2xl md:text-3xl font-montserrat font-bold tracking-tight leading-tight">
             <span className="text-[#fdfdfd]">
               Experiences That
             </span>
           </div>
-          <div className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+          <div className="text-2xl md:text-3xl font-montserrat font-bold tracking-tight leading-tight">
             <span className="text-[#f3b64c]">
               Shaped Me
             </span>
@@ -123,7 +123,7 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
                 </div>
               </div>
 
-              <div className="relative w-full md:w-[513px] [font-family:'Montserrat',Helvetica] font-normal text-[#a4a7ae] text-sm md:text-base tracking-[-0.48px] leading-[24px] md:leading-[30px]">
+              <div className="relative w-full md:w-[513px] font-montserrat font-normal text-[#a4a7ae] text-sm md:text-base tracking-[-0.48px] leading-[24px] md:leading-[30px]">
                 {experience.description}
               </div>
             </div>

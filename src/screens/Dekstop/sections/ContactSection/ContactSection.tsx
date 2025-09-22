@@ -90,7 +90,7 @@ export const ContactSection = (): JSX.Element => {
     <section ref={ref} id="contact" className="relative flex w-full flex-col items-center justify-center gap-12 p-8 md:p-16 lg:flex-row lg:items-start lg:p-[120px]">
       <motion.div variants={leftContainerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="relative flex w-full max-w-[540px] flex-col items-center justify-center gap-10 lg:items-start">
         <motion.div variants={itemVariants} className="relative flex w-full flex-col items-center gap-2 self-stretch lg:items-start">
-          <div className="relative mt-[-1.00px] self-stretch text-center text-2xl font-bold leading-tight text-[#0a0d12] lg:text-left lg:text-5xl">
+          <div className="relative mt-[-1.00px] self-stretch text-center text-2xl font-bold font-montserrat leading-tight text-[#0a0d12] lg:text-left lg:text-5xl">
             Let&apos;s Work Together
           </div>
 

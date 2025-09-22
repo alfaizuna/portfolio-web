@@ -55,7 +55,7 @@ export const About = (): JSX.Element => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="max-w-4xl text-2xl md:text-3xl font-bold text-center leading-tight">
+        <div className="max-w-4xl text-2xl md:text-3xl font-montserrat font-bold text-center leading-tight">
           <span className="text-black">
             As frontend developers, we bring designs to life
           </span>
@@ -106,7 +106,7 @@ export const About = (): JSX.Element => {
                 <h3 className="text-lg font-bold text-black uppercase tracking-wide leading-tight">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed font-montserrat">
                   {feature.description}
                 </p>
               </div>

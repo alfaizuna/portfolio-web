@@ -75,7 +75,7 @@ export const TestimonialsSection = (): JSX.Element => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col w-full max-w-3xl items-center gap-4 relative">
-        <div className="relative text-center text-2xl sm:text-4xl font-bold text-[#0a0d12] leading-tight">
+        <div className="relative text-center text-2xl sm:text-4xl font-bold font-montserrat text-[#0a0d12] leading-tight">
           What They Say About Working With Me
         </div>
         <div className="relative text-center text-base sm:text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed">
@@ -118,7 +118,7 @@ export const TestimonialsSection = (): JSX.Element => {
                         </span>
                       ))}
                     </div>
-                    <div className="text-center text-xl font-semibold text-white leading-relaxed min-h-[120px] sm:min-h-[96px]">
+                    <div className="text-center text-xl font-semibold font-montserrat text-white leading-relaxed min-h-[120px] sm:min-h-[96px]">
                       &quot;{currentTestimonial.quote}&quot;
                     </div>
                     <div className="flex flex-col items-center gap-3">
@@ -128,7 +128,7 @@ export const TestimonialsSection = (): JSX.Element => {
                         src={currentTestimonial.image}
                       />
                       <div className="flex flex-col items-center gap-1">
-                        <div className="text-lg font-bold text-white">{currentTestimonial.name}</div>
+                        <div className="text-lg font-bold font-montserrat text-white">{currentTestimonial.name}</div>
                         <div className="text-base text-white/80">{currentTestimonial.title}</div>
                       </div>
                     </div>

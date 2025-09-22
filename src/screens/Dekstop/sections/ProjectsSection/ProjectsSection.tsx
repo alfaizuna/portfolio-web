@@ -56,7 +56,7 @@ export const ProjectsSection = ({ portfolioData }: ProjectsSectionProps): JSX.El
           className="flex flex-col max-w-4xl gap-4 items-start relative"
           variants={itemVariants}
         >
-          <div className="relative text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+          <div className="relative text-3xl md:text-5xl font-bold font-montserrat tracking-tight leading-tight">
             <span className="text-[#0a0d12]">Design to </span>
             <span className="text-[#b76080]">Code Accuracy</span>
           </div>

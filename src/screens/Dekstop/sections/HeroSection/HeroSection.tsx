@@ -247,7 +247,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           />
 
           <motion.h1 
-            className="w-full font-bold text-white text-lg md:text-2xl tracking-tight leading-tight"
+            className="w-full font-bold font-montserrat text-white text-lg md:text-2xl tracking-tight leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}

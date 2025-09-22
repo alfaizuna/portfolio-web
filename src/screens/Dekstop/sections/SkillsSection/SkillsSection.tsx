@@ -134,7 +134,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.div 
-            className="relative text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0d12] leading-tight"
+            className="relative text-center text-2xl sm:text-3xl md:text-4xl font-montserrat font-bold text-[#0a0d12] leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}

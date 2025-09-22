@@ -54,7 +54,7 @@ export const FAQSection = ({ mockFaq }: FAQSectionProps): JSX.Element => {
       viewport={{ once: true, amount: 0.1 }}
     >
       <motion.div className="flex flex-col w-full md:w-[847px] items-center gap-4 relative">
-        <h2 className="relative text-center text-3xl md:text-4xl font-bold text-[#0a0d12] leading-tight">
+        <h2 className="relative text-center text-3xl md:text-4xl font-bold font-montserrat text-[#0a0d12] leading-tight">
           Let&apos;s Clear Things Up
         </h2>
 

@@ -27,7 +27,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="relative text-center text-3xl md:text-5xl font-bold text-[#0a0d12] leading-tight max-w-4xl">
+          <div className="relative text-center text-3xl md:text-5xl font-montserrat font-bold text-[#0a0d12] leading-tight max-w-4xl">
             More Than Just Code
           </div>
 
@@ -70,7 +70,7 @@ export const WithMeSection = ({ withMeFeatures, anotherTalentFeatures }: WithMeS
                         src="/check-icon.svg"
                       />
 
-                      <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold text-[#0a0d12] text-lg text-center tracking-tight leading-normal whitespace-nowrap">
+                      <div className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold font-montserrat text-[#0a0d12] text-lg text-center tracking-tight leading-normal whitespace-nowrap">
                         {feature}
                       </div>
                     </div>
