@@ -38,16 +38,19 @@ const portfolioData = [
     title: "Portfolio 1",
     category: "Web Development",
     image: "/portfolio1.png",
+    link: "https://challenge-12-wirazzz354.vercel.app",
   },
   {
     title: "Portfolio 2",
     category: "Web Development",
     image: "/portfolio2.png",
+    link: "https://challenge-11-wirazzz354-7jyck1evi-achyarwira-1342s-projects.vercel.app",
   },
   {
     title: "Portfolio 3",
     category: "Web Development",
     image: "/portfolio3.png",
+    link: "https://challenge-9-wirazzz354.vercel.app",
   },
 ];
 

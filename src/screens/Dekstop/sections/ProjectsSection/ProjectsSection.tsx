@@ -11,6 +11,7 @@ interface Portfolio {
   title: string;
   category: string;
   image: string;
+  link: string;
 }
 
 export const ProjectsSection = (): JSX.Element => {
@@ -37,6 +38,10 @@ export const ProjectsSection = (): JSX.Element => {
         ease: "easeOut",
       },
     },
+  };
+
+  const handlePortfolioClick = (link: string) => {
+    window.open(link, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -85,8 +90,9 @@ export const ProjectsSection = (): JSX.Element => {
         {portfolioData.map((portfolio, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-start relative flex-1 grow w-full"
+            className="flex flex-col items-start relative flex-1 grow w-full cursor-pointer"
             variants={itemVariants}
+            onClick={() => handlePortfolioClick(portfolio.link)}
           >
             <Card className="flex items-center gap-2 p-4 relative self-stretch w-full flex-[0_0_auto] bg-[#f4f4f4] rounded-[20px]">
               <CardContent className="p-0">
