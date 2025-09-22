@@ -6,6 +6,24 @@ const profileData = {
   defaultProfileImage: "/harmonious-purple-palette---candid-gentleman-portrait-1.png"
 };
 
+const portfolioData = [
+  {
+    title: "Portfolio 1",
+    category: "Web Development",
+    image: "/portfolio1.png",
+  },
+  {
+    title: "Portfolio 2",
+    category: "Web Development",
+    image: "/portfolio2.png",
+  },
+  {
+    title: "Portfolio 3",
+    category: "Web Development",
+    image: "/portfolio3.png",
+  },
+];
+
 const statsData = [
   {
     value: "2+",
@@ -116,24 +134,6 @@ const anotherTalentFeatures = [
   "Inconsistent Responsiveness",
   "Slow and Heavy Websites",
   "No Design Skills",
-];
-
-const portfolioData = [
-  {
-    title: "Portfolio 1",
-    category: "Web Development",
-    image: "/portfolio-image.png",
-  },
-  {
-    title: "Portfolio 2",
-    category: "Web Development",
-    image: "/portfolio-image-1.png",
-  },
-  {
-    title: "Portfolio 3",
-    category: "Web Development",
-    image: "/portfolio-image-3.png",
-  },
 ];
 
 const experienceData = [

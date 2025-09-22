@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { Separator } from "../../../../components/ui/separator";
+import { portfolioData } from "../../../../constants/mockupData";
 
 interface Portfolio {
   title: string;
@@ -12,11 +13,7 @@ interface Portfolio {
   image: string;
 }
 
-interface ProjectsSectionProps {
-  portfolioData: Portfolio[];
-}
-
-export const ProjectsSection = ({ portfolioData }: ProjectsSectionProps): JSX.Element => {
+export const ProjectsSection = (): JSX.Element => {
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -94,7 +91,7 @@ export const ProjectsSection = ({ portfolioData }: ProjectsSectionProps): JSX.El
             <Card className="flex items-center gap-2 p-4 relative self-stretch w-full flex-[0_0_auto] bg-[#f4f4f4] rounded-[20px]">
               <CardContent className="p-0">
                 <img
-                  className="relative flex-1 grow h-[354.67px] rounded-lg object-cover"
+                  className="relative flex-1 grow h-[354.67px] rounded-lg object-contain"
                   alt="Portfolio image"
                   src={portfolio.image}
                 />
