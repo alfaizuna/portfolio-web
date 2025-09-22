@@ -8,6 +8,7 @@ import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
 import Modal from "../../../../components/modal/Modal";
 import { motion, useInView, Variants } from "framer-motion";
+import { portfolioData } from "../../../../constants/mockupData";
 
 export const ContactSection = (): JSX.Element => {
   const [formData, setFormData] = useState({
@@ -87,38 +88,29 @@ export const ContactSection = (): JSX.Element => {
   };
 
   return (
-    <section ref={ref} id="contact" className="relative flex w-full flex-col items-center justify-center gap-12 p-8 md:p-16 lg:flex-row lg:items-start lg:p-[120px]">
-      <motion.div variants={leftContainerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="relative flex w-full max-w-[540px] flex-col items-center justify-center gap-10 lg:items-start">
-        <motion.div variants={itemVariants} className="relative flex w-full flex-col items-center gap-2 self-stretch lg:items-start">
+    <section ref={ref} id="contact" className="relative flex w-full flex-col items-center justify-center gap-8 px-4 py-8 sm:px-6 sm:py-12 md:gap-12 md:p-16 lg:flex-row lg:items-start lg:p-[120px]">
+      <motion.div variants={leftContainerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="relative flex w-full max-w-[540px] flex-col items-center justify-center gap-6 px-2 sm:gap-8 sm:px-4 lg:items-start lg:gap-10 lg:px-0">
+        <motion.div variants={itemVariants} className="relative flex w-full flex-col items-center gap-2 self-stretch px-2 sm:px-0 lg:items-start">
           <div className="relative mt-[-1.00px] self-stretch text-center text-2xl font-bold font-montserrat leading-tight text-[#0a0d12] lg:text-left lg:text-5xl">
             Let&apos;s Work Together
           </div>
 
-          <div className="relative self-stretch text-center font-montserrat text-base font-medium leading-relaxed text-[#0a0d12] lg:text-left lg:text-lg">
+          <div className="relative self-stretch text-center font-montserrat text-base font-medium leading-relaxed text-[#0a0d12] lg:text-left lg:text-sm">
             Have a project in mind or just want to say hi? Drop me a message —
             <br />
             I&apos;d love to hear from you.
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="relative inline-flex flex-wrap items-start justify-center gap-5">
-          <img
-            className="relative h-28 w-28 rounded-lg object-cover lg:h-[142px] lg:w-[142px]"
-            alt="Portfolio image"
-            src="/portfolio-image-3.png"
-          />
-
-          <img
-            className="relative h-28 w-28 object-cover lg:h-[142px] lg:w-[142px]"
-            alt="Portfolio image"
-            src="/portfolio-image-4.png"
-          />
-
-          <img
-            className="relative h-28 w-28 object-cover lg:h-[142px] lg:w-[142px]"
-            alt="Portfolio image"
-            src="/portfolio-image-5.png"
-          />
+        <motion.div variants={itemVariants} className="relative inline-flex flex-nowrap items-start justify-center gap-3 px-2 pb-4 sm:gap-5 sm:px-0 sm:flex-wrap sm:pb-6">
+          {portfolioData.slice(0, 3).map((portfolio, index) => (
+            <img
+              key={index}
+              className="relative h-20 w-20 flex-shrink-0 rounded-lg object-cover sm:h-28 sm:w-28 lg:h-[142px] lg:w-[142px]"
+              alt={`Portfolio image - ${portfolio.title}`}
+              src={portfolio.image}
+            />
+          ))}
         </motion.div>
       </motion.div>
 
@@ -126,11 +118,11 @@ export const ContactSection = (): JSX.Element => {
         variants={formVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="relative w-full max-w-[540px] lg:flex-1 lg:grow"
+        className="relative w-full max-w-[540px] px-2 sm:px-4 lg:flex-1 lg:grow lg:px-0"
       >
-        <Card className="relative mt-16 flex w-full flex-col items-stretch rounded-3xl bg-white p-8 shadow-[0px_0px_28px_#c4c4c440] lg:mt-0">
+        <Card className="relative mt-12 flex w-full flex-col items-stretch rounded-3xl bg-white p-6 shadow-[0px_0px_28px_#c4c4c440] sm:mt-16 sm:p-8 lg:mt-0">
           <img
-            className="mx-auto -mt-36 mb-2 block h-auto w-36 lg:hidden"
+            className="mx-auto -mt-28 mb-2 block h-auto w-32 sm:-mt-36 sm:w-36 lg:hidden"
             alt="Element"
             src="/24a839d1d8.png"
           />

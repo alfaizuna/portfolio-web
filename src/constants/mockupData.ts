@@ -1,3 +1,30 @@
+const socialMediaLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/wira.achyar",
+    icon: "/social-media-1.svg",
+    alt: "Facebook"
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/wira.achyar",
+    icon: "/social-media.svg",
+    alt: "Instagram"
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/wira-achyar", 
+    icon: "/social-media-2.svg",
+    alt: "LinkedIn"
+  },
+  {
+    name: "TikTok",
+    url: "https://tiktok.com/@wira.achyar",
+    icon: "/social-media-3.svg", 
+    alt: "TikTok"
+  }
+];
+
 const profileData = {
   name: "Wira Achyar",
   description: "a frontend developer passionate about creating seamless digital experiences that are fast, responsive, and user-friendly.",
@@ -21,6 +48,36 @@ const portfolioData = [
     title: "Portfolio 3",
     category: "Web Development",
     image: "/portfolio3.png",
+  },
+];
+
+const experienceData = [
+  {
+    period: "2025 - Present",
+    role: "Frontend Developer",
+    logo: "/vector-3.svg",
+    description:
+      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
+  },
+  {
+    period: "2025 - Present",
+    role: "Frontend Developer",
+    logo: "/vector-6.svg",
+    description:
+      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
+  },
+  {
+    period: "2025 - Present",
+    role: "Frontend Developer",
+    logo: [
+      "/vector-5.svg",
+      "/vector.svg",
+      "/vector-1.svg",
+      "/vector-2.svg",
+      "/vector-4.svg",
+    ],
+    description:
+      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
   },
 ];
 
@@ -136,36 +193,6 @@ const anotherTalentFeatures = [
   "No Design Skills",
 ];
 
-const experienceData = [
-  {
-    period: "2025 - Present",
-    role: "Frontend Developer",
-    logo: "/vector-3.svg",
-    description:
-      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
-  },
-  {
-    period: "2025 - Present",
-    role: "Frontend Developer",
-    logo: "/vector-6.svg",
-    description:
-      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
-  },
-  {
-    period: "2025 - Present",
-    role: "Frontend Developer",
-    logo: [
-      "/vector-5.svg",
-      "/vector.svg",
-      "/vector-1.svg",
-      "/vector-2.svg",
-      "/vector-4.svg",
-    ],
-    description:
-      "Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.",
-  },
-];
-
 const mockFaq = [
   {
     id: "q1",
@@ -243,4 +270,5 @@ export {
   navigationItems,
   testimonials,
   profileData,
+  socialMediaLinks,
 };
