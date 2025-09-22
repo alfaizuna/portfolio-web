@@ -17,7 +17,7 @@ interface SkillsSectionProps {
 }
 
 export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Element => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Start at index 0 to show HTML and CSS first
   const [cardsToShow, setCardsToShow] = useState(4); // Default to desktop first for SSR
   const [isMounted, setIsMounted] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +40,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
   // Responsive cards to show based on screen size
   const getCardsToShow = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth < 640) return 2; // Mobile: 2 cards (HTML & CSS first)
+      if (window.innerWidth < 640) return 2; // Mobile: 2 cards per view
       if (window.innerWidth < 1024) return 2; // Tablet: 2 cards
       return 4; // Desktop: 4 cards
     }
@@ -123,7 +123,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
       className="w-full relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       viewport={{ margin: "-100px" }}
     >
       <div className="flex flex-col w-full items-center gap-8 sm:gap-12 px-4 sm:px-8 md:px-16 lg:px-[120px] py-12 sm:py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
@@ -131,13 +131,13 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
           className="flex flex-col w-full max-w-[847px] items-center gap-4 relative flex-[0_0_auto] px-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           <motion.div 
             className="relative text-center text-2xl sm:text-3xl md:text-4xl font-montserrat font-bold text-[#0a0d12] leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Code, Design, and Everything in Between
           </motion.div>
@@ -146,7 +146,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
             className="relative text-center text-base sm:text-lg font-montserrat font-medium text-[#6b7280] leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             These are the technologies that power my workflow and bring ideas to
             life.
@@ -157,15 +157,15 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
           className="inline-flex flex-col items-center gap-6 sm:gap-8 relative flex-[0_0_auto]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
-          <div className="w-full max-w-[1100px] overflow-hidden relative flex items-center h-[280px] sm:h-[460px] px-4 sm:px-0">
+          <div className="w-full max-w-[1100px] overflow-hidden relative flex items-center h-[400px] sm:h-[460px] px-8 sm:px-0 justify-start">
             <motion.div 
               ref={scrollContainerRef}
-              className="flex items-center gap-2 sm:gap-6 md:gap-8 scroll-smooth"
+              className="flex items-center gap-4 sm:gap-6 md:gap-8 scroll-smooth"
               style={{ 
-                width: `${orderedTechnologyData.length * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 174 : 274)}px`,
-                transform: `translateX(-${currentIndex * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 174 : 274)}px)`,
+                width: `${orderedTechnologyData.length * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 180 : 274)}px`,
+                transform: `translateX(-${currentIndex * (isMounted && typeof window !== 'undefined' && window.innerWidth < 640 ? 180 : 274)}px)`,
                 transition: 'transform 0.3s ease-in-out'
               }}
             >
@@ -176,8 +176,8 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                   initial={{ opacity: 0, y: 60, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ 
-                    duration: 0.6, 
-                    delay: 0.6 + (index * 0.1),
+                    duration: 0.3, 
+                    delay: 0.1 + (index * 0.05),
                     ease: "easeOut"
                   }}
                   whileHover={{ 
@@ -186,7 +186,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                   }}
                 >
                   <Card
-                    className={`flex flex-col w-[170px] sm:w-[250px] h-[260px] sm:h-auto items-center justify-between sm:justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-8 sm:py-12 relative rounded-[80px] sm:rounded-[110px] flex-shrink-0 ${tech.highlighted ? "bg-[#f3b64c]" : "bg-[#fdfdfd] border border-solid border-[#d5d7da]"}`}
+                    className={`flex flex-col w-[160px] sm:w-[250px] h-[320px] sm:h-auto items-center justify-between sm:justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-8 sm:py-12 relative rounded-[80px] sm:rounded-[110px] flex-shrink-0 ${tech.highlighted ? "bg-[#f3b64c]" : "bg-[#fdfdfd] border border-solid border-[#d5d7da]"}`}
                   >
                     <CardContent className="p-0 flex flex-col items-center gap-4 sm:gap-4 h-full justify-between sm:justify-center">
                       <motion.div
@@ -194,8 +194,8 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         transition={{ 
-                          duration: 0.5, 
-                          delay: 0.8 + (index * 0.1),
+                          duration: 0.3, 
+                          delay: 0.1 + (index * 0.05),
                           type: "spring",
                           stiffness: 260,
                           damping: 20
@@ -229,8 +229,8 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ 
-                          duration: 0.4, 
-                          delay: 0.9 + (index * 0.1)
+                          duration: 0.3, 
+                          delay: 0.1 + (index * 0.05)
                         }}
                       >
                         <div className="relative text-center text-base sm:text-xl font-semibold text-[#0a0d12] leading-tight">
@@ -253,7 +253,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
             className="inline-flex items-center gap-3 sm:gap-4 relative flex-[0_0_auto]"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <motion.div
               whileHover={{ scale: 1.1 }}
