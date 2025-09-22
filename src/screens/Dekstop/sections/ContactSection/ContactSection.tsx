@@ -35,19 +35,30 @@ export const ContactSection = (): JSX.Element => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulasi API call dengan delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Skenario dummy: 70% success, 30% failure
-    const isSuccessful = Math.random() > 0.3;
-    
-    setIsSuccess(isSuccessful);
-    setIsModalOpen(true);
-    setIsLoading(false);
-    
-    // Reset form jika berhasil
-    if (isSuccessful) {
-      setFormData({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setIsSuccess(false);
+        console.error('Error sending email:', data.error);
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      console.error('Network error:', error);
+    } finally {
+      setIsModalOpen(true);
+      setIsLoading(false);
     }
   };
 
