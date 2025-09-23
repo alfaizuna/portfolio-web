@@ -50,7 +50,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div 
+        <motion.div
           className="flex w-full h-full items-center gap-2 absolute top-0 left-0 bg-[#a53860]"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -59,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           <div className="relative w-1/2 h-full bg-[#a53860]" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="absolute top-0 left-0 w-full h-full bg-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -92,9 +92,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           alt="Decorative star"
           src="/clip-path-group.png"
           initial={{ opacity: 0, scale: 0, rotate: 0 }}
-          animate={{ 
-            opacity: 0.5, 
-            scale: 1, 
+          animate={{
+            opacity: 0.5,
+            scale: 1,
             rotate: [0, 180, 360],
             y: [-5, 5, -5]
           }}
@@ -110,9 +110,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           alt="Decorative star"
           src="/clip-path-group.png"
           initial={{ opacity: 0, scale: 0, rotate: 0 }}
-          animate={{ 
-            opacity: 0.25, 
-            scale: 1, 
+          animate={{
+            opacity: 0.25,
+            scale: 1,
             rotate: [0, -180, -360],
             x: [-3, 3, -3]
           }}
@@ -132,53 +132,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         >
           <Card className="flex flex-col w-full max-w-[18rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-3 md:gap-3 lg:gap-4 xl:gap-5 absolute top-[13.75rem] md:bottom-auto md:top-[22%] lg:top-[20%] xl:top-[18%] left-2 right-2 md:left-auto md:transform-none md:right-4 lg:right-[6.25rem] xl:right-[8rem] bg-transparent border-none shadow-none px-1 md:px-0">
             <CardContent className="p-0 w-full">
-            {/* Mobile: Flex layout with separator, Desktop: Vertical layout */}
-            <div className="relative flex flex-wrap md:block justify-between md:gap-0 w-full">
-              {/* Vertical separator for mobile - positioned in the center */}
-              <div className="absolute md:hidden left-1/2 top-2 bottom-2 w-px bg-white/40 transform -translate-x-1/2 z-10"></div>
-              
-              {memoizedStats.map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
-                  className="w-[calc(50%-0.5rem)] md:w-full"
-                >
-                  <div className="flex flex-col items-start gap-1 md:gap-1 lg:gap-1 xl:gap-2 relative w-full flex-[0_0_auto] p-2 md:p-1 lg:p-2 xl:p-3">
-                    <div className="relative w-full mt-[-0.0625rem] font-bold text-white text-2xl md:text-xl lg:text-2xl xl:text-3xl tracking-tight leading-tight">
-                      {stat.value}
+              {/* Mobile: Flex layout with separator, Desktop: Vertical layout */}
+              <div className="relative flex flex-wrap md:block justify-between md:gap-0 w-full">
+                {/* Vertical separator for mobile - positioned in the center */}
+                <div className="absolute md:hidden left-1/2 top-2 bottom-2 w-px bg-white/40 transform -translate-x-1/2 z-10"></div>
+
+                {memoizedStats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                    className="w-[calc(50%-0.5rem)] md:w-full"
+                  >
+                    <div className="flex flex-col items-start gap-1 md:gap-1 lg:gap-1 xl:gap-2 relative w-full flex-[0_0_auto] p-2 md:p-1 lg:p-2 xl:p-3">
+                      <div className="relative w-full mt-[-0.0625rem] font-bold text-white text-2xl md:text-xl lg:text-2xl xl:text-3xl tracking-tight leading-tight">
+                        {stat.value}
+                      </div>
+
+                      <div className="relative w-full font-montserrat font-semibold text-white text-xs md:text-xs lg:text-xs xl:text-sm tracking-normal leading-normal">
+                        {stat.label}
+                      </div>
                     </div>
 
-                    <div className="relative w-full font-montserrat font-semibold text-white text-xs md:text-xs lg:text-xs xl:text-sm tracking-normal leading-normal">
-                      {stat.label}
-                    </div>
-                  </div>
-
-                  {/* Hide lines on mobile, show on desktop between items */}
-                  {index < memoizedStats.length - 1 && (
-                    <img
-                      className="hidden md:block w-full h-px relative object-cover my-1 md:my-2 lg:my-3 xl:my-4"
-                      alt="Line"
-                      src="/line-111.svg"
-                    />
-                  )}
-                </motion.div>
-              ))}
-            </div>
-
-            <Button
-              className="flex h-12 md:h-10 lg:h-12 xl:h-14 items-center justify-center gap-2 pl-4 md:pl-3 lg:pl-4 xl:pl-5 pr-2 py-2 md:py-1 lg:py-2 xl:py-3 relative w-full bg-[#f3b64c] rounded-[6.25rem] mt-4 md:mt-3 lg:mt-4 xl:mt-5 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
-              onClick={() => scrollToSection('contact')}
-            >
-              <div className="relative flex-1 font-semibold text-[#0a0d12] text-sm md:text-xs lg:text-sm xl:text-base tracking-tight leading-normal">
-                Contact Me
+                    {/* Hide lines on mobile, show on desktop between items */}
+                    {index < memoizedStats.length - 1 && (
+                      <img
+                        className="hidden md:block w-full h-px relative object-cover my-1 md:my-2 lg:my-3 xl:my-4"
+                        alt="Line"
+                        src="/line-111.svg"
+                      />
+                    )}
+                  </motion.div>
+                ))}
               </div>
 
-              <div className="inline-flex items-center gap-2 p-2 md:p-1 lg:p-2 xl:p-3 relative flex-[0_0_auto] bg-[#0a0d12] rounded-[6.25rem]">
-                <ArrowRightIcon className="relative w-4 md:w-3 lg:w-4 xl:w-5 h-4 md:h-3 lg:h-4 xl:h-5 text-white" />
-              </div>
-            </Button>
+              <Button
+                className="flex h-12 md:h-10 lg:h-12 xl:h-14 items-center justify-center gap-2 pl-4 md:pl-3 lg:pl-4 xl:pl-5 pr-2 py-2 md:py-1 lg:py-2 xl:py-3 relative w-full bg-[#f3b64c] rounded-[6.25rem] mt-4 md:mt-3 lg:mt-4 xl:mt-5 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
+                onClick={() => scrollToSection('contact')}
+              >
+                <div className="relative flex-1 font-semibold text-[#0a0d12] text-sm md:text-xs lg:text-sm xl:text-base tracking-tight leading-normal">
+                  Contact Me
+                </div>
+
+                <div className="inline-flex items-center gap-2 p-2 md:p-1 lg:p-2 xl:p-3 relative flex-[0_0_auto] bg-[#0a0d12] rounded-[6.25rem]">
+                  <ArrowRightIcon className="relative w-4 md:w-3 lg:w-4 xl:w-5 h-4 md:h-3 lg:h-4 xl:h-5 text-white" />
+                </div>
+              </Button>
             </CardContent>
           </Card>
         </motion.div>
@@ -266,7 +266,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
           {/* Logo/Name */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2 md:gap-3"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -298,6 +298,70 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           </motion.div>
         </motion.header>
 
+        <div className="relative w-full h-screen flex items-center justify-center overflow-hidden absolute bottom-18 left-0 md:mt-0 mt-[12rem]">
+          {/* Overlay konten */}
+          <div className="relative flex flex-col items-center justify-center text-center gap-2">
+            {/* FRONTEND with Junior positioned in top-right */}
+            <div className="relative">
+              <motion.div
+                className="font-anton font-normal text-[#f3b64c] tracking-[-0.03em] leading-none z-10"
+                style={{ fontSize: "clamp(6rem, 22vw, 10rem)" }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
+              >
+                FRONTEND
+              </motion.div>
+              
+              {/* Junior positioned in top-left corner */}
+              <motion.div
+                className="absolute font-bonheur-royale font-normal text-white rotate-[-12deg] z-20"
+                style={{ 
+                  fontSize: "clamp(4rem, 15vw, 6rem)",
+                  top: "-0.5em",
+                  left: "-0.3em"
+                }}
+                initial={{ opacity: 0, x: 60, rotate: -12 }}
+                animate={{ opacity: 1, x: 0, rotate: -12 }}
+                transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              >
+                Junior
+              </motion.div>
+            </div>
+
+            {/* DEVELOPER (stroke + fill ditumpuk) */}
+            <div className="relative">
+              {/* Stroke */}
+              <motion.div
+                className="absolute font-anton font-normal tracking-[-0.03em] leading-none z-50"
+                style={{
+                  fontSize: "clamp(5.5rem, 22vw, 9.1rem)",
+                  WebkitTextStroke: "1px #f3b64c",
+                  color: "transparent",
+                }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
+              >
+                DEVELOPER
+              </motion.div>
+
+              {/* Fill */}
+              <motion.div
+                className="inset-0 font-anton font-normal text-[#f3b64c] tracking-[-0.03em] leading-none z-0"
+                style={{ fontSize: "clamp(5.5rem, 22vw, 9.1rem)" }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+              >
+                DEVELOPER
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+
+
         {/* Mobile Navigation Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
@@ -312,7 +376,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               />
-              
+
               {/* Top Covering Mobile Sidebar */}
               <div className="lg:hidden fixed inset-0 z-50 flex items-start justify-center">
                 <motion.nav
@@ -323,7 +387,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   initial={{ opacity: 0, y: -100 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -100 }}
-                  transition={{ 
+                  transition={{
                     duration: 0.6,
                     ease: [0.32, 0.72, 0, 1],
                     type: "tween"
@@ -367,8 +431,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                           initial={{ opacity: 0, x: -30 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -30 }}
-                          transition={{ 
-                            duration: 0.4, 
+                          transition={{
+                            duration: 0.4,
                             delay: 0.25 + (index * 0.08),
                             ease: [0.4, 0.0, 0.2, 1]
                           }}
@@ -419,9 +483,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         {/* Available for Hire Badge - Mobile: Below stats, Desktop: Center */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: -10 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1, 
+          animate={{
+            opacity: 1,
+            scale: 1,
             y: 0,
           }}
           transition={{ duration: 0.6, delay: 1.3, ease: "backOut" }}
@@ -451,12 +515,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               key={`social-${index}`}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: 1.1 + (index * 0.1), 
-                ease: "backOut" 
+              transition={{
+                duration: 0.4,
+                delay: 1.1 + (index * 0.1),
+                ease: "backOut"
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 }
               }}
