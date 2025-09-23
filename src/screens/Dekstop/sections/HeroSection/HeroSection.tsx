@@ -186,7 +186,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Introduction Section - Mobile: Top, Desktop: Bottom Left */}
         <motion.section
-          className="flex flex-col w-full max-w-[18rem] md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[25rem] items-start space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4 absolute top-[4rem] md:top-auto md:bottom-[10%] lg:bottom-[12%] xl:bottom-[15%] left-4 right-4 md:left-4 lg:left-[7.5rem] xl:left-[7.5rem] md:right-auto lg:right-auto xl:right-auto px-2 md:px-4 lg:px-4 xl:px-0 z-30"
+          className="flex flex-col w-full max-w-[18rem] md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[25rem] items-start space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4 absolute top-[4rem] md:top-auto md:bottom-[10%] lg:bottom-[12%] xl:bottom-[15%] left-4 right-4 md:left-4 lg:left-[7.5rem] xl:left-[7.5rem] md:right-auto lg:right-auto xl:right-auto px-2 md:px-4 lg:px-4 xl:px-0 pt-2 z-30"
           aria-label="Introduction"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
