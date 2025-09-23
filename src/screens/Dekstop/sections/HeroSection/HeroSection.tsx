@@ -231,7 +231,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <motion.nav
-          className="hidden lg:flex h-10 lg:h-12 xl:h-14 items-center justify-center gap-4 lg:gap-6 xl:gap-8 px-4 lg:px-6 xl:px-8 py-0 fixed top-6 lg:top-8 xl:top-10 left-0 right-0 mx-auto w-fit bg-black/20 rounded-full backdrop-blur-md z-50"
+          className="hidden lg:flex h-5 lg:h-6 xl:h-7 items-center justify-center gap-2 lg:gap-3 xl:gap-4 px-2 lg:px-3 xl:px-4 py-0 fixed top-3 lg:top-4 xl:top-5 left-0 right-0 mx-auto w-fit bg-black/20 rounded-full backdrop-blur-md z-50"
           role="navigation"
           aria-label="Main navigation"
           initial={{ opacity: 0, y: -20 }}
@@ -247,10 +247,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             >
               <Button
                 variant="ghost"
-                className="inline-flex items-center justify-center gap-2 p-2 lg:p-3 xl:p-4 relative flex-[0_0_auto] h-auto hover:bg-white/10 cursor-pointer transition-all duration-200 pointer-events-auto rounded-lg"
+                className="inline-flex items-center justify-center gap-1 p-1 lg:p-1 xl:p-1 relative flex-[0_0_auto] h-auto hover:bg-white/5 cursor-pointer transition-all duration-200 pointer-events-auto rounded-lg"
                 onClick={() => scrollToSection(item.id)}
               >
-                <div className="relative w-fit mt-[-0.0625rem] font-montserrat font-medium text-white text-sm lg:text-base xl:text-lg tracking-normal leading-normal whitespace-nowrap">
+                <div className="relative w-fit mt-[-0.0625rem] font-montserrat font-medium text-white text-xs lg:text-sm xl:text-base tracking-normal leading-normal whitespace-nowrap">
                   {item.label}
                 </div>
               </Button>
@@ -260,7 +260,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Mobile Header */}
         <motion.header
-          className="lg:hidden flex items-center justify-between fixed top-4 md:top-6 left-0 right-0 mx-4 md:mx-6 px-4 md:px-6 py-2 md:py-3 z-40 bg-black/20 rounded-full backdrop-blur-md"
+          className="lg:hidden flex items-center justify-between fixed top-2 md:top-3 left-0 right-0 mx-2 md:mx-3 px-2 md:px-3 py-1 md:py-1.5 z-40 bg-black/20 rounded-full backdrop-blur-md"
           role="banner"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -268,12 +268,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         >
           {/* Logo/Name */}
           <motion.div
-            className="flex items-center gap-2 md:gap-3"
+            className="flex items-center gap-1 md:gap-1.5"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           >
-            <span className="font-bold text-white text-base md:text-lg">{profileData.name.split(' ')[0]}</span>
+            <span className="font-bold text-white text-sm md:text-base">{profileData.name.split(' ')[0]}</span>
           </motion.div>
 
           {/* Burger Menu Button */}
@@ -284,16 +284,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           >
             <Button
               variant="ghost"
-              className="w-8 h-8 md:w-10 md:h-10 p-0 hover:bg-white/10 rounded-lg transition-colors duration-200"
+              className="w-4 h-4 md:w-5 md:h-5 p-0 hover:bg-white/10 rounded-lg transition-colors duration-200"
               onClick={toggleMobileMenu}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? (
-                <X className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
               ) : (
-                <Menu className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <Menu className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
               )}
             </Button>
           </motion.div>
@@ -490,12 +490,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.6, delay: 1.3, ease: "backOut" }}
         >
           <Badge
-            className="inline-flex items-center gap-1 md:gap-1.5 lg:gap-2 px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 absolute top-[30rem] md:top-[18%] lg:top-[15%] xl:top-[17%] left-[49%] transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
+            className="inline-flex items-center gap-1 md:gap-1 lg:gap-1.5 px-2 md:px-3 lg:px-6 py-1 md:py-1.5 lg:py-2 absolute top-[34rem] md:top-[25%] lg:top-[22%] xl:top-[24%] left-[49%] transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
             role="status"
             aria-label="Available for hire status"
           >
-            <div className="w-1 md:w-1.5 lg:w-2 xl:w-3 h-1 md:h-1.5 lg:h-2 xl:h-3 bg-[#e16190] rounded-full animate-pulse" />
-            <span className="font-semibold text-white text-xs md:text-sm lg:text-base whitespace-nowrap">
+            <div className="w-0.5 md:w-1 lg:w-1.5 xl:w-2 h-0.5 md:h-1 lg:h-1.5 xl:h-2 bg-[#e16190] rounded-full animate-pulse" />
+            <span className="font-semibold font-montserrat text-white text-xs md:text-xs lg:text-sm whitespace-nowrap">
               Available for Hire
             </span>
           </Badge>
