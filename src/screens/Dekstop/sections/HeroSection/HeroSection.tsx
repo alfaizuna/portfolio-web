@@ -130,10 +130,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          <Card className="flex flex-col w-full max-w-[20rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-4 md:gap-3 lg:gap-4 xl:gap-5 absolute top-[13.75rem] md:bottom-auto md:top-[22%] lg:top-[20%] xl:top-[18%] left-4 right-4 md:left-auto md:transform-none md:right-4 lg:right-[6.25rem] xl:right-[8rem] bg-transparent border-none shadow-none px-2 md:px-0">
+          <Card className="flex flex-col w-full max-w-[18rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-3 md:gap-3 lg:gap-4 xl:gap-5 absolute top-[13.75rem] md:bottom-auto md:top-[22%] lg:top-[20%] xl:top-[18%] left-2 right-2 md:left-auto md:transform-none md:right-4 lg:right-[6.25rem] xl:right-[8rem] bg-transparent border-none shadow-none px-1 md:px-0">
             <CardContent className="p-0 w-full">
-            {/* Mobile: Grid layout with separator, Desktop: Vertical layout */}
-            <div className="relative grid grid-cols-2 md:block gap-3 md:gap-0 w-full">
+            {/* Mobile: Flex layout with separator, Desktop: Vertical layout */}
+            <div className="relative flex flex-wrap md:block justify-between md:gap-0 w-full">
               {/* Vertical separator for mobile - positioned in the center */}
               <div className="absolute md:hidden left-1/2 top-2 bottom-2 w-px bg-white/40 transform -translate-x-1/2 z-10"></div>
               
@@ -143,6 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                  className="w-[calc(50%-0.5rem)] md:w-full"
                 >
                   <div className="flex flex-col items-start gap-1 md:gap-1 lg:gap-1 xl:gap-2 relative w-full flex-[0_0_auto] p-2 md:p-1 lg:p-2 xl:p-3">
                     <div className="relative w-full mt-[-0.0625rem] font-bold text-white text-2xl md:text-xl lg:text-2xl xl:text-3xl tracking-tight leading-tight">
