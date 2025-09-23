@@ -125,7 +125,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
       transition={{ duration: 0.4, ease: "easeOut" }}
       viewport={{ margin: "-100px" }}
     >
-      <div className="flex flex-col w-full items-center gap-8 sm:gap-12 px-4 sm:px-8 md:px-16 lg:px-[120px] py-12 sm:py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
+      <div className="flex flex-col w-full items-center gap-8 sm:gap-12 px-2 sm:px-8 md:px-16 lg:px-[100px] py-12 sm:py-20 relative flex-[0_0_auto] bg-[linear-gradient(180deg,rgba(158,56,94,0)_0%,rgba(158,56,94,0.1)_100%)]">
         <motion.div 
           className="flex flex-col w-full max-w-[847px] items-center gap-4 relative flex-[0_0_auto] px-4"
           initial={{ opacity: 0, y: 30 }}
@@ -162,13 +162,13 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
           {/* Cards Container */}
           <div 
             ref={carouselRef}
-            className="overflow-hidden px-0 z-0"
+            className="overflow-hidden px-2 sm:px-0 z-0"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
             <motion.div 
-              className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-out"
+              className="flex gap-4 sm:gap-5 transition-transform duration-500 ease-out"
               animate={{ 
                 x: `-${currentIndex * (100 / cardsToShow)}%` 
               }}
@@ -182,8 +182,8 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                 <motion.div
                   key={tech.name}
                   className={`flex-shrink-0 ${
-                    cardsToShow === 2 ? 'w-[calc(50%-12px)]' : 'w-[calc(25%-18px)]'
-                  } sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]`}
+                    cardsToShow === 2 ? 'w-[calc(50%-8px)]' : 'w-[calc(25%-12px)]'
+                  } sm:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ 
@@ -195,35 +195,32 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <Card className={`h-full transition-all duration-300 z-30 hover:shadow-xl border-2 ${
+                  <Card className={`h-full transition-all duration-300 z-30 hover:shadow-xl border-2 w-[160px] h-[220px] sm:w-[215px] sm:h-[281px] rounded-[80px] sm:rounded-[100px] aspect-[160/220] sm:aspect-[215/281] ${
                     tech.highlighted 
                       ? 'bg-[#F3B64C] border-orange-300 text-white' 
                       : 'bg-white border-gray-200 hover:border-gray-300'
-                  }`}
-                  style={{
-                    borderRadius: '100px',
-                    clipPath: 'ellipse(85% 100% at 50% 50%)'
-                  }}>
-                    <CardContent className="p-6 sm:p-8 flex flex-col items-center text-center h-full">
-                      <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-4 sm:mb-6 ${
+                  }`}>
+                    <CardContent className="p-4 sm:p-10 flex flex-col items-center text-center h-full justify-center">
+                      <div className={`w-12 h-12 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-3 sm:mb-6 flex-shrink-0 ${
                         tech.highlighted 
                           ? 'bg-white/20 backdrop-blur-sm' 
                           : 'bg-gray-50'
-                      }`}>
+                      }`} style={{ aspectRatio: '1/1' }}>
                         <img 
                           src={tech.icon} 
                           alt={tech.name}
-                          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                          className="w-6 h-6 sm:w-10 sm:h-10 object-contain flex-shrink-0"
+                          style={{ aspectRatio: '1/1' }}
                         />
                       </div>
                       
-                      <h3 className={`text-lg sm:text-xl font-bold mb-3 sm:mb-4 ${
+                      <h3 className={`text-sm sm:text-lg font-bold mb-2 sm:mb-4 leading-tight ${
                         tech.highlighted ? 'text-white' : 'text-gray-900'
                       }`}>
                         {tech.name}
                       </h3>
                       
-                      <p className={`text-sm sm:text-base leading-relaxed ${
+                      <p className={`text-xs sm:text-sm leading-relaxed px-1 sm:px-2 -mt-1 sm:-mt-2 ${
                         tech.highlighted ? 'text-white/90' : 'text-gray-600'
                       }`}>
                         {tech.description}
