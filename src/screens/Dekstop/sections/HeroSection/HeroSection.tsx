@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          <Card className="flex flex-col w-full max-w-[20rem] md:max-w-[13.875rem] lg:max-w-[15.625rem] items-start gap-4 md:gap-5 lg:gap-6 absolute top-[13.75rem] md:bottom-auto md:top-[20%] lg:top-[18%] left-4 right-4 md:left-auto md:transform-none md:right-4 lg:right-[6.25rem] xl:right-[8rem] bg-transparent border-none shadow-none px-2 md:px-0">
+          <Card className="flex flex-col w-full max-w-[20rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-4 md:gap-3 lg:gap-4 xl:gap-5 absolute top-[13.75rem] md:bottom-auto md:top-[22%] lg:top-[20%] xl:top-[18%] left-4 right-4 md:left-auto md:transform-none md:right-4 lg:right-[6.25rem] xl:right-[8rem] bg-transparent border-none shadow-none px-2 md:px-0">
             <CardContent className="p-0 w-full">
             {/* Mobile: Grid layout, Desktop: Vertical layout */}
             <div className="grid grid-cols-2 md:block gap-2 md:gap-0 w-full">
@@ -141,12 +141,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
                 >
-                  <div className="flex flex-col items-start gap-1 md:gap-2 lg:gap-3 relative w-full flex-[0_0_auto] p-2 md:p-3 lg:p-4">
-                    <div className="relative w-full mt-[-0.0625rem] font-bold text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight">
+                  <div className="flex flex-col items-start gap-1 md:gap-1 lg:gap-1 xl:gap-2 relative w-full flex-[0_0_auto] p-2 md:p-1 lg:p-2 xl:p-3">
+                    <div className="relative w-full mt-[-0.0625rem] font-bold text-white text-2xl md:text-xl lg:text-2xl xl:text-3xl tracking-tight leading-tight">
                       {stat.value}
                     </div>
 
-                    <div className="relative w-full font-montserrat font-semibold text-white text-xs md:text-sm lg:text-base xl:text-lg tracking-normal leading-normal">
+                    <div className="relative w-full font-montserrat font-semibold text-white text-xs md:text-xs lg:text-xs xl:text-sm tracking-normal leading-normal">
                       {stat.label}
                     </div>
                   </div>
@@ -154,7 +154,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   {/* Hide lines on mobile, show on desktop between items */}
                   {index < memoizedStats.length - 1 && (
                     <img
-                      className="hidden md:block w-full h-px relative object-cover my-4 md:my-5 lg:my-6"
+                      className="hidden md:block w-full h-px relative object-cover my-1 md:my-2 lg:my-3 xl:my-4"
                       alt="Line"
                       src="/line-111.svg"
                     />
@@ -164,15 +164,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             </div>
 
             <Button
-              className="flex h-12 md:h-14 lg:h-16 items-center justify-center gap-2 pl-4 md:pl-5 lg:pl-6 pr-2 py-2 md:py-3 lg:py-4 relative w-full bg-[#f3b64c] rounded-[6.25rem] mt-4 md:mt-5 lg:mt-6 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
+              className="flex h-12 md:h-10 lg:h-12 xl:h-14 items-center justify-center gap-2 pl-4 md:pl-3 lg:pl-4 xl:pl-5 pr-2 py-2 md:py-1 lg:py-2 xl:py-3 relative w-full bg-[#f3b64c] rounded-[6.25rem] mt-4 md:mt-3 lg:mt-4 xl:mt-5 h-auto hover:bg-[#f3b64c]/90 cursor-pointer transition-all duration-200"
               onClick={() => scrollToSection('contact')}
             >
-              <div className="relative flex-1 font-semibold text-[#0a0d12] text-sm md:text-base lg:text-lg tracking-tight leading-normal">
+              <div className="relative flex-1 font-semibold text-[#0a0d12] text-sm md:text-xs lg:text-sm xl:text-base tracking-tight leading-normal">
                 Contact Me
               </div>
 
-              <div className="inline-flex items-center gap-2 p-2 md:p-3 lg:p-4 relative flex-[0_0_auto] bg-[#0a0d12] rounded-[6.25rem]">
-                <ArrowRightIcon className="relative w-4 md:w-5 lg:w-6 h-4 md:h-5 lg:h-6 text-white" />
+              <div className="inline-flex items-center gap-2 p-2 md:p-1 lg:p-2 xl:p-3 relative flex-[0_0_auto] bg-[#0a0d12] rounded-[6.25rem]">
+                <ArrowRightIcon className="relative w-4 md:w-3 lg:w-4 xl:w-5 h-4 md:h-3 lg:h-4 xl:h-5 text-white" />
               </div>
             </Button>
             </CardContent>
@@ -207,7 +207,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           </motion.h1>
 
           <motion.p 
-            className="w-full md:w-5/6 lg:w-4/5 xl:w-3/4 font-montserrat font-medium text-white text-xs md:text-sm lg:text-sm xl:text-base tracking-normal leading-relaxed md:mr-4 lg:mr-8 xl:mr-12"
+            className="w-full md:w-full lg:w-4/5 xl:w-3/4 font-montserrat font-medium text-white text-xs md:text-sm lg:text-sm xl:text-base tracking-normal leading-relaxed md:mr-0 lg:mr-8 xl:mr-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
@@ -428,7 +428,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Social Icons - Hide on mobile, show on desktop */}
         <motion.aside
-          className="hidden md:inline-flex flex-col items-start justify-center gap-3 md:gap-4 lg:gap-5 px-3 md:px-4 lg:px-5 py-5 md:py-6 lg:py-7 absolute top-[10%] md:top-[12%] lg:top-[10%] left-4 lg:left-[7.5rem] xl:left-[10rem] rounded-full border border-[#b76080]"
+          className="hidden md:inline-flex flex-col items-start justify-center gap-3 md:gap-4 lg:gap-5 px-3 md:px-4 lg:px-5 py-5 md:py-6 lg:py-7 absolute top-[10%] md:top-[12%] lg:top-[10%] left-4 md:left-4 lg:left-[7.5rem] xl:left-[7.5rem] rounded-full border border-[#b76080]"
           aria-label="Social media links"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
