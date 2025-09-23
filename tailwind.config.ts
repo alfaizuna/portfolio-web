@@ -17,6 +17,13 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'sm': '640px',
+      'md': '769px',    // Tablet breakpoint
+      'lg': '1025px',   // Desktop breakpoint
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
