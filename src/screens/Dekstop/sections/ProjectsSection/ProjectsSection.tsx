@@ -80,18 +80,18 @@ export const ProjectsSection = (): JSX.Element => {
       </div>
 
       <motion.div
-        className="flex flex-col md:flex-row items-center gap-5 relative self-stretch w-full flex-[0_0_auto]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative self-stretch w-full flex-[0_0_auto] place-items-center"
         variants={sectionVariants}
       >
         {portfolioData.map((portfolio, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-start relative flex-1 grow w-full cursor-pointer"
+            className="flex flex-col items-start relative w-full max-w-[400px] cursor-pointer"
             variants={itemVariants}
           >
-            <a href={portfolio.link} target="_blank" rel="noopener noreferrer" className='flex flex-col items-start'>
+            <a href={portfolio.link} target="_blank" rel="noopener noreferrer" className='flex flex-col items-start w-full'>
               {/* Image Container */}
-              <div className='relative flex flex-row items-center p-4 gap-2 w-full h-[346.67px] bg-[#F5F5F5] rounded-[20px]'>
+              <div className='relative flex flex-row items-center p-4 gap-2 w-full h-[346.67px] bg-[#F5F5F5] rounded-[20px] overflow-hidden'>
                 {/* Portfolio Image */}
                 <Image
                   src={portfolio.image}
