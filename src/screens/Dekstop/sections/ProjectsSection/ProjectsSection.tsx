@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
-import { Separator } from "../../../../components/ui/separator";
 import { portfolioData } from "../../../../constants/mockupData";
+import Image from "next/image";
+import { ArrowRight } from 'lucide-react';
 
 interface Portfolio {
   title: string;
@@ -38,10 +38,6 @@ export const ProjectsSection = (): JSX.Element => {
         ease: "easeOut",
       },
     },
-  };
-
-  const handlePortfolioClick = (link: string) => {
-    window.open(link, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -92,47 +88,76 @@ export const ProjectsSection = (): JSX.Element => {
             key={index}
             className="flex flex-col items-start relative flex-1 grow w-full cursor-pointer"
             variants={itemVariants}
-            onClick={() => handlePortfolioClick(portfolio.link)}
           >
-            <Card className="flex items-center gap-2 p-4 relative self-stretch w-full flex-[0_0_auto] bg-[#f4f4f4] rounded-[20px]">
-              <CardContent className="p-0">
-                <img
-                  className="relative flex-1 grow h-[354.67px] rounded-lg object-contain"
-                  alt="Portfolio image"
+            <a href={portfolio.link} target="_blank" rel="noopener noreferrer" className='flex flex-col items-start'>
+              {/* Image Container */}
+              <div className='relative flex flex-row items-center p-4 gap-2 w-full h-[346.67px] bg-[#F5F5F5] rounded-[20px]'>
+                {/* Portfolio Image */}
+                <Image
                   src={portfolio.image}
+                  alt={portfolio.title}
+                  width={600}
+                  height={400}
+                  className='w-full h-[314.67px] object-cover rounded-lg flex-1'
                 />
-                <div className="absolute top-7 left-[-10px] z-10">
-                  <img
-                    className="w-auto h-auto"
-                    alt="Best Portfolio Badge"
-                    src="/badge-best-portfolio.png"
-                  />
+
+                {/* Best Portfolio Label */}
+                <div className='absolute w-[97px] h-[29px] left-[-9px] top-[28px] transform -scale-x-100'>
+                  <div className='w-[97px] h-[21px] bg-[#F3B64C] rounded-l-[178.63px] flex items-center justify-center'>
+                    <span
+                      className='text-[#0A0D12] font-montserrat transform scale-x-[-1]'
+                      style={{
+                        fontWeight: 600,
+                        fontSize: '12px',
+                        lineHeight: '24px',
+                        letterSpacing: '-0.03em',
+                      }}
+                    >
+                      Best Portfolio
+                    </span>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-            <Card className="flex items-center justify-between p-4 relative self-stretch w-full flex-[0_0_auto] bg-[#f4f4f4] rounded-[20px]">
-              <CardContent className="p-0 flex items-center justify-between w-full">
-                <div className="flex flex-col items-start gap-3 relative flex-1">
-                  <div className="relative mt-[-1.00px] font-text-lg-bold font-[number:var(--text-lg-bold-font-weight)] text-[#0a0d12] text-[length:var(--text-lg-bold-font-size)] tracking-[var(--text-lg-bold-letter-spacing)] leading-[var(--text-lg-bold-line-height)] [font-style:var(--text-lg-bold-font-style)]">
+              </div>
+
+              {/* Info Container */}
+              <div className='flex flex-row justify-between items-center p-4 gap-6 w-full h-[118px] bg-[#F5F5F5] rounded-[20px]'>
+                {/* Text Container */}
+                <div className='flex flex-col items-start gap-3 mx-auto w-full h-[86px]'>
+                  {/* Portfolio Title */}
+                  <h3
+                    className='text-[#0A0D12] font-montserrat'
+                    style={{
+                      fontWeight: 700,
+                      fontSize: '18px',
+                      lineHeight: '32px',
+                    }}
+                  >
                     {portfolio.title}
-                  </div>
-                  <Separator className="w-full h-px relative object-cover" />
-                  <div className="relative font-text-md-medium font-[number:var(--text-md-medium-font-weight)] text-[#535861] text-[length:var(--text-md-medium-font-size)] tracking-[var(--text-md-medium-letter-spacing)] leading-[var(--text-md-medium-line-height)] [font-style:var(--text-md-medium-font-style)]">
+                  </h3>
+
+                  {/* Divider Line */}
+                  <div className='w-full h-px border border-[#D5D7DA]' />
+
+                  {/* Portfolio Description */}
+                  <p
+                    className='text-[#535862] font-montserrat'
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '16px',
+                      lineHeight: '30px',
+                      letterSpacing: '-0.03em',
+                    }}
+                  >
                     {portfolio.category}
-                  </div>
+                  </p>
                 </div>
-                <Button
-                  size="icon"
-                  className="inline-flex items-center gap-2 p-2 relative bg-[#b76080] rounded-[100px] h-auto ml-4"
-                >
-                  <img
-                    className="relative w-5 h-5"
-                    alt="Arrow right"
-                    src="/arrow-right-2.svg"
-                  />
-                </Button>
-              </CardContent>
-            </Card>
+
+                {/* Button Container */}
+                <div className='flex items-center justify-center mx-auto w-11 h-9 bg-[#B76080] rounded-full'>
+                  <ArrowRight className='w-5 h-5 text-white' />
+                </div>
+              </div>
+            </a>
           </motion.div>
         ))}
       </motion.div>
