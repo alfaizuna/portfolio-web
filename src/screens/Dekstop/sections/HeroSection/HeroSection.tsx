@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         <div className="absolute bottom-0 left-0 w-full flex justify-center z-20">
           <motion.img
-            className="w-auto h-[45vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[75vh] 2xl:h-[80vh] max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] max-h-[350px] sm:max-h-[400px] md:max-h-[480px] lg:max-h-[560px] xl:max-h-[600px] 2xl:max-h-[640px] object-contain"
+            className="w-auto h-[45vh] sm:h-[50vh] md:h-[60vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[75vh] max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[450px] xl:max-w-[520px] 2xl:max-w-[600px] max-h-[350px] sm:max-h-[400px] md:max-h-[460px] lg:max-h-[520px] xl:max-h-[560px] 2xl:max-h-[600px] object-contain"
             alt={`${profileData.name} - Frontend Developer`}
             src={profileImageSrc}
             onError={handleImageError}
@@ -181,39 +181,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Introduction Section - Mobile: Top, Desktop: Bottom Left */}
         <motion.section
-          className="flex flex-col w-full max-w-[20rem] md:max-w-[25rem] lg:max-w-[24rem] xl:max-w-[28rem] items-start gap-2 md:gap-3 lg:gap-3 xl:gap-4 absolute top-[5rem] md:top-auto md:bottom-[10%] lg:bottom-[12%] xl:bottom-[15%] left-4 right-4 md:left-4 lg:left-[7.5rem] xl:left-[7.5rem] md:right-4 lg:right-8 xl:right-18 px-2 md:px-4 lg:px-4 xl:px-0"
+          className="flex flex-col w-full max-w-[18rem] md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[25rem] items-start space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4 absolute top-[4rem] md:top-auto md:bottom-[10%] lg:bottom-[12%] xl:bottom-[15%] left-4 right-4 md:left-4 lg:left-[7.5rem] xl:left-[7.5rem] md:right-auto lg:right-auto xl:right-auto px-2 md:px-4 lg:px-4 xl:px-0 z-30"
           aria-label="Introduction"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          <motion.img
-            className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10"
-            alt="Welcome indicator"
-            src="/fluent-mic-24-filled.svg"
-            loading="lazy"
+          <motion.div
+            className="flex items-center justify-center"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6, ease: "backOut" }}
-          />
+          >
+            <img
+              className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10"
+              alt="Welcome indicator"
+              src="/fluent-mic-24-filled.svg"
+              loading="lazy"
+            />
+          </motion.div>
 
-          <motion.h1 
-            className="w-full font-bold font-montserrat text-white text-lg md:text-xl lg:text-xl xl:text-2xl tracking-tight leading-tight"
+          <motion.div
+            className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
           >
-            Hi, I&apos;m {profileData.name}
-          </motion.h1>
+            <h1 className="scroll-m-20 text-lg md:text-xl lg:text-xl xl:text-2xl font-bold font-montserrat tracking-tight text-white">
+              Hi, I&apos;m {profileData.name}
+            </h1>
+          </motion.div>
 
-          <motion.p 
-            className="w-full md:w-full lg:w-4/5 xl:w-3/4 font-montserrat font-medium text-white text-xs md:text-sm lg:text-sm xl:text-base tracking-normal leading-relaxed md:mr-0 lg:mr-8 xl:mr-12"
+          <motion.div
+            className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
-            {profileData.description}
-          </motion.p>
+            <p className="leading-7 text-xs md:text-sm lg:text-sm xl:text-base font-montserrat font-medium text-white w-full md:w-full lg:w-full xl:w-full">
+              {profileData.description}
+            </p>
+          </motion.div>
         </motion.section>
 
         {/* Desktop Navigation */}
