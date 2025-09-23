@@ -30,7 +30,7 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
     <motion.section
       ref={ref}
       id="experience"
-      className="flex flex-col w-full items-start gap-8 md:gap-12 px-4 md:px-8 lg:px-[120px] py-10 md:py-20 relative bg-[#0a0d12]"
+      className="flex flex-col w-full items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-[120px] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative bg-[#0a0d12]"
       variants={{
         hidden: { opacity: 0, y: 75 },
         visible: { opacity: 1, y: 0 },
@@ -39,14 +39,14 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
     >
-      <div className="justify-between self-stretch w-full flex flex-col md:flex-row items-start relative gap-4 md:gap-0">
-        <div className="flex flex-col gap-0 max-w-full md:max-w-2xl">
-          <div className="text-2xl md:text-3xl font-montserrat font-bold tracking-tight leading-tight">
+      <div className="justify-between self-stretch w-full flex flex-col lg:flex-row items-start relative gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16">
+        <div className="flex flex-col gap-1 sm:gap-2 max-w-full lg:max-w-2xl xl:max-w-3xl">
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold tracking-tight leading-tight">
             <span className="text-[#fdfdfd]">
               Experiences That
             </span>
           </div>
-          <div className="text-2xl md:text-3xl font-montserrat font-bold tracking-tight leading-tight">
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold tracking-tight leading-tight">
             <span className="text-[#f3b64c]">
               Shaped Me
             </span>
@@ -56,30 +56,30 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
           </div>
         </div>
 
-        <div className="relative max-w-full md:max-w-md mt-0 md:mt-[-1.00px] font-montserrat font-semibold text-[#fdfdfd] text-base md:text-lg tracking-tight leading-normal">
+        <div className="relative max-w-full lg:max-w-md xl:max-w-lg mt-2 sm:mt-4 lg:mt-0 xl:mt-[-1.00px] font-montserrat font-semibold text-[#fdfdfd] text-sm sm:text-base md:text-lg lg:text-xl tracking-tight leading-relaxed">
           From startups to side projects, every step has been a chance to learn, build, and level up.
         </div>
       </div>
 
       <Separator className="w-full h-px relative object-cover" />
 
-      <div className="flex flex-col items-start gap-8 relative self-stretch w-full">
+      <div className="flex flex-col items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 relative self-stretch w-full">
         {experienceData.map((experience, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col md:flex-row items-start justify-between relative self-stretch w-full bg-[#0a0d12] gap-4 md:gap-0">
-              <div className="flex flex-col w-full md:w-[178px] items-start gap-1 relative">
-                <div className="relative self-stretch font-text-sm-medium font-[number:var(--text-sm-medium-font-weight)] text-[#a4a7ae] text-[length:var(--text-sm-medium-font-size)] tracking-[var(--text-sm-medium-letter-spacing)] leading-[var(--text-sm-medium-line-height)] [font-style:var(--text-sm-medium-font-style)]">
+            <div className="flex flex-col lg:flex-row items-start justify-between relative self-stretch w-full bg-[#0a0d12] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+              <div className="flex flex-col w-full lg:w-auto lg:min-w-[200px] xl:min-w-[240px] items-start gap-2 sm:gap-3 relative">
+                <div className="relative self-stretch font-text-sm-medium font-[number:var(--text-sm-medium-font-weight)] text-[#a4a7ae] text-xs sm:text-sm md:text-base tracking-[var(--text-sm-medium-letter-spacing)] leading-[var(--text-sm-medium-line-height)] [font-style:var(--text-sm-medium-font-style)]">
                   {experience.period}
                 </div>
 
-                <div className="relative self-stretch text-lg md:text-xl font-bold text-[#fdfdfd] leading-tight">
+                <div className="relative self-stretch text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#fdfdfd] leading-tight">
                   {experience.role}
                 </div>
               </div>
 
-              <div className="relative w-full md:w-48 h-20 rounded-2xl border-2 border-solid border-[#3a3f4a] p-1">
-                <div className="flex items-center justify-center w-full h-full bg-[#0a0d12] rounded-xl border border-solid border-[#2a2f3c] relative overflow-hidden">
-                  <div className="relative w-32 h-12 overflow-hidden">
+              <div className="relative w-full sm:w-auto sm:min-w-[160px] md:min-w-[180px] lg:w-48 xl:w-56 h-16 sm:h-18 md:h-20 lg:h-22 xl:h-24 rounded-xl sm:rounded-2xl border-2 border-solid border-[#3a3f4a] p-1">
+                <div className="flex items-center justify-center w-full h-full bg-[#0a0d12] rounded-lg sm:rounded-xl border border-solid border-[#2a2f3c] relative overflow-hidden">
+                  <div className="relative w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 overflow-hidden">
                     {Array.isArray(experience.logo) ? (
                       <>
                         <img
@@ -123,7 +123,7 @@ export const ExperienceSection = ({ experienceData }: ExperienceSectionProps): J
                 </div>
               </div>
 
-              <div className="relative w-full md:w-[513px] font-montserrat font-normal text-[#a4a7ae] text-sm md:text-base tracking-[-0.48px] leading-[24px] md:leading-[30px]">
+              <div className="relative w-full lg:flex-1 lg:max-w-[500px] xl:max-w-[600px] font-montserrat font-normal text-[#a4a7ae] text-xs sm:text-sm md:text-base lg:text-lg tracking-[-0.32px] sm:tracking-[-0.40px] md:tracking-[-0.48px] leading-[20px] sm:leading-[24px] md:leading-[28px] lg:leading-[32px]">
                 {experience.description}
               </div>
             </div>
