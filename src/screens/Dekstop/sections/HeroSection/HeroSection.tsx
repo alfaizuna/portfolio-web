@@ -231,7 +231,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <motion.nav
-          className="hidden lg:inline-flex h-10 lg:h-12 xl:h-14 items-center justify-center gap-4 lg:gap-6 xl:gap-8 px-4 lg:px-6 xl:px-8 py-0 absolute top-6 lg:top-8 xl:top-10 left-1/2 left-[23%] transform -translate-x-1/2 bg-black/20 rounded-full backdrop-blur-md z-50"
+          className="hidden lg:flex h-10 lg:h-12 xl:h-14 items-center justify-center gap-4 lg:gap-6 xl:gap-8 px-4 lg:px-6 xl:px-8 py-0 fixed top-6 lg:top-8 xl:top-10 left-0 right-0 mx-auto w-fit bg-black/20 rounded-full backdrop-blur-md z-50"
           role="navigation"
           aria-label="Main navigation"
           initial={{ opacity: 0, y: -20 }}
@@ -260,7 +260,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
         {/* Mobile Header */}
         <motion.header
-          className="lg:hidden flex items-center justify-between mx-4 md:mx-6 mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 absolute top-0 left-0 right-0 z-40 bg-black/20 rounded-full backdrop-blur-md"
+          className="lg:hidden flex items-center justify-between fixed top-4 md:top-6 left-0 right-0 mx-4 md:mx-6 px-4 md:px-6 py-2 md:py-3 z-40 bg-black/20 rounded-full backdrop-blur-md"
           role="banner"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -319,8 +319,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 className="absolute font-bonheur-royale font-normal text-white rotate-[-12deg] z-20"
                 style={{ 
                   fontSize: "clamp(4rem, 15vw, 6rem)",
-                  top: "-0.5em",
-                  left: "-0.3em"
+                  top: "-0.8em",
+                  left: "-0.8em"
                 }}
                 initial={{ opacity: 0, x: 60, rotate: -12 }}
                 animate={{ opacity: 1, x: 0, rotate: -12 }}
