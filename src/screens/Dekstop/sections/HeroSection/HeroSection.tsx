@@ -376,10 +376,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               />
 
               {/* Top Covering Mobile Sidebar */}
-              <div className="lg:hidden fixed inset-0 z-50 flex items-start justify-center">
+              <div className="lg:hidden fixed inset-0 z-50 flex items-start justify-center p-2">
                 <motion.nav
                   id="mobile-navigation"
-                  className="relative w-full h-[90vh] bg-gradient-to-b from-[#a53860]/40 via-[#9b4265]/35 to-[#8b2f5a]/30 backdrop-blur-3xl rounded-b-[3rem] shadow-2xl border-b border-x border-white/30 overflow-hidden"
+                  className="relative w-full max-w-sm h-[85vh] bg-gradient-to-b from-[#000000]/20 via-[#000000]/20 to-[#000000]/20 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden m-4"
                   role="navigation"
                   aria-label="Mobile navigation"
                   initial={{ opacity: 0, y: -100 }}
@@ -392,7 +392,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   }}
                 >
                   {/* Header with Brand Name and Close Button */}
-                  <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 md:px-6 py-6 md:py-8 mt-4">
+                  <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-8 md:px-6 py-6 md:py-8 mt-4">
                     {/* Brand Name */}
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
@@ -489,7 +489,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.6, delay: 1.3, ease: "backOut" }}
         >
           <Badge
-            className="inline-flex items-center gap-1 md:gap-1 lg:gap-1.5 px-2 md:px-3 lg:px-6 py-1 md:py-1.5 lg:py-2 absolute top-[30rem] sm:top-[32rem] md:top-[15%] lg:top-[22%] xl:top-[24%] left-[49%] transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
+            className="inline-flex items-center gap-1 md:gap-1 lg:gap-1.5 px-2 md:px-3 lg:px-6 py-1 md:py-1.5 lg:py-2 absolute top-[35rem] sm:top-[32rem] md:top-[15%] lg:top-[22%] xl:top-[24%] left-[49%] transform -translate-x-1/2 bg-[#860d39] rounded-full border border-[#b76080] shadow-lg animate-pulse"
             role="status"
             aria-label="Available for hire status"
           >
