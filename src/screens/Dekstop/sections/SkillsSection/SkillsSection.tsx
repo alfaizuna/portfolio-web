@@ -168,7 +168,10 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
             onTouchEnd={handleTouchEnd}
           >
             <motion.div 
-              className="flex gap-4 sm:gap-5 transition-transform duration-500 ease-out"
+              className="flex gap-4 sm:gap-5 lg:gap-5 transition-transform duration-500 ease-out pl-2 sm:pl-0 pr-2 sm:pr-0"
+              style={{ 
+                gap: window.innerWidth >= 1024 ? '20px' : window.innerWidth < 640 ? '16px' : undefined 
+              }}
               animate={{ 
                 x: `-${currentIndex * (100 / cardsToShow)}%` 
               }}
