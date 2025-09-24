@@ -376,10 +376,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               />
 
               {/* Top Covering Mobile Sidebar */}
-              <div className="lg:hidden fixed inset-0 z-50 flex items-start justify-center p-2">
+              <div className="lg:hidden fixed inset-0 z-50 flex items-start w-full justify-start md:justify-center p-2 md:px-4">
                 <motion.nav
                   id="mobile-navigation"
-                  className="relative w-full max-w-sm h-[85vh] bg-gradient-to-b from-[#000000]/20 via-[#000000]/20 to-[#000000]/20 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden m-4"
+                  className="relative w-full h-[85vh] bg-gradient-to-b from-[#000000]/7 via-[#000000]/7 to-[#000000]/7 backdrop-blur-xl rounded-2xl shadow-2xl my-4 md:my-2 md:w-full md:max-w-full"
                   role="navigation"
                   aria-label="Mobile navigation"
                   initial={{ opacity: 0, y: -100 }}
@@ -422,7 +422,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   <div className="px-6 md:px-8 pt-20 md:pt-24 pb-12 md:pb-16 h-full flex flex-col justify-center">
 
                     {/* Navigation Items */}
-                    <div className="space-y-4 md:space-y-6 flex-1 flex flex-col justify-center">
+                    <div className="space-y-4 md:space-y-6 flex-1 flex flex-col justify-start pt-6 md:pt-4 overflow-y-auto">
                       {memoizedNavItems.map((item, index) => (
                         <motion.div
                           key={item.id}
