@@ -131,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="block min-[769px]:max-[1020px]:hidden"
         >
-          <Card className="flex flex-col w-full max-w-[23rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-3 md:gap-3 lg:gap-4 xl:gap-5 absolute top-[16.75rem] md:bottom-auto md:top-[15%] lg:top-[18%] xl:top-[20%] left-2 right-2 md:right-4 md:left-auto lg:right-8 xl:right-12 bg-transparent border-none shadow-none px-1 md:px-0">
+          <Card className="flex flex-col w-full max-w-[23rem] md:max-w-[14rem] lg:max-w-[12rem] xl:max-w-[13rem] items-start gap-3 md:gap-3 lg:gap-4 xl:gap-5 absolute z-50 top-[16.75rem] md:bottom-auto md:top-[15%] lg:top-[18%] xl:top-[20%] left-2 right-2 md:right-4 md:left-auto lg:right-8 xl:right-12 bg-transparent border-none shadow-none px-1 md:px-0">
             <CardContent className="p-0 w-full">
               {/* Mobile: Flex layout with separator, Desktop: Vertical layout */}
               <div className="relative flex flex-wrap md:block justify-between md:gap-0 w-full">
