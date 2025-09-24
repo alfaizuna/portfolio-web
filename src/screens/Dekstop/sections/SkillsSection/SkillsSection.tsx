@@ -23,6 +23,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
   const [isMounted, setIsMounted] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [gapSize, setGapSize] = useState<string>('20px');
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const orderedTechnologyData = useMemo(() => {
@@ -56,6 +57,17 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
     const newCardsToShow = getCardsToShow();
     setCardsToShow(newCardsToShow);
     setCurrentIndex(0);
+    
+    // Set gap size based on screen width
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) {
+        setGapSize('20px');
+      } else if (window.innerWidth < 640) {
+        setGapSize('16px');
+      } else {
+        setGapSize('20px');
+      }
+    }
   }, []);
 
   // Handle window resize
@@ -65,6 +77,17 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
     const handleResize = () => {
       const newCardsToShow = getCardsToShow();
       setCardsToShow(newCardsToShow);
+      
+      // Update gap size on resize
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth >= 1024) {
+          setGapSize('20px');
+        } else if (window.innerWidth < 640) {
+          setGapSize('16px');
+        } else {
+          setGapSize('20px');
+        }
+      }
       
       // Reset index if it's out of bounds
       if (currentIndex >= orderedTechnologyData.length - newCardsToShow) {
@@ -170,7 +193,7 @@ export const SkillsSection = ({ technologyData }: SkillsSectionProps): JSX.Eleme
             <motion.div 
               className="flex gap-4 sm:gap-5 lg:gap-5 transition-transform duration-500 ease-out pl-2 sm:pl-0 pr-2 sm:pr-0"
               style={{ 
-                gap: window.innerWidth >= 1024 ? '20px' : window.innerWidth < 640 ? '16px' : undefined 
+                gap: gapSize
               }}
               animate={{ 
                 x: `-${currentIndex * (100 / cardsToShow)}%` 
